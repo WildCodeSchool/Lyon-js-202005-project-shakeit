@@ -1,3 +1,7 @@
+import styled from "styled-components";
+
+
+const Test = styled.div`
 #imgTurn {
     width:50px;
     margin: 15%;
@@ -12,3 +16,6 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
     }
+`;
+
+export default Test;

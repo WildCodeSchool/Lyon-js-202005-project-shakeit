@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import RandomButton from './component/RandomButton';
+import Test from './component/Test';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Test>
     <RandomButton />
+    </Test>
   </React.StrictMode>,
   document.getElementById('root')
 );
