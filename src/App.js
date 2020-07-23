@@ -1,9 +1,10 @@
 import React from "react";
-import GridLayout from "./components/GridLayout";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Header from "./components/Header";
-import Search from "./components/Search";
+import GridLayout from "./components/Central Page/GridLayout";
+import Footer from "./components/Central Page/Footer";
+import Main from "./components/Central Page/Main";
+import Header from "./components/Central Page/Header";
+import Search from "./components/Central Page/Search";
+import DisplayCocktails from "./containers/DisplayCocktails";
 
 
 export default function App() {
@@ -21,7 +22,8 @@ export default function App() {
       
       
       <Main>
-      <h2>MAIN</h2>
+      
+      <DisplayCocktails />
       </Main>
         
           
