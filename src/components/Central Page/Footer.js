@@ -7,6 +7,18 @@ const Footer = styled.footer`
   z-index:1;
 bottom:0;
 width:100%;
+display:flex;
+justify-content:space-around;
+align-items:center;
+background-color:#009ce7;
+height:80px;
+
+
+.fa {
+
+color:white;
+
+};
 `;
 
 export default Footer;
