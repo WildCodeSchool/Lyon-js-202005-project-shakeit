@@ -8,9 +8,9 @@ import Test from './component/Test';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Test>
+    {/* <Test>
     <RandomButton />
-    </Test>
+    </Test> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
