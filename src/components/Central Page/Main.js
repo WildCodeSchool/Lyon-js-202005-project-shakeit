@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Main = styled.div`
   grid-area: main;
   
@@ -9,6 +10,7 @@ const Main = styled.div`
   overflow-y: scroll;
   margin-bottom:100px;
   align-items:center;
+  margin-top:50px;
 
   .cocktailList {
 display:flex;
