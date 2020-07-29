@@ -7,6 +7,7 @@ import Search from "./../components/MainPage/Search";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const MainPage = () => {
   return (
@@ -32,15 +33,7 @@ const MainPage = () => {
       </GridLayout>
 
       <Footer>
-        <i class="fa fa-2x fa-refresh" aria-hidden="true"></i>
-        <i class="fa fa-2x fa-list" aria-hidden="true"></i>
-        <i
-          className=" clickable  fa-2x fa fa-heart"
-          aria-hidden="true"
-          value="test"
-        ></i>
-        <i className="fa fa-2x fa-user" aria-hidden="true"></i>
-        {/* <i class="fa fa-2x fa-bars" aria-hidden="true"></i> */}
+        <Navbar />
       </Footer>
     </div>
   );
