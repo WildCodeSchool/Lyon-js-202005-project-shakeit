@@ -42,7 +42,7 @@ class RecipePage extends React.Component {
       strIngredient ? 
       <li>
         <img 
-            src={"https://www.thecocktaildb.com/images/ingredients/"+strIngredient+"-Small.png"}
+            src={"https://www.thecocktaildb.com/images/ingredients/`${dataRecipe.strIngredient}`-Small.png"}
             alt={strIngredient}
             />
           {strMeasure} {strIngredient}
