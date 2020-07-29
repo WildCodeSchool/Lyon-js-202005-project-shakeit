@@ -12,7 +12,7 @@ class RecipePage extends React.Component {
       dataRecipe: {},
     };
     this.getRecipe = this.getRecipe.bind(this);
-    // this.strIngredientX = this.strIngredientX.bind(this);
+    this.strIngredientX = this.strIngredientX.bind(this);
   }
 
   componentDidMount() {
@@ -24,8 +24,8 @@ class RecipePage extends React.Component {
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then((response) => response.data)
       .then((data) => {
-        console.log("data", data);
-        console.log("data.drinks[0]", data.drinks[0]);
+        // console.log("data", data);
+        // console.log("data.drinks[0]", data.drinks[0]);
         this.setState({
           dataRecipe: data.drinks[0],
         });
@@ -33,19 +33,35 @@ class RecipePage extends React.Component {
   }
   /* EBAUCHE DE FONCTION POUR REMPLACER LA LISTE D'INGREDIENT EN DUR */
   
-  // strIngredientX(num) {
-  //   let dataRecipe = this.state.dataRecipe;
-  //   return 
-  //     {dataRecipe.strIngredient`${num}` ? 
-  //       <li>
-  //       <img 
-  //           src={`https://www.thecocktaildb.com/images/ingredients/${dataRecipe.strIngredient}${num}-Small.png`}
-  //           alt={dataRecipe.strIngredient`${num}`}
-  //           />
-  //         {dataRecipe.strMeasure`${num}`} {dataRecipe.strIngredient`${num}`}
-  //       </li> :
-  //       null}
-  // }
+    strIngredientX(num) {
+     //let dataRecipe = this.state.dataRecipe;
+     let strIngredient = "this.state.dataRecipe.strIngredient"+num;
+     let strMeasure = "this.state.dataRecipe.strMeasure"+num;
+    
+    return (
+      strIngredient ? 
+      <li>
+        <img 
+            src={"https://www.thecocktaildb.com/images/ingredients/"+strIngredient+"-Small.png"}
+            alt={strIngredient}
+            />
+          {strMeasure} {strIngredient}
+        </li>  : 
+        null
+    )
+       
+      
+        //  <li>
+        //  <img 
+        //      src={"https://www.thecocktaildb.com/images/ingredients/"+strIngredient+"-Small.png"}
+        //      alt={strIngredient}
+        //      />
+        //    {strMeasure} {strIngredient}
+        //  </li>   :
+        //  null};
+   }
+
+  //  let tab = [dataRecipe.strIngredient1, dataRecipe.strIngredient2]
 
   render() {
     let dataRecipe = this.state.dataRecipe;
@@ -70,7 +86,7 @@ class RecipePage extends React.Component {
           null}
 
           {/* APPEL DE LA FONCTION AVEC EN PARAMETRE LE NUMERO CORRESPONDANT */}
-          {/* {this.strIngredientX(1)} */}
+          {this.strIngredientX(1)}
           {dataRecipe.strIngredient2 ? 
           <li>
           <img 
