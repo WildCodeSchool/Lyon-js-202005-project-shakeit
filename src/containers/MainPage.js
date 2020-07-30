@@ -6,7 +6,6 @@ import Header from "./../components/MainPage/Header";
 import Search from "./../components/MainPage/Search";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
-import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const MainPage = () => {
