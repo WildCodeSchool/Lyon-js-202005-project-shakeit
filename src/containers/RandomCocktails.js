@@ -35,11 +35,11 @@ class RandomCocktail extends React.Component {
             <div className="cocktailInfos">
                 <p className="cocktailTitle">{dataRecipe.strDrink}</p>
                 <div className="cocktailRate">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
                 </div>
                 <i
                     className=" clickable fa fa-heart"
