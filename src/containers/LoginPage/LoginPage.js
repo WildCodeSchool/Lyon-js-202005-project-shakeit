@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import Form from "./Form";
 import LogPage from "../../components/HomePage/LogPage"
+
+
 
 const LoginPage = props => {
   const identifiants = {
@@ -31,20 +34,15 @@ const LoginPage = props => {
   let history = useHistory();
   let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/protected" } };
+  let { from } = location.state || { from: { pathname: "/main" } };
 
   return (
-    <>
-      <h3>LoginPage</h3>
-      <form onSubmit={loginForm}>
-        <label>Login : </label>
-        <input onChange={loginHandleChange} />
+    <>  
+    <LogPage>
+     <Form loginForm={loginForm} loginHandleChange={loginHandleChange} mdpHandleChange={mdpHandleChange}/>
+     </LogPage>
 
-        <label>Mdp : </label>
-        <input onChange={mdpHandleChange} />
-        <button type="submit">Entrer sur le site</button>
-      </form>
-    </>
+     </>
   );
 };
 

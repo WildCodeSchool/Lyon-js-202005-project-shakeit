@@ -30,12 +30,10 @@ export default function App() {
         
 
         <Switch>
-          <Route exact path="/">
-            {/* container Authentification */}
-          </Route>
+         
           <Route path="/main" component={MainPage} />
           <Route path="/recipepage" component={RecipePage} />
-          <Route path="/public">
+          <Route exact path="/">
           <LoginPage fakeAuth={fakeAuth}  />
           </Route>
           <Route path="/login">

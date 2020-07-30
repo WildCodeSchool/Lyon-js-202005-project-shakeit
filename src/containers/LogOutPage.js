@@ -5,7 +5,7 @@ const LogOutPage = props => {
   let history = useHistory();
   let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/public" } };
+  let { from } = location.state || { from: { pathname: "/login" } };
 
   let logout = () => {
     props.fakeAuth.signout(() => {

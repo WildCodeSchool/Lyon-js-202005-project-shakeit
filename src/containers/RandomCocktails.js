@@ -29,7 +29,7 @@ class RandomCocktail extends React.Component {
     let dataRecipe = this.state.dataRecipe;
     return (
         <div className="cocktailList">
-            <a href="localhost">
+            <a href="recipepage">
                 <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
             </a>
             <div className="cocktailInfos">
