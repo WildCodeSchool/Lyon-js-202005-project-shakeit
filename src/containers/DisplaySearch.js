@@ -9,16 +9,6 @@ function DisplaySearch(){
 const[tag, setTag] = useState([]);
 const[tagList,setTagList]=useState('');
 const tagAPI=liste_ingredient;
-// const tagAPI = [
-//   { ingredient: "vodka"},
-//   { ingredient: "rhum"},
-//   { ingredient: "lemon"},
-//   { ingredient: "orange juice"},
-//   { ingredient: "tequila"},
-//   { ingredient: "beer"},
-//   { ingredient: "icecubes"},
-//   { ingredient: "soda"},
-// ];
 
 function handleChange({target}){
     setTagList(target.value);
