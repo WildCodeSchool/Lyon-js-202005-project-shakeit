@@ -2,29 +2,27 @@ import React, {useState} from "react";
 import 'font-awesome/css/font-awesome.min.css';
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import liste_ingredient from './liste_ingredient.js';
 
 function DisplaySearch(){
 
 const[tag, setTag] = useState([]);
 const[tagList,setTagList]=useState('');
-
-const tagAPI = [
-  { ingredient: "vodka"},
-  { ingredient: "rhum"},
-  { ingredient: "lemon"},
-  { ingredient: "orange juice"},
-  { ingredient: "tequila"},
-  { ingredient: "beer"},
-  { ingredient: "icecubes"},
-  { ingredient: "soda"},
-];
+const tagAPI=liste_ingredient;
+// const tagAPI = [
+//   { ingredient: "vodka"},
+//   { ingredient: "rhum"},
+//   { ingredient: "lemon"},
+//   { ingredient: "orange juice"},
+//   { ingredient: "tequila"},
+//   { ingredient: "beer"},
+//   { ingredient: "icecubes"},
+//   { ingredient: "soda"},
+// ];
 
 function handleChange({target}){
     setTagList(target.value);
 }
-
-
-
 
 function AutoComplete() {
   return (
@@ -44,8 +42,6 @@ function AutoComplete() {
     </div>
   );
 }
-
-
 
 function handleClick(){
 setTag(tag=>tag.concat(tagList));
