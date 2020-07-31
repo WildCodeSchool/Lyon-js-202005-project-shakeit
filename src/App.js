@@ -13,14 +13,10 @@ export default function App() {
 
     <>
     <GridLayout>
-
     <Header>
-     
+
       <img  className="logo" src="https://i.ibb.co/3znmZs9/Daco-4332189.png" alt="Daco-4332189" border="0"/>
       <h1>ShakeIt</h1>
-     
-      
-    
     
       </Header>
       
@@ -28,8 +24,7 @@ export default function App() {
       
       <DisplaySearch />
      </Search>
-      
-      
+          
       <Main>
       
       <DisplayCocktails />
