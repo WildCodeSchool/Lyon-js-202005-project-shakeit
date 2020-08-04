@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 const EmptierButton = styled.button`
-  font-size : 2rem;
+    background-color : pink;
 `;
 
 export default EmptierButton;
