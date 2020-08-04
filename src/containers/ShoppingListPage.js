@@ -3,6 +3,7 @@ import Footer from "../components/MainPage/Footer";
 import GridLayout from '../components/MainPage/GridLayout';
 import Header from '../components/MainPage/Header';
 import { Link } from "react-router-dom";
+import Main from '../components/MainPage/Main';
 import Navbar from './Navbar';
 
 const ShoppingListPage = () => {
@@ -20,8 +21,20 @@ const ShoppingListPage = () => {
                     </Link>
                     <h1>ShakeIt</h1>
                 </Header>
+                <Main>
+                    <h1>Ma shopping-list</h1>
+                    <ul>
+                        <li>Ingrédient1</li>
+                        <li>Ingrédient2</li>
+                        <li>Ingrédient3</li>
+                        <li>Ingrédient4</li>
+                    </ul>
+                    <button>Vider ma liste</button>
+                </Main>
                 
             </GridLayout>
+
+            
 
             <Footer>
                 <Navbar />
