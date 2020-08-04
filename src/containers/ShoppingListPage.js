@@ -1,4 +1,5 @@
 import React from 'react';
+import EmptierButton from '../components/ShoppingList/EmptierButton';
 import Footer from "../components/MainPage/Footer";
 import GridLayout from '../components/MainPage/GridLayout';
 import Header from '../components/MainPage/Header';
@@ -29,12 +30,13 @@ const ShoppingListPage = () => {
                         <li>Ingrédient3</li>
                         <li>Ingrédient4</li>
                     </ul>
-                    <button>Vider ma liste</button>
+                    <EmptierButton>
+                        Vider ma liste
+                    </EmptierButton>
+                    
                 </Main>
                 
             </GridLayout>
-
-            
 
             <Footer>
                 <Navbar />
