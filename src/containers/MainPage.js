@@ -7,18 +7,21 @@ import Search from "./../components/MainPage/Search";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
+import {Link} from "react-router-dom";
 
 const MainPage = () => {
   return (
     <div>
       <GridLayout>
         <Header>
-          <img
-            className="logo"
-            src="https://i.ibb.co/3znmZs9/Daco-4332189.png"
-            alt="Daco-4332189"
-            border="0"
-          />
+          <Link to="/main">
+            <img
+              className="logo"
+              src="https://i.ibb.co/3znmZs9/Daco-4332189.png"
+              alt="Daco-4332189"
+              border="0"
+            />
+          </Link>
           <h1>ShakeIt</h1>
         </Header>
 

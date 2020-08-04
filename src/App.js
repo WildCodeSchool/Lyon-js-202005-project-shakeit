@@ -9,9 +9,6 @@ export default function App() {
   return (
     <>
       <Router>
-        <Link to="/main">Page Principale</Link>
-        <Link to="/shoppinglistpage">Page ShoppingList</Link>
-
         <Switch>
           <Route exact path="/">
             {/* container Authentification */}
