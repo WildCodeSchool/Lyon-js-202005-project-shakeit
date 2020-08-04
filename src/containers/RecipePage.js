@@ -22,7 +22,7 @@ function RecipePage({ match }) {
 
   useEffect(() => {
     getDetailedRecipe();
-  }, []);
+  }, );
 
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
