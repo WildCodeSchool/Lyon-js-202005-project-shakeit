@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class RandomCocktail extends React.Component {
   constructor(props) {
@@ -37,18 +39,12 @@ class RandomCocktail extends React.Component {
         </a> */}
           <div className="cocktailInfos">
             <p className="cocktailTitle">{dataRecipe.strDrink}</p>
-            <div className="cocktailRate">
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-            </div>
-            <i
-              className=" clickable fa fa-heart"
-              aria-hidden="true"
-              value="test"
-            ></i>
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon ="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="heart" /> 
           </div>
         </Link>
       </div>
