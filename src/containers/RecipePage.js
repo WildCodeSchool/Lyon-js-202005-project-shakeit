@@ -20,7 +20,9 @@ class RecipePage extends React.Component {
 
   getRecipe() {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+      .get(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.props.match.params.cocktailName}`
+      )
       .then((response) => response.data)
       .then((data) => {
         this.setState({

@@ -16,7 +16,7 @@ export default function App() {
             {/* container Authentification */}
           </Route>
           <Route path="/main" component={MainPage} />
-          <Route path="/recipepage" component={RecipePage} />
+          <Route path="/recipepage/:cocktailName" component={RecipePage} />
         </Switch>
       </Router>
     </>
