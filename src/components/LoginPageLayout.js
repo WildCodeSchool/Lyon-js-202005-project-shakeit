@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "./../img/acccueil.jpg"
+import img from "../img/accueil.jpg"
 
 const LogPage = styled.body`
 

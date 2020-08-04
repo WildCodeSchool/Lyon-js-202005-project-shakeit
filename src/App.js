@@ -13,7 +13,7 @@ export default function App() {
 
         <Switch>
           <Route exact path="/" component={LoginPage}>
-            {/* container Authentification */}
+           
           </Route>
           <Route path="/login" component={LoginPage} />
           <Route path="/main" component={MainPage} />
