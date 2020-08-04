@@ -1,6 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 
 const Ingredients = ({ item }) => {
+    const [ing, setIng] = useState("");    
+
+    const getIngredient = () => {
+        axios
+        .get(
+            `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${item.name}`
+        )
+        .then((response) => response.data)
+        .then((data) => {
+          setIng(data.ingredients[0].strIngredient);
+        });
+    };
+
   return (
     <li>
       <img
@@ -8,7 +22,7 @@ const Ingredients = ({ item }) => {
         alt={item.name}
       />
       {item.measure} of {item.name}
-      <button>Add</button>
+      <button onClick={getIngredient}>Add</button>
     </li>
   );
 };
