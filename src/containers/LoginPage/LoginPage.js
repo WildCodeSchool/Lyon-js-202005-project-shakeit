@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Form from "./Form";
+import LoginPageLayout from "../../components/LoginPageLayout"
 
 
 
@@ -38,9 +39,9 @@ const LoginPage = props => {
 
   return (
     <>  
-    
+    <LoginPageLayout>
      <Form loginForm={loginForm} loginHandleChange={loginHandleChange} mdpHandleChange={mdpHandleChange}/>
-     
+     </LoginPageLayout>
 
      </>
   );
