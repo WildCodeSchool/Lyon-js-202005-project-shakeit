@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 
+
+
 class RecipePage extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,9 @@ class RecipePage extends React.Component {
 
   componentDidMount() {
     this.getRecipe();
+   
   }
+
 
   getRecipe() {
     axios
@@ -41,11 +45,17 @@ class RecipePage extends React.Component {
     return ingredients.filter((ingredient) => ingredient.name != null);
   }
 
+  
+
   render() {
     let dataRecipe = this.state.dataRecipe;
+   
+  
     return (
       <div>
         <h2>RecipeMain container</h2>
+     
+         {/* <LogOutPage fakeAuth={this.props.fakeAuth} /> */}
         <button onClick={this.getRecipe}>Random recipe</button>
         <h2>Cocktail : {dataRecipe.strDrink}</h2>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />

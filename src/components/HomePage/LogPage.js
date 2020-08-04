@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import img from "../../img/accueil.jpg"
 
-const LogPage = styled.body`
+const LogPage = styled.div`
 
 background-image: url(${img});
 background-size:cover;

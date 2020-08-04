@@ -3,23 +3,20 @@ import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import LoginPage from "./containers/LoginPage/LoginPage"
 import PrivateRoute from "./containers/PrivateRoute";
-import LogOutPage from "./containers/LogOutPage";
+import {AuthProvider} from "./containers/AuthContext";
+import Protected from "./containers/Protected"
+
+//import LogOutPage from "./containers/LogOutPage";
+//import Protected from "./containers/Protected"
 //import ProtectedPage from "./containers/ProtectedPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 export default function App() {
 
-  const fakeAuth = {
-    isAuthenticated: false,
-    authenticate(cb) {
-      fakeAuth.isAuthenticated = true;
-      setTimeout(cb, 100); // fake async
-    },
-    signout(cb) {
-      fakeAuth.isAuthenticated = false;
-      setTimeout(cb, 100);
-    }
-  };
+ 
+
+
+ 
 
 
   return (
@@ -30,21 +27,23 @@ export default function App() {
         
 
         <Switch>
+          <AuthProvider>
          
           <Route path="/main" component={MainPage} />
-          <Route path="/recipepage" component={RecipePage} />
+          <Route path="/recipepage" component={RecipePage}  />
           <Route exact path="/">
-          <LoginPage fakeAuth={fakeAuth}  />
+          <LoginPage   />
           </Route>
+          
           <Route path="/login">
-            <LoginPage fakeAuth={fakeAuth}  />
+            <LoginPage   />
           </Route>
-          <PrivateRoute path="/protected" fakeAuth={fakeAuth}>
-          <Link to="/main">Page Principale</Link>
-        <Link to="/recipepage">Page Recette</Link>
-            
-            <LogOutPage fakeAuth={fakeAuth} />
+          <PrivateRoute path="/protected" >
+           <Protected />
+          <MainPage  />
+        
           </PrivateRoute >
+          </AuthProvider>
         </Switch>
       </Router>
     </>

@@ -7,8 +7,13 @@ import Search from "./../components/MainPage/Search";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
+import LogOutPage from "./LogOutPage";
 
-const MainPage = () => {
+
+const MainPage = (props) => {
+
+  
+  
   return (
     <div>
       <GridLayout>
@@ -20,6 +25,7 @@ const MainPage = () => {
             border="0"
           />
           <h1>ShakeIt</h1>
+          <LogOutPage  />
         </Header>
 
         <Search>
@@ -27,7 +33,7 @@ const MainPage = () => {
         </Search>
 
         <Main>
-          <DisplayCocktails />
+          <DisplayCocktails  />
         </Main>
       </GridLayout>
 

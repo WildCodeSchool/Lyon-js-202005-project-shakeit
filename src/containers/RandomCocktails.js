@@ -1,37 +1,41 @@
-import React from "react";
+import React, {useContext, useState, useEffect} from "react";
 import axios from "axios";
+import {AuthContext} from "./AuthContext";
 
-class RandomCocktail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataRecipe: {},
-    };
-    this.getCocktail = this.getCocktail.bind(this);
-  }
 
-  componentDidMount() {
-    this.getCocktail();
-  }
 
-  getCocktail() {
+
+const RandomCocktail = () => {
+  
+
+  const [dataRecipe,setDatarecipe]=useState({});
+  const fakeAuth= useContext(AuthContext)
+ 
+  const getCocktail= () => {
     axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then((response) => response.data)
       .then((data) => {
-        this.setState({
+        setDatarecipe({
           dataRecipe: data.drinks[0],
         });
       });
   }
 
-  render() {
-    let dataRecipe = this.state.dataRecipe;
+  
+
+  useEffect(() => { getCocktail() },[]);
+
+  
+  
+  
     return (
         <div className="cocktailList">
-            <a href="recipepage">
+          
+            <a href="/recipepage" fakeAuth={fakeAuth} >
                 <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
             </a>
+           
             <div className="cocktailInfos">
                 <p className="cocktailTitle">{dataRecipe.strDrink}</p>
                 <div className="cocktailRate">
@@ -49,7 +53,8 @@ class RandomCocktail extends React.Component {
             </div>
         </div>
     );
-  }
+    
+      
 }
 
 export default RandomCocktail;
