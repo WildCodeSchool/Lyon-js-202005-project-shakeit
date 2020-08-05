@@ -5,7 +5,12 @@ import LoginPage from "./containers/LoginPage/LoginPage"
 import {LoginDatabaseProvider} from "./context/LoginDatabaseContext"
 import {AuthentProvider} from "./context/AuthentContext";
 import PrivateRoute from "./containers/PrivateRoute";
-import {  Switch, Route } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHeart, faStar} from '@fortawesome/free-solid-svg-icons'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+
+library.add(faStar, faHeart)
 
 export default function App() {
 
