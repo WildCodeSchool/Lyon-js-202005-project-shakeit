@@ -1,7 +1,8 @@
-import React, {useState} from "react";
-import axios from "axios";
+import React from "react";
 
-const Ingredients = ({ item, addIngredient }) => {   
+
+const Ingredients = ({ item, addIngredient }) => {
+
   return (
     <li>
       <img
@@ -9,7 +10,13 @@ const Ingredients = ({ item, addIngredient }) => {
         alt={item.name}
       />
       {item.measure} of {item.name}
-      <button onClick={()=>{addIngredient(item)}}>Add</button>
+      <button
+        onClick={() => {
+          addIngredient(item);
+        }}
+      >
+        Add
+      </button>
     </li>
   );
 };

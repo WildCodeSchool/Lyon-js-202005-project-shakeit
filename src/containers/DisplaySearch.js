@@ -1,35 +1,30 @@
-import React from "react";
-import "font-awesome/css/font-awesome.min.css";
+import React, {useState} from "react";
+import 'font-awesome/css/font-awesome.min.css';
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import liste_ingredient from './liste_ingredient.js';
 
-const DisplaySearch = () => {
-  return (
-    <>
-      <hr></hr>
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
-        crossOrigin="anonymous"
-      ></link>
-      <div>
-        <p className="search__title">Let's find cocktail</p>
-        <div className="searchBar">
-          <input className="search__input" type="text" placeholder="Search" />
-          <i className="fa fa-2x fa-plus" aria-hidden="true"></i>
-        </div>
-      </div>
-
-      <div className="searchTags">
-        <button className="button-secondary pure-button" disabled="">
-          Rhum
-        </button>
-        <button className="button-secondary pure-button" disabled="">
-          Mint
-        </button>
-      </div>
-      <hr></hr>
-    </>
-  );
-};
-
+function DisplaySearch(){
+const [value, setValue] = useState([]);
+const Search = ({ value }) => 
+(<button className="button-secondary pure-button" disabled="">{value}</button>)
+        return (
+          <div className="searchBar">
+            <Autocomplete
+              onChange={(event, value) => setValue(value => value.concat(value))}
+              multiple
+              options={liste_ingredient}
+              getOptionLabel={option => option.ingredient}
+              style={{ width: 300 }}
+              renderInput={params => (
+              <TextField
+                {...params}
+                variant="outlined"
+                label="Ingrédients"
+                placeholder="Choisissez vos ingrédientss favoris"
+              />)}
+            />
+            </div>
+        );
+      }
 export default DisplaySearch;

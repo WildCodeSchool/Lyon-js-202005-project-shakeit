@@ -1,19 +1,29 @@
-import React from 'react';
-import EmptierButton from '../components/ShoppingList/EmptierButton';
-import ShoppingListIngredient from './ShoppingListIngredient';
+import React from "react";
+import EmptierButton from "../components/ShoppingList/EmptierButton";
+import ShoppingListIngredient from "./ShoppingListIngredient";
 
 const ShoppingListContent = (props) => {
-    return (
-        <div>
-            <h1>Ma shopping-list</h1>
-            <ShoppingListIngredient />
-            <div>
-                <EmptierButton>
-                    Vider
-                </EmptierButton>
-            </div>
-        </div>
-    )
-}
+  let listIngredients = [];
+  if (props.list.length !== 0 && props.list !== null) {
+    listIngredients = props.list.map((ingredient) => {
+      return (
+        <ShoppingListIngredient
+          ingredient={ingredient.name}
+          key={ingredient.id}
+        />
+      );
+    });
+  }
 
-export default ShoppingListContent
+  return (
+    <div>
+      <h1>Ma shopping-list</h1>
+      {listIngredients}
+      <div>
+        <EmptierButton>Vider</EmptierButton>
+      </div>
+    </div>
+  );
+};
+
+export default ShoppingListContent;
