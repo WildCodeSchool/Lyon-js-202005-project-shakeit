@@ -2,22 +2,32 @@ import React from "react";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import LoginPage from "./containers/LoginPage/LoginPage"
-
+import {LoginDatabaseProvider} from "./context/LoginDatabaseContext"
+import {AuthentProvider} from "./context/AuthentContext";
+import PrivateRoute from "./containers/PrivateRoute";
 import {  Switch, Route } from "react-router-dom";
 
 export default function App() {
+
+  
+
   return (
     <>
       
         
 
         <Switch>
-          <Route exact path="/" component={LoginPage}>
-           
-          </Route>
+          <LoginDatabaseProvider>
+            <AuthentProvider>
+          <Route exact path="/" component={LoginPage} />
+                   
+          
+
           <Route path="/login" component={LoginPage} />
-          <Route path="/main" component={MainPage} />
-          <Route path="/recipepage/:cocktailName" component={RecipePage} />
+          <PrivateRoute path="/main" component={MainPage} />
+          <PrivateRoute path="/recipepage/:cocktailName" component={RecipePage} />
+          </AuthentProvider>
+          </LoginDatabaseProvider>
         </Switch>
       
     </>

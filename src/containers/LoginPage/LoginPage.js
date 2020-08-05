@@ -1,19 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Form from "./Form";
 import LoginPageLayout from "../../components/LoginPageLayout"
+import {LoginDatabaseContext} from "../../context/LoginDatabaseContext";
+import {AuthentContext} from "../../context/AuthentContext";
+
 
 
 
 
 const LoginPage = props => {
-  const identifiants = {
-    login: "p2",
-    mdp: "p2mdp"
-  };
+
+
+ 
+  
+
+
+
+  
+
+// USE CONTEXT
+ const identifiants = useContext(LoginDatabaseContext);
+ const fakeAuth= useContext(AuthentContext);
+  
 
   const [Login, setLogin] = useState("");
   const [Mdp, setMdp] = useState("");
+
+  console.log("Authentifié?"+fakeAuth.isAuthenticated)
 
   const loginHandleChange = e => {
     setLogin(e.target.value);
@@ -26,7 +40,7 @@ const LoginPage = props => {
   const loginForm = e => {
     setTimeout(e.preventDefault(), 100);
     if (Login === identifiants.login && Mdp === identifiants.mdp) {
-      props.fakeAuth.authenticate(() => {
+      fakeAuth.authenticate(() => {
         history.replace(from);
       });
     } else alert("Erreur identifiants");

@@ -7,6 +7,8 @@ import Search from "./../components/MainPage/Search";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
+import LogOut from "./LogOut";
+
 
 const MainPage = () => {
   return (
@@ -20,6 +22,7 @@ const MainPage = () => {
             border="0"
           />
           <h1>ShakeIt</h1>
+          <LogOut />
         </Header>
 
         <Search>
