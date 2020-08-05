@@ -37,9 +37,15 @@ function RecipePage(props) {
   };
 
   let listOfIngredients = [];
-  if (typeof dataRecipe === "object" && dataRecipe !== null) {
+  if (dataRecipe !== undefined && dataRecipe !== null) {
     listOfIngredients = getIngredients(dataRecipe).map((item) => {
-      return <Ingredients item={item} key={item.id} addIngredient={props.addIngredient}/>;
+      return (
+        <Ingredients
+          item={item}
+          key={item.id}
+          addIngredient={props.addIngredient}
+        />
+      );
     });
   }
 
