@@ -4,14 +4,14 @@ import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 
-function RecipePage({ match }) {
+function RecipePage(props) {
   const [dataRecipe, setDataRecipe] = useState();
   const [loading, setLoading] = useState(true);
 
   const getDetailedRecipe = () => {
     axios
       .get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${match.params.cocktailName}`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${props.match.params.cocktailName}`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -22,7 +22,7 @@ function RecipePage({ match }) {
 
   useEffect(() => {
     getDetailedRecipe();
-  }, );
+  }, []);
 
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
@@ -39,7 +39,7 @@ function RecipePage({ match }) {
   let listOfIngredients = [];
   if (typeof dataRecipe === "object" && dataRecipe !== null) {
     listOfIngredients = getIngredients(dataRecipe).map((item) => {
-      return <Ingredients item={item} key={item.id} />;
+      return <Ingredients item={item} key={item.id} addIngredient={props.addIngredient}/>;
     });
   }
 
