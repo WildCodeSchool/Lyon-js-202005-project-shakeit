@@ -2,7 +2,7 @@ import React from 'react';
 import EmptierButton from '../components/ShoppingList/EmptierButton';
 import ShoppingListIngredient from './ShoppingListIngredient';
 
-const ShoppingListContent = () => {
+const ShoppingListContent = (props) => {
     return (
         <div>
             <h1>Ma shopping-list</h1>
