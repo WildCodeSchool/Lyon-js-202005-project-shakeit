@@ -7,7 +7,6 @@ import Navbar from './Navbar';
 import ShoppingListContent from './ShoppingListContent';
 
 const ShoppingListPage = (props) => {
-    console.log(props);
     return (
         <div>
             <GridLayout>
