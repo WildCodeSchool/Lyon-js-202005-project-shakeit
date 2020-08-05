@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import ShoppingListPage from "./containers/ShoppingListPage.js";
@@ -14,8 +14,7 @@ import {  Switch, Route} from "react-router-dom";
 library.add(faStar, faHeart)
 
 export default function App() {
-
-  
+  const [listIngredients, setListIngredients] = useState([]);
 
   return (
     <>
@@ -23,13 +22,10 @@ export default function App() {
           <LoginDatabaseProvider>
             <AuthentProvider>
               <Route exact path="/" component={LoginPage} />
-
-
-
               <Route path="/login" component={LoginPage} />
-              <PrivateRoute path="/main" component={MainPage} />
-              <PrivateRoute path="/recipepage/:cocktailName" component={RecipePage} />
-              <PrivateRoute path="/shoppinglistpage" component={ShoppingListPage} />
+              <Route path="/main" component={MainPage}/>
+              <Route path="/recipepage/:cocktailName" component={RecipePage} addIngredient={(ingredient)=>{setListIngredients([...listIngredients, ingredient])}} />
+              <Route path="/shoppinglistpage" component={ShoppingListPage} listIngredients={listIngredients}/>
           </AuthentProvider>
           </LoginDatabaseProvider>
 

@@ -4,9 +4,10 @@ import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 
-function RecipePage({ match }) {
+function RecipePage({ match, addIngredient }) {
   const [dataRecipe, setDataRecipe] = useState();
   const [loading, setLoading] = useState(true);
+  
 
   const getDetailedRecipe = () => {
     axios
@@ -22,7 +23,7 @@ function RecipePage({ match }) {
 
   useEffect(() => {
     getDetailedRecipe();
-  }, );
+  }, []);
 
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
@@ -39,7 +40,7 @@ function RecipePage({ match }) {
   let listOfIngredients = [];
   if (typeof dataRecipe === "object" && dataRecipe !== null) {
     listOfIngredients = getIngredients(dataRecipe).map((item) => {
-      return <Ingredients item={item} key={item.id} />;
+      return <Ingredients item={item} key={item.id} addIngredient={addIngredient}/>;
     });
   }
 
