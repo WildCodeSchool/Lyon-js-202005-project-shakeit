@@ -10,13 +10,27 @@ const LoginPage = props => {
 
 const fakeAuth=useContext(AuthContext);
 
-  const identifiants = {
-    login: "p2",
-    mdp: "p2mdp"
-  };
+ 
+  
+
+
+
+  
+
+// USE CONTEXT
+ const identifiants = useContext(LoginDatabaseContext);
+ 
+ const {user,auth} = useContext(AuthentContext);
+const {isAuthenticated,setAuthenticated}=auth;
+const [currentUser,setCurrentUser]=user;
+
+ 
+  
 
   const [Login, setLogin] = useState("");
   const [Mdp, setMdp] = useState("");
+
+  
 
   const loginHandleChange = e => {
     setLogin(e.target.value);
@@ -29,10 +43,12 @@ const fakeAuth=useContext(AuthContext);
   const loginForm = e => {
     setTimeout(e.preventDefault(), 100);
     if (Login === identifiants.login && Mdp === identifiants.mdp) {
-      fakeAuth.authenticate(() => {
-        history.replace(from);
-        console.log(fakeAuth.isAuthenticated);
-      });
+      //  fakeAuth.authenticate(() => {
+      //   history.replace(from);
+      setAuthenticated("true");
+  
+      history.push("/main");
+       
     } else alert("Erreur identifiants");
   };
 
