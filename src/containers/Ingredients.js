@@ -13,7 +13,6 @@ const Ingredients = ({ item, addIngredient }) => {
 //           setIng(data.ingredients[0].strIngredient);
 //         });
 //     };
-  console.log(addIngredient);
   return (
     <li>
       <img

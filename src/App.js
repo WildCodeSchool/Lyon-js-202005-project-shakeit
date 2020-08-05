@@ -23,9 +23,12 @@ export default function App() {
             <AuthentProvider>
               <Route exact path="/" component={LoginPage} />
               <Route path="/login" component={LoginPage} />
-              <Route path="/main" component={MainPage}/>
-              <Route path="/recipepage/:cocktailName" component={RecipePage} addIngredient={(ingredient)=>{setListIngredients([...listIngredients, ingredient])}} />
-              <Route path="/shoppinglistpage" component={ShoppingListPage} listIngredients={listIngredients}/>
+              <PrivateRoute path="/main" component={MainPage}/>
+              <PrivateRoute path="/recipepage/:cocktailName" 
+                component={RecipePage} 
+                addIngredient={(ingredient)=>{setListIngredients([...listIngredients, ingredient])}}/>
+              <PrivateRoute path="/shoppinglistpage" component={ShoppingListPage}
+               listIngredients={listIngredients}/>
           </AuthentProvider>
           </LoginDatabaseProvider>
 
