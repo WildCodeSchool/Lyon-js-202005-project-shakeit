@@ -21,17 +21,15 @@ function RandomCocktail() {
   }, []);
 
 
-  render() {
-    let dataRecipe = this.state.dataRecipe;
+
+    
     return (
       <div className="cocktailList">
         <Link to={`/recipePage/${dataRecipe.strDrink}`}>
           <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-          {/* <a href="localhost">
-          <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-        </a> */}
-          <div className="cocktailInfos">
+                    <div className="cocktailInfos">
             <p className="cocktailTitle">{dataRecipe.strDrink}</p>
+            <div className="cocktailRate">
               <FontAwesomeIcon icon="star" />
               <FontAwesomeIcon icon="star" />
               <FontAwesomeIcon icon ="star" />
@@ -48,7 +46,9 @@ function RandomCocktail() {
         </div>
       </Link>
     </div>
+    
   );
+
 }
 
 export default RandomCocktail;
