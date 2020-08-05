@@ -9,14 +9,9 @@ const [value, setValue] = useState([]);
 const Search = ({ value }) => 
 (<button className="button-secondary pure-button" disabled="">{value}</button>)
         return (
-          <div>
           <div className="searchBar">
             <Autocomplete
-              onChange={(event, value) => 
-              {
-                setValue(value => value.concat(value))
-                console.log(value);
-              }}
+              onChange={(event, value) => setValue(value => value.concat(value))}
               multiple
               options={liste_ingredient}
               getOptionLabel={option => option.ingredient}
@@ -30,7 +25,6 @@ const Search = ({ value }) =>
               />)}
             />
             </div>
-          </div>
         );
       }
 export default DisplaySearch;
