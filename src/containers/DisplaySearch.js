@@ -13,28 +13,18 @@ const Search = ({ value }) =>
           <div>
           <div className="searchBar">
             <Autocomplete
-              value={inputValue}
-              onChange={(event, newValue) => {
-                setInputValue(newValue);
-              }}
-              options={liste_ingredient.map(option =>option.ingredient)}
+              multiple
+              options={liste_ingredient}
+              getOptionLabel={option => option.ingredient}
               style={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Search ingredient" variant="outlined" />}
+              renderInput={params => (
+              <TextField
+                {...params}
+                variant="outlined"
+                label="Ingrédients"
+                placeholder="Choisissez vos ingrédientss favoris"
+              />)}
             />
-            <i onClick={() =>{
-              setValue(value => value.concat(inputValue));
-              console.log(value);}
-            } className="fa fa-2x fa-plus" aria-hidden="true"></i>
-            </div>
-            <div>
-            <ul>
-            {value.map((item, i) => (
-           <Search
-          value={item}
-          key={item}
-          />
-        ))}
-            </ul>
             </div>
           </div>
         );
