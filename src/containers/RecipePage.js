@@ -1,37 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 
-class RecipePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataRecipe: {},
-    };
-    this.getRecipe = this.getRecipe.bind(this);
-    this.getIngredients = this.getIngredients.bind(this);
-  }
+function RecipePage({ match }) {
+  const [dataRecipe, setDataRecipe] = useState();
+  const [loading, setLoading] = useState(true);
 
-  componentDidMount() {
-    this.getRecipe();
-  }
-
-  getRecipe() {
+  const getDetailedRecipe = () => {
     axios
       .get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.props.match.params.cocktailName}`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${match.params.cocktailName}`
       )
       .then((response) => response.data)
       .then((data) => {
-        this.setState({
-          dataRecipe: data.drinks[0],
-        });
+        setDataRecipe(data.drinks[0]);
+        setLoading(false);
       });
-  }
+  };
 
-  getIngredients(dataRecipe) {
+  useEffect(() => {
+    getDetailedRecipe();
+  }, );
+
+  const getIngredients = (dataRecipe) => {
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
       ingredients.push({
@@ -41,29 +34,32 @@ class RecipePage extends React.Component {
       });
     }
     return ingredients.filter((ingredient) => ingredient.name != null);
+  };
+
+  let listOfIngredients = [];
+  if (typeof dataRecipe === "object" && dataRecipe !== null) {
+    listOfIngredients = getIngredients(dataRecipe).map((item) => {
+      return <Ingredients item={item} key={item.id} />;
+    });
   }
 
-  render() {
-    let dataRecipe = this.state.dataRecipe;
-    return (
-      <div>
-        <h2>RecipeMain container</h2>
-        <button onClick={this.getRecipe}>Random recipe</button>
-        <h2>Cocktail : {dataRecipe.strDrink}</h2>
-        <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-        <p>{dataRecipe.strInstructions}</p>
-        <ul>
-          List of ingredients :
-          {this.getIngredients(dataRecipe).map((item) => {
-            return <Ingredients item={item} key={item.id} />;
-          })}
-        </ul>
-        <Footer>
-          <Navbar />
-        </Footer>
-      </div>
-    );
+  if (loading) {
+    return <h2>Loading...</h2>;
   }
+
+  return (
+    <div>
+      <h2>RecipeMain container</h2>
+      <button onClick={getDetailedRecipe}>Random recipe</button>
+      <h2>Cocktail : {dataRecipe.strDrink}</h2>
+      <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+      <p>{dataRecipe.strInstructions}</p>
+      <ul>List of ingredients :{listOfIngredients}</ul>
+      <Footer>
+        <Navbar />
+      </Footer>
+    </div>
+  );
 }
 
 export default RecipePage;

@@ -2,22 +2,39 @@ import React from "react";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import ShoppingListPage from "./containers/ShoppingListPage.js";
+import LoginPage from "./containers/LoginPage/LoginPage"
+import {LoginDatabaseProvider} from "./context/LoginDatabaseContext"
+import {AuthentProvider} from "./context/AuthentContext";
+import PrivateRoute from "./containers/PrivateRoute";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHeart, faStar} from '@fortawesome/free-solid-svg-icons'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+library.add(faStar, faHeart)
 
 export default function App() {
+
+  
+
   return (
     <>
-      <Router>
         <Switch>
-          <Route exact path="/">
-            {/* container Authentification */}
-          </Route>
-          <Route path="/main" component={MainPage} />
-          <Route path="/recipepage/:cocktailName" component={RecipePage} />
-          <Route path="/shoppinglistpage" component={ShoppingListPage} />
+          <LoginDatabaseProvider>
+            <AuthentProvider>
+              <Route exact path="/" component={LoginPage} />
+
+
+
+              <Route path="/login" component={LoginPage} />
+              <PrivateRoute path="/main" component={MainPage} />
+              <PrivateRoute path="/recipepage/:cocktailName" component={RecipePage} />
+              <PrivateRoute path="/shoppinglistpage" component={ShoppingListPage} />
+          </AuthentProvider>
+          </LoginDatabaseProvider>
+
         </Switch>
-      </Router>
+      
     </>
   );
 }

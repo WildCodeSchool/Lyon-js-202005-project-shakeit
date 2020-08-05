@@ -8,6 +8,7 @@ import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
+import LogOut from "./LogOut";
 
 const MainPage = () => {
   return (
@@ -23,6 +24,7 @@ const MainPage = () => {
             />
           </Link>
           <h1>ShakeIt</h1>
+          <LogOut />
         </Header>
 
         <Search>

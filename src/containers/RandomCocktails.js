@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-class RandomCocktail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataRecipe: {},
-    };
-    this.getCocktail = this.getCocktail.bind(this);
-  }
 
-  componentDidMount() {
-    this.getCocktail();
-  }
+function RandomCocktail() {
+  const [dataRecipe, setDataRecipe] = useState({});
 
-  getCocktail() {
+  const getRandomCocktail = () => {
     axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then((response) => response.data)
       .then((data) => {
-        this.setState({
-          dataRecipe: data.drinks[0],
-        });
+        setDataRecipe(data.drinks[0]);
       });
-  }
+  };
+
+  useEffect(() => {
+    getRandomCocktail();
+  }, []);
+
 
   render() {
     let dataRecipe = this.state.dataRecipe;
@@ -37,23 +32,23 @@ class RandomCocktail extends React.Component {
         </a> */}
           <div className="cocktailInfos">
             <p className="cocktailTitle">{dataRecipe.strDrink}</p>
-            <div className="cocktailRate">
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-              <i className="fa fa-star" aria-hidden="true"></i>
-            </div>
-            <i
-              className=" clickable fa fa-heart"
-              aria-hidden="true"
-              value="test"
-            ></i>
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon ="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="star" />
+              <FontAwesomeIcon icon="heart" /> 
+
           </div>
-        </Link>
-      </div>
-    );
-  }
+          <i
+            className=" clickable fa fa-heart"
+            aria-hidden="true"
+            value="test"
+          ></i>
+        </div>
+      </Link>
+    </div>
+  );
 }
 
 export default RandomCocktail;
