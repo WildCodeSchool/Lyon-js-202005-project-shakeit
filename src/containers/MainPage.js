@@ -9,19 +9,17 @@ import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
 import LogOut from "./LogOut";
-
+import Global from "./../components/MainPage/Global";
+import CocktailLogo from "./Logo"
 const MainPage = () => {
   return (
+    <>
+    <Global />
     <div>
       <GridLayout>
         <Header>
           <Link to="/main">
-            <img
-              className="logo"
-              src="https://i.ibb.co/3znmZs9/Daco-4332189.png"
-              alt="Daco-4332189"
-              border="0"
-            />
+            <CocktailLogo />
           </Link>
           <h1>ShakeIt</h1>
           <LogOut />
@@ -40,6 +38,7 @@ const MainPage = () => {
         <Navbar />
       </Footer>
     </div>
+    </>
   );
 };
 
