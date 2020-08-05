@@ -8,7 +8,7 @@ const ShoppingListContent = () => {
             <h1>Ma shopping-list</h1>
             <ShoppingListIngredient />
             <div>
-                <EmptierButton onClick={()=>console.log("Hello")}>
+                <EmptierButton>
                     Vider
                 </EmptierButton>
             </div>

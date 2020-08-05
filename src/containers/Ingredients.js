@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 
 const Ingredients = ({ item }) => {
-    export const [ing, setIng] = useState("");    
+    const [ing, setIng] = useState("");    
 
     const getIngredient = () => {
         axios
