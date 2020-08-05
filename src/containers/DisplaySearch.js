@@ -6,13 +6,17 @@ import liste_ingredient from './liste_ingredient.js';
 
 function DisplaySearch(){
 const [value, setValue] = useState([]);
-const [inputValue, setInputValue] = useState('');
 const Search = ({ value }) => 
 (<button className="button-secondary pure-button" disabled="">{value}</button>)
         return (
           <div>
           <div className="searchBar">
             <Autocomplete
+              onChange={(event, value) => 
+              {
+                setValue(value => value.concat(value))
+                console.log(value);
+              }}
               multiple
               options={liste_ingredient}
               getOptionLabel={option => option.ingredient}
