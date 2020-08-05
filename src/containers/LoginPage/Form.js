@@ -5,7 +5,7 @@ const Form = (props) => {
     return (
         <>
         
-        <html>
+        
           <form onSubmit={props.loginForm}>
               
             <label className="labelForm">Login : </label>
@@ -18,7 +18,7 @@ const Form = (props) => {
             <button type="submit">Sign Up</button>
            
           </form>
-          </html>
+          
         </>
       );
 
