@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Navbar from './Navbar';
 import ShoppingListContent from './ShoppingListContent';
 
-const ShoppingListPage = () => {
+const ShoppingListPage = (props) => {
     return (
         <div>
             <GridLayout>
