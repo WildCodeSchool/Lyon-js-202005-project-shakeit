@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 
 const Ingredients = ({ item }) => {
-    const [ing, setIng] = useState("");    
+    export const [ing, setIng] = useState("");    
 
     const getIngredient = () => {
         axios
@@ -23,6 +23,7 @@ const Ingredients = ({ item }) => {
       />
       {item.measure} of {item.name}
       <button onClick={getIngredient}>Add</button>
+      <p>{ing}</p>
     </li>
   );
 };

@@ -1,10 +1,8 @@
 import React from 'react';
-import EmptierButton from '../components/ShoppingList/EmptierButton';
 import Footer from "../components/MainPage/Footer";
 import GridLayout from '../components/MainPage/GridLayout';
 import Header from '../components/MainPage/Header';
 import { Link } from "react-router-dom";
-import Main from '../components/MainPage/Main';
 import Navbar from './Navbar';
 import ShoppingListContent from './ShoppingListContent';
 

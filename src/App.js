@@ -3,7 +3,7 @@ import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import ShoppingListPage from "./containers/ShoppingListPage.js";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
   return (
