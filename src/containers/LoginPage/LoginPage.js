@@ -4,6 +4,7 @@ import Form from "./Form";
 import LoginPageLayout from "../../components/LoginPageLayout"
 import {AuthentContext} from "../../context/AuthentContext";
 import {LoginDatabaseContext} from "../../context/LoginDatabaseContext"
+import md5 from "md5-hash";
 
 
 
@@ -19,6 +20,7 @@ const LoginPage = props => {
 
   const [Login, setLogin] = useState("");
   const [Mdp, setMdp] = useState("");
+  
 
   
 
@@ -31,8 +33,9 @@ const LoginPage = props => {
   };
 
   const loginForm = e => {
+
     setTimeout(e.preventDefault(), 100);
-    if (Login === identifiants.login && Mdp === identifiants.mdp) {
+    if (md5(Login) === identifiants.login && md5(Mdp) === identifiants.mdp) {
       
       setAuth("true");
   history.replace(from);      

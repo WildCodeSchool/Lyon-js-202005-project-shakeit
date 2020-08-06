@@ -3,7 +3,6 @@ import CocktailLogo from "./Logo";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
-import Header from "./../components/MainPage/Header";
 import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
