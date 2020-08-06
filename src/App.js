@@ -7,10 +7,16 @@ import { LoginDatabaseProvider } from "./context/LoginDatabaseContext";
 import { AuthentProvider } from "./context/AuthentContext";
 import PrivateRoute from "./containers/PrivateRoute";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeart, faStar, faCocktail } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart,
+  faStar,
+  faCocktail,
+  faList,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Switch, Route } from "react-router-dom";
 
-library.add(faStar, faHeart, faCocktail);
+library.add(faStar, faHeart, faCocktail, faList, faUser);
 
 export default function App() {
   const [listIngredients, setListIngredients] = useState([]);

@@ -9,15 +9,14 @@ const Navbar = () => {
         <FontAwesomeIcon icon="cocktail" size="3x" color="white" />
       </Link>
       <Link to="/shoppinglistpage">
-        <i className="fa fa-2x fa-list" aria-hidden="true"></i>
+        <FontAwesomeIcon icon="list" size="3x" color="white" />
       </Link>
-
-      <i
-        className=" clickable  fa-2x fa fa-heart"
-        aria-hidden="true"
-        value="test"
-      ></i>
-      <i className="fa fa-2x fa-user" aria-hidden="true"></i>
+      <Link to="/main">
+        <FontAwesomeIcon icon="heart" size="3x" color="white" />
+      </Link>
+      <Link to="/main">
+        <FontAwesomeIcon icon="user" size="3x" color="white" />
+      </Link>{" "}
     </>
   );
 };
