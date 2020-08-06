@@ -6,16 +6,15 @@ const Header = styled.header`
   text-align:center;
   align-items:center;
   margin-left: 0px;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #009ce7;
   
-  
-  h1 {
-      margin-top:50px;
-      margin-left: 20px;
-    }
     img{
       position: relative;
-      height:100px;
-      top: 20px;
+      height:90px;
+      top:15px;
     }
     button{
       position: relative;

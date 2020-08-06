@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import ShoppingListContent from "./ShoppingListContent";
 import CocktailLogo from "./Logo";
+import Title from "./../components/MainPage/Title";
+
 
 const ShoppingListPage = (props) => {
   return (
@@ -15,7 +17,7 @@ const ShoppingListPage = (props) => {
           <Link to="/main">
             <CocktailLogo />
           </Link>
-          <h1>ShakeIt</h1>
+          <Title>ShakeIt</Title>
         </Header>
         <ShoppingListContent list={props.listIngredients} />
       </GridLayout>

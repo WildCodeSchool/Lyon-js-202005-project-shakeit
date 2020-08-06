@@ -1,7 +1,7 @@
 import React from "react";
 import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
-
+import Title from "./../components/MainPage/Title";
 const ShoppingListContent = (props) => {
   let listIngredients = [];
   if (props.list.length !== 0 && props.list !== null) {
@@ -17,7 +17,9 @@ const ShoppingListContent = (props) => {
 
   return (
     <div>
-      <h1>Your shopping-list</h1>
+
+     <Title>Ma shopping-list</Title>
+
       {listIngredients}
       <div>
         <EmptierButton>Reset</EmptierButton>

@@ -4,6 +4,7 @@ import Footer from "./../components/MainPage/Footer";
 import Main from "./../components/MainPage/Main";
 import Header from "./../components/MainPage/Header";
 import Search from "./../components/MainPage/Search";
+import Title from "./../components/MainPage/Title";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
@@ -18,18 +19,20 @@ const MainPage = () => {
     <div>
       <GridLayout>
         <Header>
+        
           <Link to="/main">
             <CocktailLogo />
           </Link>
-          <h1>ShakeIt</h1>
+          <Title>ShakeIt</Title>
           <LogOut />
         </Header>
-
         <Search>
           <DisplaySearch />
         </Search>
-
         <Main>
+        
+
+        
           <DisplayCocktails />
         </Main>
       </GridLayout>
