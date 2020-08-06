@@ -5,6 +5,9 @@ import Header from "../components/MainPage/Header";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import ShoppingListContent from "./ShoppingListContent";
+import CocktailLogo from "./Logo";
+import Title from "./../components/MainPage/Title";
+
 
 const ShoppingListPage = (props) => {
   return (
@@ -12,14 +15,9 @@ const ShoppingListPage = (props) => {
       <GridLayout>
         <Header>
           <Link to="/main">
-            <img
-              className="logo"
-              src="https://i.ibb.co/3znmZs9/Daco-4332189.png"
-              alt="Daco-4332189"
-              border="0"
-            />
+            <CocktailLogo />
           </Link>
-          <h1>ShakeIt</h1>
+          <Title>ShakeIt</Title>
         </Header>
         <ShoppingListContent list={props.listIngredients} />
       </GridLayout>
