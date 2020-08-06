@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import CocktailLogo from "./Logo";
+import LogOut from "./LogOut";
+import Header from "./../components/MainPage/Header";
 import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
+import CocktailImg from "./../components/RecipePage/CocktailImg";
+import CocktailName from "./../components/RecipePage/CocktailName";
+import CocktailInstructions from "./../components/RecipePage/CocktailInstructions";
+import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 
 function RecipePage(props) {
-  const [dataRecipe, setDataRecipe] = useState();
+  const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const getDetailedRecipe = () => {
@@ -27,17 +35,19 @@ function RecipePage(props) {
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
-      ingredients.push({
-        name: dataRecipe["strIngredient" + i],
-        measure: dataRecipe["strMeasure" + i],
-        id: i,
-      });
+      if (dataRecipe["strIngredient" + i] != null) {
+        ingredients.push({
+          name: dataRecipe["strIngredient" + i],
+          measure: dataRecipe["strMeasure" + i],
+          id: i,
+        });
+      }
     }
-    return ingredients.filter((ingredient) => ingredient.name != null);
+    return ingredients;
   };
 
   let listOfIngredients = [];
-  if (dataRecipe !== undefined && dataRecipe !== null) {
+  if (dataRecipe !== null) {
     listOfIngredients = getIngredients(dataRecipe).map((item) => {
       return (
         <Ingredients
@@ -54,17 +64,22 @@ function RecipePage(props) {
   }
 
   return (
-    <div>
-      <h2>RecipeMain container</h2>
-      <button onClick={getDetailedRecipe}>Random recipe</button>
-      <h2>Cocktail : {dataRecipe.strDrink}</h2>
-      <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-      <p>{dataRecipe.strInstructions}</p>
-      <ul>List of ingredients :{listOfIngredients}</ul>
+    <RecipePageStyle>
+      <Header>
+        <Link to="/main">
+          <CocktailLogo />
+        </Link>
+        <h1>ShakeIt</h1>
+        <LogOut />
+      </Header>
+      <CocktailName>{dataRecipe.strDrink}</CocktailName>
+      <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+      <CocktailInstructions>{dataRecipe.strInstructions}</CocktailInstructions>
+      <ul>{listOfIngredients}</ul>
       <Footer>
         <Navbar />
       </Footer>
-    </div>
+    </RecipePageStyle>
   );
 }
 
