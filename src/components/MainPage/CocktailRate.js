@@ -4,8 +4,10 @@ import styled from "styled-components";
 const CocktailRate = styled.div`
 p{
     display:inline-block;
-    padding-left: 10px;
-    width: 60%;
+    width: 50%;
+    margin-top:5px;
+    margin-bottom:10px;
+
 }
 `
 
