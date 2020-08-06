@@ -8,6 +8,7 @@ import ShoppingListContent from "./ShoppingListContent";
 import CocktailLogo from "./Logo";
 import Title from "./../components/MainPage/Title";
 
+
 const ShoppingListPage = (props) => {
   return (
     <div>

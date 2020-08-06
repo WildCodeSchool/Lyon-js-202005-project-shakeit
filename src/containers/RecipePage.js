@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import CocktailLogo from "./Logo";
+import Header from "../components/MainPage/Header";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
+import { Link } from "react-router-dom";
 
 function RecipePage(props) {
   const [dataRecipe, setDataRecipe] = useState();
@@ -55,8 +58,12 @@ function RecipePage(props) {
 
   return (
     <div>
-      <h2>RecipeMain container</h2>
-      <button onClick={getDetailedRecipe}>Random recipe</button>
+      <Header>
+        <Link to="/main">
+          <CocktailLogo />
+        </Link>
+        <h1>ShakeIt</h1>
+      </Header>
       <h2>Cocktail : {dataRecipe.strDrink}</h2>
       <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
       <p>{dataRecipe.strInstructions}</p>

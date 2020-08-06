@@ -1,16 +1,18 @@
-import React, {useContext} from "react";
-import {Route, Redirect} from "react-router-dom";
-import {AuthentContext} from "../context/AuthentContext";
+import React, { useContext } from "react";
+import { Route, Redirect } from "react-router-dom";
+import { AuthentContext } from "../context/AuthentContext";
 
 function PrivateRoute({ component: Component, ...rest }) {
+  
+ 
+    const [auth,setAuth] = useContext(AuthentContext);
 
-    const fakeAuth=useContext(AuthentContext);
-    console.log("Authentifié avant redirection Main?"+fakeAuth.isAuthenticated)
+   
     return (
       <Route
         {...rest}
         render={(props) =>
-          true ? (
+          auth ? (
             <Component {...props} {...rest}/>
           ) : (
             <Redirect
@@ -25,3 +27,4 @@ function PrivateRoute({ component: Component, ...rest }) {
   }
 
   export default PrivateRoute;
+

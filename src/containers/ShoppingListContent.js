@@ -17,10 +17,12 @@ const ShoppingListContent = (props) => {
 
   return (
     <div>
+
      <Title>Ma shopping-list</Title>
+
       {listIngredients}
       <div>
-        <EmptierButton>Vider</EmptierButton>
+        <EmptierButton>Reset</EmptierButton>
       </div>
     </div>
   );
