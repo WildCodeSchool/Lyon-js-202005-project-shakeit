@@ -4,13 +4,15 @@ import {AuthentContext} from "../context/AuthentContext";
 
 function PrivateRoute({ component: Component, ...rest }) {
 
-    const fakeAuth=useContext(AuthentContext);
-    console.log("Authentifié avant redirection Main?"+fakeAuth.isAuthenticated)
+    
+    const [auth,setAuth] = useContext(AuthentContext);
+
+   
     return (
       <Route
         {...rest}
         render={(props) =>
-          true ? (
+          auth ? (
             <Component {...props} {...rest}/>
           ) : (
             <Redirect
