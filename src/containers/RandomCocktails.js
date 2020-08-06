@@ -25,15 +25,16 @@ function RandomCocktail() {
     <CocktailList>
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-        <CocktailRate>
-          <p>{dataRecipe.strDrink}</p>
+          <CocktailRate>
+            {dataRecipe.strDrink}
+          </CocktailRate>
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="heart" />
-        </CocktailRate>
+        
       </Link>
     </CocktailList>
   );

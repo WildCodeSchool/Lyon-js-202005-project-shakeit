@@ -15,7 +15,7 @@ import CocktailLogo from "./Logo"
 const MainPage = () => {
   return (
     <>
-    <Global />
+    <Global /> 
     <div>
       <GridLayout>
         <Header>

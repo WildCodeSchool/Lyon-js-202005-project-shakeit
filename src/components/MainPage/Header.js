@@ -5,7 +5,6 @@ const Header = styled.header`
   display:flex;
   text-align:center;
   align-items:center;
-  margin-left: 0px;
   width: 90%;
   margin-left: 5%;
   margin-bottom: 10px;
