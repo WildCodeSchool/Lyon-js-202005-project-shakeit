@@ -4,7 +4,6 @@ import React, {createContext, useState} from 'react';
 export const AuthentContext= createContext();
 
 
-export const AuthentContext = createContext();
 
 export const AuthentProvider = (props) => {
 
