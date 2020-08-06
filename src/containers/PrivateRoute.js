@@ -22,5 +22,27 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   );
 }
+ 
+    const [auth,setAuth] = useContext(AuthentContext);
 
-export default PrivateRoute;
+   
+    return (
+      <Route
+        {...rest}
+        render={(props) =>
+          auth ? (
+            <Component {...props} {...rest}/>
+          ) : (
+            <Redirect
+              to={{
+                pathname: "/login"
+              }}
+            />
+          )
+        }
+      />
+    );
+  }
+
+  export default PrivateRoute;
+
