@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FavoritePage from "./containers/FavoritePage";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
 import ShoppingListPage from "./containers/ShoppingListPage.js";
@@ -6,6 +7,7 @@ import LoginPage from "./containers/LoginPage/LoginPage";
 import { LoginDatabaseProvider } from "./context/LoginDatabaseContext";
 import { AuthentProvider } from "./context/AuthentContext";
 import PrivateRoute from "./containers/PrivateRoute";
+import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeart,
@@ -41,6 +43,8 @@ export default function App() {
               component={ShoppingListPage}
               listIngredients={listIngredients}
             />
+            <PrivateRoute path="/profilpage" component={ProfilPage} />
+            <PrivateRoute path="/favoritepage" component={FavoritePage} />
           </AuthentProvider>
         </LoginDatabaseProvider>
       </Switch>

@@ -11,10 +11,10 @@ const Navbar = () => {
       <Link to="/shoppinglistpage">
         <FontAwesomeIcon icon="list" size="3x" color="white" />
       </Link>
-      <Link to="/main">
+      <Link to="/favoritepage">
         <FontAwesomeIcon icon="heart" size="3x" color="white" />
       </Link>
-      <Link to="/main">
+      <Link to="/profilpage">
         <FontAwesomeIcon icon="user" size="3x" color="white" />
       </Link>{" "}
     </>
