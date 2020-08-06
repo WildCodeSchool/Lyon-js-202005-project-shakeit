@@ -64,8 +64,6 @@ function RecipePage(props) {
         </Link>
         <h1>ShakeIt</h1>
       </Header>
-      <h2>RecipeMain container</h2>
-      <button onClick={getDetailedRecipe}>Random recipe</button>
       <h2>Cocktail : {dataRecipe.strDrink}</h2>
       <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
       <p>{dataRecipe.strInstructions}</p>
