@@ -1,37 +1,32 @@
-import React, {
-  createContext
-} from "react";
+import React, {createContext} from "react";
 
-export const AuthContext = createContext();
+export const AuthContext=createContext();
 
 
-export const AuthProvider = (props) => {
+export const AuthProvider = (props) => 
+{
 
-  const fakeAuth = {
+const fakeAuth = {
+  
+  isAuthenticated: false,
 
-    isAuthenticated: false,
+  authenticate(cb) {
+    fakeAuth.isAuthenticated = true;
+    setTimeout(cb, 100); // fake async
+  },
+  signout(cb) {
+    fakeAuth.isAuthenticated = false;
+    setTimeout(cb, 100);
+  }
+};
 
-    authenticate(cb) {
-      fakeAuth.isAuthenticated = true;
-      setTimeout(cb, 100); // fake async
-    },
-    signout(cb) {
-      fakeAuth.isAuthenticated = false;
-      setTimeout(cb, 100);
-    }
-  };
+return(
 
-  return (
-
-    <
-    AuthContext.Provider value = {
-      fakeAuth
-    } > {
-      props.children
-    } <
-    /AuthContext.Provider>
+<AuthContext.Provider value= {fakeAuth}>
+  {props.children}
+</AuthContext.Provider>
 
 
-  );
+);
 
 }

@@ -13,7 +13,6 @@ const LoginPage = props => {
 
 // USE CONTEXT
  const identifiants = useContext(LoginDatabaseContext);
- 
  const [auth,setAuth] = useContext(AuthentContext);
 
  
@@ -34,11 +33,9 @@ const LoginPage = props => {
   const loginForm = e => {
     setTimeout(e.preventDefault(), 100);
     if (Login === identifiants.login && Mdp === identifiants.mdp) {
-      //  fakeAuth.authenticate(() => {
-      //   history.replace(from);
+      
       setAuth("true");
-  
-      history.push("/main");
+  history.replace(from);      
        
     } else alert("Erreur identifiants");
   };
@@ -46,7 +43,7 @@ const LoginPage = props => {
   let history = useHistory();
   let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/protected" } };
+  let { from } = location.state || { from: { pathname: "/main" } };
 
   
   return (
