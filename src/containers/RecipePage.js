@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CocktailLogo from "./Logo";
-import Header from "../components/MainPage/Header";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CocktailLogo from "./Logo";
 import LogOut from "./LogOut";
 import Header from "./../components/MainPage/Header";
 import Navbar from "./Navbar";

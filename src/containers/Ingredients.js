@@ -12,7 +12,7 @@ const Ingredients = ({ item, addIngredient }) => {
           alt={item.name}
         />
         <span>
-          {item.measure} of {item.name}
+          {item.measure ? `${item.measure} of` : null} {item.name}
         </span>
       </CocktailIngredient>
       <IngredientBtn
