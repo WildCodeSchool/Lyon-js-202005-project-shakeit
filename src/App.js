@@ -43,6 +43,7 @@ export default function App() {
               component={ShoppingListPage}
               listIngredients={listIngredients}
             />
+
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
           </AuthentProvider>
