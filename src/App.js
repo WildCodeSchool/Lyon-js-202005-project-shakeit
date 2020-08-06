@@ -42,6 +42,7 @@ export default function App() {
               path="/shoppinglistpage"
               component={ShoppingListPage}
               listIngredients={listIngredients}
+              removeListIngredients={setListIngredients}
             />
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
