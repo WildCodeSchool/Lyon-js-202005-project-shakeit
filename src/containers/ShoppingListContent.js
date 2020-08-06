@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
 import Title from "./../components/MainPage/Title";
@@ -22,7 +22,13 @@ const ShoppingListContent = (props) => {
 
       {listIngredients}
       <div>
-        <EmptierButton>Reset</EmptierButton>
+        <EmptierButton
+          onClick={() => {
+            props.removeListIngredients([]);
+          }}
+        >
+          Reset
+        </EmptierButton>
       </div>
     </div>
   );
