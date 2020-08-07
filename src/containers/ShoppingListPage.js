@@ -19,7 +19,10 @@ const ShoppingListPage = (props) => {
           </Link>
           <Title>ShakeIt</Title>
         </Header>
-        <ShoppingListContent list={props.listIngredients} />
+        <ShoppingListContent
+          list={props.listIngredients}
+          removeListIngredients={props.removeListIngredients}
+        />
       </GridLayout>
 
       <Footer>
