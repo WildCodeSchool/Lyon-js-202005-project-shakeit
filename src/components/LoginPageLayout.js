@@ -18,7 +18,7 @@ input,button {
     
 }
 
-button {
+/* button {
     margin-left:150px;
     background-color:white;
     color:black;
@@ -31,7 +31,7 @@ button:hover {
     color:white;
     border:solid 1px #009ce7;
     font-weight:bold;
-}
+} */
 
 input,label,input {
     margin-left:35px;
