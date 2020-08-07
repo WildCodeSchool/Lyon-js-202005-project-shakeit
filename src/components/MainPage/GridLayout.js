@@ -8,7 +8,8 @@ const GridLayout = styled.div`
     "head head head"
     "search search search"
     "main main main";
-    
+
+
   @media (max-width: 768px) {
     grid-template-areas : "head"
                           "search"
