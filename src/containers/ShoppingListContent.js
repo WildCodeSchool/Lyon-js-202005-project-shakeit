@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
+import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
 const ShoppingListContent = (props) => {
   let listIngredients = [];
@@ -17,10 +18,8 @@ const ShoppingListContent = (props) => {
 
   return (
     <div>
-
-     <Title>Ma shopping-list</Title>
-
-      {listIngredients}
+      <Title>Ma shopping-list</Title>
+      <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
       <div>
         <EmptierButton
           onClick={() => {
