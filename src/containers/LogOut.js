@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {AuthentContext} from "../context/AuthentContext";
 import { useHistory} from "react-router-dom";
+import LogButton from "../components/LogButton"
 
 
 const LogOut = ({ item }) => {
@@ -19,8 +20,11 @@ const disconnect = () => {
 };
 
 
-  return (     
-      <button onClick={disconnect}>Logout</button>
+  return (   
+
+      <LogButton  onClick={disconnect} width={60}>Logout</LogButton>  
+    
+     
     
   );
 };

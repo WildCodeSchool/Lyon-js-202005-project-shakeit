@@ -18,20 +18,7 @@ input,button {
     
 }
 
-button {
-    margin-left:150px;
-    background-color:white;
-    color:black;
-    font-weight:bold;
-}
 
-button:hover {
-    
-    background-color:#009ce7;
-    color:white;
-    border:solid 1px #009ce7;
-    font-weight:bold;
-}
 
 input,label,input {
     margin-left:35px;
