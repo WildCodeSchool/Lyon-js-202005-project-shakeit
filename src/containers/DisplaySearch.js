@@ -46,7 +46,7 @@ const Search = ({ value }) =>
                 style={{ FontColor: 'white'}}
                 variant="outlined"
                 label="Ingrédients"
-                placeholder="Choisissez vos ingrédientss favoris"
+                placeholder="Choisissez vos ingrédients"
                 color="secondary"
               />)}
             />
