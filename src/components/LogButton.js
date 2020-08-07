@@ -17,4 +17,5 @@ width:${props => +props.width+"px"}
 
 `
 
+
 export default LogButton;
