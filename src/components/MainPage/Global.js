@@ -21,9 +21,8 @@ h1 {
 svg{
   margin-right: 5px;
 }
-
-input{
-  background-color: white;
+label{
+  color: #fff !important;
 }
 `;
 
