@@ -6,8 +6,10 @@ import liste_ingredient from './liste_ingredient.js';
 
 function DisplaySearch(){
 const [value, setValue] = useState([]);
-const Search = ({ value }) => 
-(<button className="button-secondary pure-button" disabled="">{value}</button>)
+
+const Search = ({ value }) => (<button className="button-secondary pure-button" disabled="">{value}</button>)
+
+
         return (
           <div className="searchBar">
             <Autocomplete
@@ -21,7 +23,7 @@ const Search = ({ value }) =>
                 {...params}
                 variant="outlined"
                 label="Ingrédients"
-                placeholder="Choisissez vos ingrédientss favoris"
+                placeholder="Choisissez vos ingrédients favoris"
               />)}
             />
             </div>
