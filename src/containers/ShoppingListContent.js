@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
 import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
@@ -18,7 +18,7 @@ const ShoppingListContent = (props) => {
 
   return (
     <div>
-      <Title>Ma shopping-list</Title>
+      <Title>Your Shopping list</Title>
       <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
       <div>
         <EmptierButton

@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import Navbar from "./Navbar";
+import Header from "./../components/MainPage/Header";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 import CocktailImg from "./../components/RecipePage/CocktailImg";
@@ -13,7 +14,7 @@ import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 import Title from "./../components/MainPage/Title";
 import Subtitle from "./../components/MainPage/Subtitle";
 
-function RecipePage(props) { 
+function RecipePage(props) {
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -61,7 +62,7 @@ function RecipePage(props) {
   }
 
   if (loading) {
-    return <Subtitle >Loading...</Subtitle>
+    return <Subtitle>Loading...</Subtitle>;
   }
 
   return (
