@@ -9,7 +9,6 @@ color:whitesmoke;
 border : 1px solid #009ce7;
 font-weight:bold;
 padding:5px;
-/* width:60px; */
 font-size:14px;
 
 margin-left:${props => props.marginleft+"px"};
