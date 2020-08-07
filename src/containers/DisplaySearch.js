@@ -16,6 +16,7 @@ const Search = ({ value }) =>
               options={liste_ingredient}
               getOptionLabel={option => option.ingredient}
               style={{ width: 300 }}
+              variant="outlined"
               renderInput={params => (
               <TextField
                 {...params}

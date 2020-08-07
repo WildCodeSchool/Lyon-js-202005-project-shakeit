@@ -7,7 +7,6 @@ const Main = styled.div`
   overflow-y: scroll;
   margin-bottom:100px;
   align-items:center;
-  margin-top:50px;
   width: 90%;
   margin-left: 5%;
   border-top: 2px solid #009ce7;

@@ -17,6 +17,14 @@ a {
 h1 {
     text-align: center;
 }
+
+svg{
+  margin-right: 5px;
+}
+
+input{
+  background-color: white;
+}
 `;
 
 export default Global;

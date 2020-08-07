@@ -10,8 +10,10 @@ import CocktailImg from "./../components/RecipePage/CocktailImg";
 import CocktailName from "./../components/RecipePage/CocktailName";
 import CocktailInstructions from "./../components/RecipePage/CocktailInstructions";
 import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
+import Title from "./../components/MainPage/Title";
+import Subtitle from "./../components/MainPage/Subtitle";
 
-function RecipePage(props) {
+function RecipePage(props) { 
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -59,7 +61,7 @@ function RecipePage(props) {
   }
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <Subtitle >Loading...</Subtitle>
   }
 
   return (
@@ -68,7 +70,7 @@ function RecipePage(props) {
         <Link to="/main">
           <CocktailLogo />
         </Link>
-        <h1>ShakeIt</h1>
+        <Title>ShakeIt</Title>
         <LogOut />
       </Header>
       <CocktailName>{dataRecipe.strDrink}</CocktailName>

@@ -6,16 +6,16 @@ const Navbar = () => {
   return (
     <>
       <Link to="/main">
-        <FontAwesomeIcon icon="cocktail" size="3x" color="white" />
+        <FontAwesomeIcon icon="cocktail" size="2x" color="white" />
       </Link>
       <Link to="/shoppinglistpage">
-        <FontAwesomeIcon icon="list" size="3x" color="white" />
+        <FontAwesomeIcon icon="list" size="2x" color="white" />
       </Link>
       <Link to="/favoritepage">
-        <FontAwesomeIcon icon="heart" size="3x" color="white" />
+        <FontAwesomeIcon icon="heart" size="2x" color="white" />
       </Link>
       <Link to="/profilpage">
-        <FontAwesomeIcon icon="user" size="3x" color="white" />
+        <FontAwesomeIcon icon="user" size="2x" color="white" />
       </Link>{" "}
     </>
   );
