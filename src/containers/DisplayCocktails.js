@@ -6,7 +6,7 @@ import "font-awesome/css/font-awesome.min.css";
 const DisplayCocktails = () => {
   return (
     <>
-      <h2>Cocktails du jour</h2>
+      <h2>Random cocktails</h2>
       <RandomCocktails />
       <RandomCocktails />
       <RandomCocktails />
