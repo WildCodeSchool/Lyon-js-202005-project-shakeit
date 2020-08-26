@@ -69,8 +69,8 @@ function DisplaySearch() {
           <TextField
             {...params}
             variant="outlined"
-            label="Ingrédients"
-            placeholder="Choisissez vos ingrédients favoris"
+            label="Ingredient"
+            placeholder="What's inside your fridge?"
           />
         )}
       />
