@@ -38,7 +38,7 @@ function DisplaySearch() {
         .then((response) => response.data)
         .then((data) => {
           testAPI.push(
-            data["drinks"].map((i) => [i.strDrink, i.strDrinkThumb])
+            data["drinks"].map((i) => [i.strDrinkThumb, i.strDrink])
           );
           console.log("ICI", testAPI);
           setValueAPI(testAPI);
@@ -65,6 +65,19 @@ function DisplaySearch() {
           />
         )}
       />
+      <div>
+        {valueAPI.map((cocktail, i) => (
+          <div key={i}>
+            <img
+              src={cocktail[0]}
+              width="100px"
+              height="auto"
+              alt="Cocktail Thumb"
+            />
+            <p>{cocktail[1]}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
