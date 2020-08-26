@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import CocktailList from "./../components/MainPage/CocktailList";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 
-function RandomCocktail() {
+function RandomCocktail({favCocktails, setFavCocktails}) {
   const [dataRecipe, setDataRecipe] = useState({});
+  const [fav,setFav]= useState(false)
+  
+ 
 
   const getRandomCocktail = () => {
     axios
@@ -21,10 +26,16 @@ function RandomCocktail() {
     getRandomCocktail();
   }, []);
 
+
+  
+
+
   return (
     <CocktailList>
+      {console.log(dataRecipe.idDrink)}
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+        </Link>
           <CocktailRate>
             {dataRecipe.strDrink}
           </CocktailRate>
@@ -33,9 +44,38 @@ function RandomCocktail() {
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="heart" />
+          {fav? 
+          <FontAwesomeIcon  
+          onClick={ () => {
+          
+            setFav(!fav);
+            const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== dataRecipe.idDrink)
+            setFavCocktails(filteredCocktails);
+            
+
+          }} 
+          
+          
+          icon="heart" />:
+          <FontAwesomeIcon 
+          
+          onClick={ () => {
+           
+            setFav(!fav);
+            
+            setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink }]);
+            
+
+          }} 
+          
+          icon={faHeart} />}
+          
+         
+
+
+
         
-      </Link>
+      
     </CocktailList>
   );
 }

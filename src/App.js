@@ -6,6 +6,7 @@ import ShoppingListPage from "./containers/ShoppingListPage.js";
 import LoginPage from "./containers/LoginPage/LoginPage";
 import { LoginDatabaseProvider } from "./context/LoginDatabaseContext";
 import { AuthentProvider } from "./context/AuthentContext";
+import { FavProvider } from "./context/FavContext";
 import PrivateRoute from "./containers/PrivateRoute";
 import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -28,6 +29,7 @@ export default function App() {
       <Switch>
         <LoginDatabaseProvider>
           <AuthentProvider>
+            <FavProvider>
             <Route exact path="/" component={LoginPage} />
             {/* <Route path="/login" component={LoginPage} /> */}
             <PrivateRoute path="/main" component={MainPage} />
@@ -47,6 +49,7 @@ export default function App() {
 
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
+            </FavProvider>
           </AuthentProvider>
         </LoginDatabaseProvider>
       </Switch>
