@@ -9,7 +9,6 @@ const DisplayCocktails = () => {
       <h2>Random cocktails</h2>
       <RandomCocktails />
       <RandomCocktails />
-      <RandomCocktails />
     </>
   );
 };
