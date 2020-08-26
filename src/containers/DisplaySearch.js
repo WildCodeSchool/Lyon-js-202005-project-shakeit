@@ -56,5 +56,3 @@ function DisplaySearch() {
     </div>
   );
 }
-
-export default DisplaySearch;
