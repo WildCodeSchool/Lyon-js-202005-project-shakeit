@@ -69,3 +69,4 @@ useEffect(()=>
             </div>
         );
       }
+      export default DisplaySearch;
