@@ -3,6 +3,7 @@ import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
 import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
+
 const ShoppingListContent = (props) => {
   let listIngredients = [];
   if (props.list.length !== 0 && props.list !== null) {
@@ -28,6 +29,7 @@ const ShoppingListContent = (props) => {
         >
           Reset
         </EmptierButton>
+        <button>Filter</button>
       </div>
     </div>
   );
