@@ -1,14 +1,13 @@
 import React from "react";
+import CocktailLogo from "./Logo";
 import Footer from "../components/MainPage/Footer";
 import Header from "../components/MainPage/Header";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 import LogOut from "./LogOut";
-import ShoppingListContent from "./ShoppingListContent";
-import CocktailLogo from "./Logo";
+import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
 
-const ShoppingListPage = (props) => {
+const FavoritePage = () => {
   return (
     <div>
       <Header>
@@ -18,10 +17,8 @@ const ShoppingListPage = (props) => {
         <Title>ShakeIt</Title>
         <LogOut />
       </Header>
-      <ShoppingListContent
-        list={props.listIngredients}
-        removeListIngredients={props.removeListIngredients}
-      />
+
+      <h1>Your Favorites</h1>
 
       <Footer>
         <Navbar />
@@ -30,4 +27,4 @@ const ShoppingListPage = (props) => {
   );
 };
 
-export default ShoppingListPage;
+export default FavoritePage;

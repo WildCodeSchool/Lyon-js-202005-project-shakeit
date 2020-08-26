@@ -1,26 +1,30 @@
 import React, {useContext} from "react";
 import {AuthentContext} from "../context/AuthentContext";
 import { useHistory} from "react-router-dom";
+import LogButton from "../components/LogButton"
+
 
 const LogOut = ({ item }) => {
-    const fakeAuth=useContext(AuthentContext);
+    
     const history=useHistory();
+
+    const [auth,setAuth] = useContext(AuthentContext);
    
     
 const disconnect = () => {
 
-    fakeAuth.signout(() => {
-        history.push("/");
 
-    });
-
+    setAuth(false);
+    history.push("/");
+    
 };
 
 
-  return (
-      
+  return (   
+
+      <LogButton  onClick={disconnect} width={60}>Logout</LogButton>  
     
-      <button onClick={disconnect}>Logout</button>
+     
     
   );
 };

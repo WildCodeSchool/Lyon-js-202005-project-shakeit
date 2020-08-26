@@ -4,33 +4,21 @@ const Header = styled.header`
   grid-area: head;
   display:flex;
   text-align:center;
+  align-items:center;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #009ce7;
   
- align-items:center;
-
-  .fa-user {
-
-  }
-
-  hr {
-width:100%;
-
-
-  }
-
-h1 {
-margin-top:50px;
-
-
-};
-  .logo {
-
-    width:80px;
-    height:80px;
-    margin-right:40px;
-    margin-top:10px;
-    
-    
-  };
+    img{
+      position: relative;
+      height:90px;
+      top:15px;
+    }
+    button{
+      position: relative;
+      right: -40px;
+    }
 `;
 
 export default Header;

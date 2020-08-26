@@ -1,19 +1,38 @@
-import React from 'react';
-import EmptierButton from '../components/ShoppingList/EmptierButton';
-import ShoppingListIngredient from './ShoppingListIngredient';
+import React from "react";
+import EmptierButton from "../components/ShoppingList/EmptierButton";
+import ShoppingListIngredient from "./ShoppingListIngredient";
+import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
+import Title from "./../components/MainPage/Title";
 
-const ShoppingListContent = () => {
-    return (
-        <div>
-            <h1>Ma shopping-list</h1>
-            <ShoppingListIngredient />
-            <div>
-                <EmptierButton onClick={()=>console.log("Hello")}>
-                    Vider
-                </EmptierButton>
-            </div>
-        </div>
-    )
-}
+const ShoppingListContent = (props) => {
+  let listIngredients = [];
+  if (props.list.length !== 0 && props.list !== null) {
+    listIngredients = props.list.map((ingredient) => {
+      return (
+        <ShoppingListIngredient
+          ingredient={ingredient.name}
+          key={ingredient.id}
+        />
+      );
+    });
+  }
 
-export default ShoppingListContent
+  return (
+    <div>
+      <Title>Your Shopping list</Title>
+      <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
+      <div>
+        <EmptierButton
+          onClick={() => {
+            props.removeListIngredients([]);
+          }}
+        >
+          Reset
+        </EmptierButton>
+        <button>Filter</button>
+      </div>
+    </div>
+  );
+};
+
+export default ShoppingListContent;

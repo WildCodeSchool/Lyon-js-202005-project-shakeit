@@ -1,11 +1,12 @@
 import React from "react";
+import LogButton from "../../components/LogButton"
 
 const Form = (props) => {
 
     return (
         <>
         
-        <html>
+        
           <form onSubmit={props.loginForm}>
               
             <label className="labelForm">Login : </label>
@@ -15,10 +16,11 @@ const Form = (props) => {
             
             <label>Mdp : </label>
             <input onChange={props.mdpHandleChange} /><br></br>
-            <button type="submit">Sign Up</button>
+            <LogButton type="submit" marginleft={150} width={100} >Sign Up</LogButton>
+            
            
           </form>
-          </html>
+          
         </>
       );
 

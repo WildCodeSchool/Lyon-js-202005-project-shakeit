@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import img from "../img/accueil.jpg"
 
-const LogPage = styled.body`
+const LogPage = styled.div`
 
 background-image: url(${img});
 background-size:cover;
@@ -18,20 +18,7 @@ input,button {
     
 }
 
-button {
-    margin-left:150px;
-    background-color:white;
-    color:black;
-    font-weight:bold;
-}
 
-button:hover {
-    
-    background-color:#009ce7;
-    color:white;
-    border:solid 1px #009ce7;
-    font-weight:bold;
-}
 
 input,label,input {
     margin-left:35px;
