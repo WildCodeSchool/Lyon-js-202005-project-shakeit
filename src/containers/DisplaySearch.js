@@ -29,21 +29,21 @@ function DisplaySearch() {
   }));
   const classes = useStyles();
 
-  useEffect(() => {
-    console.log(value);
-    setValueAPI(value);
+  const mapAxios = () => {
     value.map((i) =>
       axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`)
         .then((response) => response.data)
         .then((data) => {
-          testAPI.push(
-            data["drinks"].map((i) => [i.strDrinkThumb, i.strDrink])
-          );
-          console.log("ICI", testAPI);
-          setValueAPI(testAPI);
+          setValueAPI(data["drinks"].map((i) => [i.strDrinkThumb, i.strDrink]));
+          console.log("valueAPI : ", valueAPI);
         })
     );
+  };
+
+  useEffect(() => {
+    mapAxios();
+    console.log("value : ", value);
   }, [value]);
   return (
     <div className="searchBar">
