@@ -8,7 +8,7 @@ import ShoppingListContent from "./ShoppingListContent";
 import CocktailLogo from "./Logo";
 import Title from "./../components/MainPage/Title";
 
-const ShoppingListPage = (props) => {
+const ShoppingListPage = ({ listIngredients, setListIngredients }) => {
   return (
     <div>
       <Header>
@@ -19,8 +19,8 @@ const ShoppingListPage = (props) => {
         <LogOut />
       </Header>
       <ShoppingListContent
-        list={props.listIngredients}
-        removeListIngredients={props.removeListIngredients}
+        list={listIngredients}
+        setListIngredients={setListIngredients}
       />
 
       <Footer>

@@ -42,7 +42,7 @@ export default function App() {
               path="/shoppinglistpage"
               component={ShoppingListPage}
               listIngredients={listIngredients}
-              removeListIngredients={setListIngredients}
+              setListIngredients={setListIngredients}
             />
 
             <PrivateRoute path="/profilpage" component={ProfilPage} />

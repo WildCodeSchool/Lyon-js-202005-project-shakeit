@@ -4,14 +4,25 @@ import ShoppingListIngredient from "./ShoppingListIngredient";
 import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
 
-const ShoppingListContent = (props) => {
+const ShoppingListContent = ({ list, setListIngredients }) => {
+  const removeIng = (id) => {
+    const newListIngredients = [...list];
+    const index = newListIngredients.findIndex(
+      (ingredient) => ingredient.id === id
+    );
+    newListIngredients.splice(index, 1);
+    setListIngredients(newListIngredients);
+  };
+
   let listIngredients = [];
-  if (props.list.length !== 0 && props.list !== null) {
-    listIngredients = props.list.map((ingredient) => {
+  if (list.length !== 0 && list !== null) {
+    listIngredients = list.map((ingredient) => {
       return (
         <ShoppingListIngredient
           ingredient={ingredient.name}
           key={ingredient.id}
+          ingredientId={ingredient.id}
+          removeIng={removeIng}
         />
       );
     });
@@ -24,7 +35,7 @@ const ShoppingListContent = (props) => {
       <div>
         <EmptierButton
           onClick={() => {
-            props.removeListIngredients([]);
+            setListIngredients([]);
           }}
         >
           Reset
