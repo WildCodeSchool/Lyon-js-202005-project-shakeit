@@ -5,17 +5,16 @@ import { AuthentContext } from "../context/AuthentContext";
 function PrivateRoute({ component: Component, ...rest }) {
   const [auth, setAuth] = useContext(AuthentContext);
 
-
   return (
     <Route
       {...rest}
       render={(props) =>
-        true ? (
+        auth ? (
           <Component {...props} {...rest} />
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: "/",
             }}
           />
         )
@@ -23,6 +22,5 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   );
 }
-
 
 export default PrivateRoute;
