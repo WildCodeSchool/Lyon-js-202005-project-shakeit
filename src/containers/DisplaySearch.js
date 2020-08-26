@@ -10,7 +10,13 @@ import {makeStyles} from "@material-ui/core/styles";
 function DisplaySearch(){
 const [value, setValue] = useState([]);
 const [valueAPI, setValueAPI]=useState([]);
+const [testPic,setTestPic]= useState([]);
 let testAPI=[];
+let testAPI2=[];
+let concTest=[];
+let pl=[];
+
+
 const useStyles = makeStyles(theme => ({
   inputRoot: {
     color: "white",
@@ -40,12 +46,24 @@ useEffect(()=>
     .then(response=>response.data)
     .then(data=>
       {
-        testAPI.push(data["drinks"].map(i=>[i.strDrink, i.strDrinkThumb]))
-        console.log("ICI",testAPI);
+        testAPI=testAPI.concat(data["drinks"].map(i=>i.strDrink));
+        testAPI2=testAPI2.concat(data["drinks"].map(i=>i.strDrinkThumb))
+        // pl=pl.concat(data["drinks"].map(i=>i.strDrinkThumb))
+        // pl=pl.concat(data["drinks"].map(i=>i.strDrink))
+        // console.log("ICI",testAPI.map((item,i)=>item[i]));
+        // setValueAPI(testAPI);
+        // console.log("LALALA ",testAPI.map(i=>i[0]));
+        console.log("API ",testAPI);
+        console.log("LAL;ALALA ",testAPI2);
+        console.log(testAPI[1]);
+        concTest.push(testAPI,testAPI2)
+        console.log("BLBLBL", pl);
         setValueAPI(testAPI);
+        setTestPic(testAPI2);
       }));
 
-},[value])
+},[value])  
+
         return (
           <div className="searchBar">
             <Autocomplete
@@ -65,7 +83,20 @@ useEffect(()=>
                 placeholder="Choisissez vos ingrédients favoris"
               />)}
             />
-
+            <div>
+        {valueAPI.map((item, i) => (
+          <div key={i}>
+            <p>{valueAPI[i]}</p>
+            <img 
+              src={testPic[i]}
+              width="100px"
+              height="auto"
+              alt="Cocktail Thumb"
+            />
+          
+          </div>
+        ))}
+      </div>
             </div>
         );
       }
