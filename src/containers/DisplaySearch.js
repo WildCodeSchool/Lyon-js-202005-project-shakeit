@@ -11,6 +11,8 @@ function DisplaySearch(){
 const [value, setValue] = useState([]);
 const [valueAPI, setValueAPI]=useState([]);
 const [testPic,setTestPic]= useState([]);
+let testAPI=[];
+let testAPI2=[];
 
 const useStyles = makeStyles(theme => ({
   inputRoot: {
@@ -46,6 +48,7 @@ useEffect(()=>
         setValueAPI(testAPI);
         setTestPic(testAPI2);
       }));
+
 },[value])  
 
         return (
@@ -77,7 +80,6 @@ useEffect(()=>
               height="auto"
               alt="Cocktail Thumb"
             />
-          
           </div>
         ))}
       </div>
