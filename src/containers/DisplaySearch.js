@@ -13,10 +13,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
-  const [valueAPI, setValueAPI] = useState([]);
-  const [testPic, setTestPic] = useState([]);
-  let testAPI = [];
-  let testAPI2 = [];
+  const [cocktailName, setCocktailName] = useState([]);
+  const [cocktailImage, setCocktailImage] = useState([]);
+  let apiName = [];
+  let apiImage = [];
 
   const useStyles = makeStyles((theme) => ({
     inputRoot: {
@@ -31,27 +31,28 @@ function DisplaySearch() {
         borderColor: "blue",
       },
       "&.MuiFormLabel-root .MuiFormLabel-colorSecondary .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-outlined": {
-        color: "white",
+        color: "#BEDA04",
       },
     },
   }));
   const classes = useStyles();
 
   useEffect(() => {
-    setValueAPI(value);
+    setCocktailName(value);
     value.map((i) =>
       axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`)
         .then((response) => response.data)
         .then((data) => {
-          testAPI = testAPI.concat(data["drinks"].map((i) => i.strDrink));
-          testAPI2 = testAPI2.concat(
+          apiName = apiName.concat(data["drinks"].map((i) => i.strDrink));
+          apiImage = apiImage.concat(
             data["drinks"].map((i) => i.strDrinkThumb)
           );
-          setValueAPI(testAPI);
-          setTestPic(testAPI2);
+          setCocktailName(apiName);
+          setCocktailImage(apiImage);
         })
     );
+
   }, [value]);
 
   return (
@@ -75,12 +76,12 @@ function DisplaySearch() {
         )}
       />
       <div>
-        {valueAPI.map((item, i) => (
+        {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
-              <Link to={`/recipePage/${valueAPI[i]}`}>
-                <img src={testPic[i]} alt="Cocktail Thumb" />
-                <CocktailRate>{valueAPI[i]}</CocktailRate>
+              <Link to={`/recipePage/${cocktailName[i]}`}>
+                <img src={cocktailImage[i]} alt="Cocktail Thumb" />
+                <CocktailRate>{cocktailName[i]}</CocktailRate>
                 <FontAwesomeIcon icon="star" />
                 <FontAwesomeIcon icon="star" />
                 <FontAwesomeIcon icon="star" />

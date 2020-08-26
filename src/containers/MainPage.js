@@ -30,9 +30,6 @@ const MainPage = () => {
           <DisplaySearch />
         </Search>
         <Main>
-        
-
-        
           <DisplayCocktails />
         </Main>
       </GridLayout>

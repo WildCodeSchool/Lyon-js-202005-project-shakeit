@@ -8,11 +8,11 @@ export const Global = createGlobalStyle`
    
   }
   :root {
-      background-color: #2b323c;
-      color: #fff;
+      background-color: #F2F2F9;
+      color: #3DE0D7;
     }
 a {
-    color: #fff;
+    color: #3DE0D7;
 }
 h1 {
     text-align: center;
