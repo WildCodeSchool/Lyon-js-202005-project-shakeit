@@ -13,6 +13,7 @@ import CocktailInstructions from "./../components/RecipePage/CocktailInstruction
 import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 import Title from "./../components/MainPage/Title";
 import Subtitle from "./../components/MainPage/Subtitle";
+import uuid from "react-uuid";
 
 function RecipePage(props) {
   const [dataRecipe, setDataRecipe] = useState(null);
@@ -41,7 +42,7 @@ function RecipePage(props) {
         ingredients.push({
           name: dataRecipe["strIngredient" + i],
           measure: dataRecipe["strMeasure" + i],
-          id: i,
+          id: uuid(),
         });
       }
     }
