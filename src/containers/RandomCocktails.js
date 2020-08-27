@@ -32,7 +32,7 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
 
   return (
     <CocktailList>
-      {console.log(dataRecipe.idDrink)}
+   
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         </Link>

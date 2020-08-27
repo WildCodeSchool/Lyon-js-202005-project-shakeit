@@ -8,7 +8,7 @@ export const FavContext= createContext();
 export const FavProvider = (props) => {
 
     const [favCocktails,setFavCocktails]= useState([]) 
-    const [fav,setFav]= useState(false)
+   
 
 return(
 

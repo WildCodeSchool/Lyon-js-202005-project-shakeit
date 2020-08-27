@@ -18,8 +18,8 @@ const LoginPage = props => {
 
  
 
-  const [Login, setLogin] = useState("");
-  const [Mdp, setMdp] = useState("");
+  const [Login, setLogin] = useState("p2");
+  const [Mdp, setMdp] = useState("p2mdp");
   
 
   
