@@ -12,11 +12,13 @@ import {Link} from "react-router-dom";
 import LogOut from "./LogOut";
 import Global from "./../components/MainPage/Global";
 import CocktailLogo from "./Logo"
+import { FavProvider } from "../context/FavContext";
 const MainPage = () => {
   return (
     <>
     <Global /> 
     <div>
+   
       <GridLayout>
         <Header>
         
@@ -40,6 +42,7 @@ const MainPage = () => {
       <Footer>
         <Navbar />
       </Footer>
+     
     </div>
     </>
   );
