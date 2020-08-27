@@ -7,8 +7,6 @@ import Title from "./../components/MainPage/Title";
 const ShoppingListContent = ({ list, setListIngredients }) => {
   const [displaySortedIngr, setDisplaySortedIngr] = useState(false);
 
-  console.log("list", list);
-
   const removeIng = (id) => {
     const newListIngredients = [...list];
     const index = newListIngredients.findIndex(
@@ -18,11 +16,6 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
     setListIngredients(newListIngredients);
   };
 
-  // useEffect(() => {
-  //   removeIng();
-  //   sortIngredients();
-  // }, [list, displaySortedIngr]);
-
   const sortIngredients = () => {
     let listIngrSorted = list.sort(function (a, b) {
       let textA = a.name.toUpperCase();
@@ -30,7 +23,7 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
       return textA < textB ? -1 : textA > textB ? 1 : 0;
     });
     setListIngredients(listIngrSorted);
-    console.log("sorted", listIngrSorted);
+    setDisplaySortedIngr((prevState) => !prevState);
   };
 
   let listIngredients = [];
