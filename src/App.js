@@ -31,7 +31,6 @@ export default function App() {
           <AuthentProvider>
             <FavProvider>
             <Route exact path="/" component={LoginPage} />
-            {/* <Route path="/login" component={LoginPage} /> */}
             <PrivateRoute path="/main" component={MainPage} />
             <PrivateRoute
               path="/recipepage/:cocktailName"
@@ -44,7 +43,7 @@ export default function App() {
               path="/shoppinglistpage"
               component={ShoppingListPage}
               listIngredients={listIngredients}
-              removeListIngredients={setListIngredients}
+              setListIngredients={setListIngredients}
             />
 
             <PrivateRoute path="/profilpage" component={ProfilPage} />
