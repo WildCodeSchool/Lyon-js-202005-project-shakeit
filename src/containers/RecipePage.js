@@ -15,7 +15,7 @@ import Title from "./../components/MainPage/Title";
 import Subtitle from "./../components/MainPage/Subtitle";
 import uuid from "react-uuid";
 
-function RecipePage(props) {
+function RecipePage({ addIngredient, ...props }) {
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -53,11 +53,7 @@ function RecipePage(props) {
   if (dataRecipe !== null) {
     listOfIngredients = getIngredients(dataRecipe).map((item) => {
       return (
-        <Ingredients
-          item={item}
-          key={item.id}
-          addIngredient={props.addIngredient}
-        />
+        <Ingredients item={item} key={item.id} addIngredient={addIngredient} />
       );
     });
   }

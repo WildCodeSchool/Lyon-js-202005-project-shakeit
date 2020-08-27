@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import EmptierButton from "../components/ShoppingList/EmptierButton";
 import ShoppingListIngredient from "./ShoppingListIngredient";
 import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
 
 const ShoppingListContent = ({ list, setListIngredients }) => {
+  const [displaySortedIngr, setDisplaySortedIngr] = useState(false);
+
+  console.log("list", list);
+
   const removeIng = (id) => {
     const newListIngredients = [...list];
     const index = newListIngredients.findIndex(
@@ -14,13 +18,28 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
     setListIngredients(newListIngredients);
   };
 
+  // useEffect(() => {
+  //   removeIng();
+  //   sortIngredients();
+  // }, [list, displaySortedIngr]);
+
+  const sortIngredients = () => {
+    let listIngrSorted = list.sort(function (a, b) {
+      let textA = a.name.toUpperCase();
+      let textB = b.name.toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+    setListIngredients(listIngrSorted);
+    console.log("sorted", listIngrSorted);
+  };
+
   let listIngredients = [];
   if (list.length !== 0 && list !== null) {
-    listIngredients = list.map((ingredient) => {
+    listIngredients = list.map((ingredient, i) => {
       return (
         <ShoppingListIngredient
           ingredient={ingredient.name}
-          key={ingredient.id}
+          key={i}
           ingredientId={ingredient.id}
           removeIng={removeIng}
         />
@@ -40,7 +59,7 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
         >
           Reset
         </EmptierButton>
-        <button>Filter</button>
+        <button onClick={() => sortIngredients()}>Sort Ingredients</button>
       </div>
     </div>
   );

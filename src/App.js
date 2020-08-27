@@ -29,7 +29,6 @@ export default function App() {
         <LoginDatabaseProvider>
           <AuthentProvider>
             <Route exact path="/" component={LoginPage} />
-            {/* <Route path="/login" component={LoginPage} /> */}
             <PrivateRoute path="/main" component={MainPage} />
             <PrivateRoute
               path="/recipepage/:cocktailName"
