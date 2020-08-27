@@ -17,6 +17,7 @@ const DisplayCocktails = () => {
 
   return (
     <>
+
       <h2>Cocktails du jour</h2>
       <RandomCocktails favCocktails={favCocktails} setFavCocktails={setFavCocktails} />
       <RandomCocktails favCocktails={favCocktails}  setFavCocktails={setFavCocktails}  />
@@ -25,6 +26,7 @@ const DisplayCocktails = () => {
       <RandomCocktails favCocktails={favCocktails} setFavCocktails={setFavCocktails} />
       <RandomCocktails favCocktails={favCocktails} setFavCocktails={setFavCocktails} />
       
+
     </>
   );
 };

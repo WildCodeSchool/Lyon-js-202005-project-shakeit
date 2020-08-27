@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import CocktailRate from "../components/MainPage/CocktailRate";
 import CocktailList from "../components/MainPage/CocktailList";
 import "font-awesome/css/font-awesome.min.css";
@@ -9,8 +11,17 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import liste_ingredient from "./liste_ingredient.js";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
+
 import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
+
+
+function DisplaySearch() {
+  const [value, setValue] = useState([]);
+  const [valueAPI, setValueAPI] = useState([]);
+  const [testPic, setTestPic] = useState([]);
+  let testAPI = [];
+  let testAPI2 = [];
 
 
 function DisplaySearch() {
@@ -38,11 +49,14 @@ function DisplaySearch() {
         borderColor: "blue",
       },
       "&.MuiFormLabel-root .MuiFormLabel-colorSecondary .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-outlined": {
+
         color: "#BEDA04",
+
       },
     },
   }));
   const classes = useStyles();
+
 
   useEffect(() => {
     setCocktailName(value);
@@ -131,12 +145,15 @@ function DisplaySearch() {
           
           icon={faHeart} />}
               
+
             </CocktailList>
           </div>
         ))}
       </div>
+
       </>
     
   );
 }
 export default DisplaySearch;
+

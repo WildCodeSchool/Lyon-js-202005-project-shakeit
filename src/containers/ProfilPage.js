@@ -19,7 +19,7 @@ const ProfilPage = () => {
         <LogOut />
       </Header>
 
-      <h1>Your Profil</h1>
+      <h1>Your Profile</h1>
 
       <Footer>
         <Navbar />

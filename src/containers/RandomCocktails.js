@@ -35,6 +35,7 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
    
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+
         </Link>
           <CocktailRate>
             {dataRecipe.strDrink}
@@ -76,6 +77,7 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
 
         
       
+
     </CocktailList>
   );
 }
