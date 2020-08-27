@@ -8,6 +8,7 @@ const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {
 
     
     const [fav,setFav]= useState(false)
+  
 
 return (
 
@@ -46,7 +47,7 @@ return (
            
             setFav(!fav);
             
-            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.title ,favStatus:true}]);
+            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.name }]);
             
 
           }} 

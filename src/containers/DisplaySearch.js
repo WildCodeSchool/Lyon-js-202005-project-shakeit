@@ -67,7 +67,7 @@ function DisplaySearch() {
           
           const tabData=Object.values(data)
           setApiResponse(tabData[0]);
-          console.log(tabData[0])
+          
           
          
           apiCocktailId = apiCocktailId.concat(data["drinks"].map((i) => i.idDrink));
@@ -109,7 +109,8 @@ function DisplaySearch() {
         {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
-            <DisplayCocktail key={item.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktailId[i]} name={cocktailName[i]} id={i} img={cocktailImage[i]}/>          
+              
+            <DisplayCocktail key={item.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktailId[i]} name={cocktailName[i]}  img={cocktailImage[i]}/>          
             </CocktailList>
           </div>
         ))}

@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
 import {FavContext} from "../context/FavContext";
 import CocktailList from "./../components/MainPage/CocktailList";
-import DisplayFavCocktail from "./DisplayCocktail"
+import DisplayFavCocktail from "./DisplayFavCocktail"
 
 const FavoritePage = () => {
 
