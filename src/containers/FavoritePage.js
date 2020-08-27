@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
 import {FavContext} from "../context/FavContext";
 import CocktailList from "./../components/MainPage/CocktailList";
-import DisplayCocktail from "./DisplayCocktail"
+import DisplayFavCocktail from "./DisplayCocktail"
 
 const FavoritePage = () => {
 
@@ -32,7 +32,7 @@ const FavoritePage = () => {
 
       <CocktailList>
       {favCocktails.map( (cocktail) => (
-        <DisplayCocktail key={cocktail.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} name={cocktail.title} id={cocktail.id} img={cocktail.img}/> ))}
+        <DisplayFavCocktail key={cocktail.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} name={cocktail.title} id={cocktail.id} img={cocktail.img}/> ))}
       </CocktailList>
 
 

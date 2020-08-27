@@ -14,6 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
+import DisplayCocktail from "./DisplayCocktail"
 
 
 
@@ -23,13 +24,15 @@ function DisplaySearch() {
   const [value, setValue] = useState([]);
   const [cocktailName, setCocktailName] = useState([]);
   const [cocktailImage, setCocktailImage] = useState([]);
+   const [cocktailId, setCocktailId] = useState([]);
   const [apiResponse,setApiResponse]=useState([]);
   let apiName = [];
   let apiImage = [];
+  let apiCocktailId = [];
 
     // Hooks déclaration
     const [favCocktails,setFavCocktails]= useContext(FavContext)
-    const [fav,setFav]= useState(false)
+    
 
   const useStyles = makeStyles((theme) => ({
     inputRoot: {
@@ -64,15 +67,17 @@ function DisplaySearch() {
           
           const tabData=Object.values(data)
           setApiResponse(tabData[0]);
+          console.log(tabData[0])
           
          
-         
+          apiCocktailId = apiCocktailId.concat(data["drinks"].map((i) => i.idDrink));
           apiName = apiName.concat(data["drinks"].map((i) => i.strDrink));
           apiImage = apiImage.concat(
             data["drinks"].map((i) => i.strDrinkThumb)
           );
           setCocktailName(apiName);
           setCocktailImage(apiImage);
+          setCocktailId(apiCocktailId);
         })
     );
 
@@ -104,43 +109,7 @@ function DisplaySearch() {
         {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
-              <Link to={`/recipePage/${cocktailName[i]}`}>
-                <img src={cocktailImage[i]} alt="Cocktail Thumb" />
-                </Link>
-                <CocktailRate>{cocktailName[i]}</CocktailRate>
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-               
-                {fav? 
-          <FontAwesomeIcon  
-          onClick={ () => {
-          
-            setFav(!fav);
-            const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== apiResponse.idDrink)
-            setFavCocktails(filteredCocktails);
-            
-
-          }} 
-          
-          
-          icon="heart" />:
-          <FontAwesomeIcon 
-          
-          onClick={ () => {
-           
-            setFav(!fav);
-            
-            setFavCocktails( [...favCocktails,{id :apiResponse[i].idDrink, img : apiResponse[i].strDrinkThumb , title:apiResponse[i].strDrink }]);
-            
-
-          }} 
-          
-          icon={faHeart} />}
-              
-
+            <DisplayCocktail key={item.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktailId[i]} name={cocktailName[i]} id={i} img={cocktailImage[i]}/>          
             </CocktailList>
           </div>
         ))}

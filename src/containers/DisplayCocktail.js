@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
-
+import {faHeart} from "@fortawesome/free-regular-svg-icons"
 
 const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {
 
-    console.log(rest);
-    const [fav,setFav]= useState(true)
+    
+    const [fav,setFav]= useState(false)
 
 return (
 
@@ -25,7 +25,8 @@ return (
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
-          
+          {fav? 
+         
           <FontAwesomeIcon  
           onClick={ () => {
           
@@ -37,7 +38,20 @@ return (
           }} 
           
           
-          icon="heart" />
+          icon="heart" /> :
+          
+          <FontAwesomeIcon 
+          
+          onClick={ () => {
+           
+            setFav(!fav);
+            
+            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.title ,favStatus:true}]);
+            
+
+          }} 
+          
+          icon={faHeart} />}
 
 </>
 
