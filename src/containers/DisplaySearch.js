@@ -16,12 +16,7 @@ import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 
 
-function DisplaySearch() {
-  const [value, setValue] = useState([]);
-  const [valueAPI, setValueAPI] = useState([]);
-  const [testPic, setTestPic] = useState([]);
-  let testAPI = [];
-  let testAPI2 = [];
+
 
 
 function DisplaySearch() {
