@@ -64,7 +64,7 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
            
             setFav(!fav);
             
-            setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink }]);
+            setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink ,favStatus:true }]);
             
 
           }} 
