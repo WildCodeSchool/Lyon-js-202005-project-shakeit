@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import CocktailLogo from "./Logo";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import LogOut from "./LogOut";
 import Navbar from "./Navbar";
 import Header from "./../components/MainPage/Header";
 import Footer from "./../components/MainPage/Footer";
@@ -73,7 +72,7 @@ function RecipePage(props) {
           <CocktailLogo />
         </Link>
         <Title>ShakeIt</Title>
-        <LogOut />
+        
       </Header>
       <CocktailName>{dataRecipe.strDrink}</CocktailName>
       <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />

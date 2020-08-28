@@ -3,7 +3,7 @@ import CocktailLogo from "./Logo";
 import Footer from "../components/MainPage/Footer";
 import Header from "../components/MainPage/Header";
 import { Link } from "react-router-dom";
-import LogOut from "./LogOut";
+
 import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
 import {FavContext} from "../context/FavContext";
@@ -22,7 +22,7 @@ const FavoritePage = () => {
           <CocktailLogo />
         </Link>
         <Title>ShakeIt</Title>
-        <LogOut />
+        
       </Header>
    
       <div>
