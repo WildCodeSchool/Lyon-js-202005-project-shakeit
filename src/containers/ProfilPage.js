@@ -18,6 +18,7 @@ const ProfilPage = () => {
         <Title>ShakeIt</Title>
         <LogOut />
       </Header>
+      
 
       <h1>Your Profile</h1>
 
