@@ -4,11 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 
-const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {
+const DisplayFavCocktail = ({favCocktails,setFavCocktails,...rest}) => {
 
     
-    const [fav,setFav]= useState(false)
-  
+    const [fav,setFav]= useState(true)
 
 return (
 
@@ -20,6 +19,7 @@ return (
       </Link>
       <CocktailRate>
             {rest.name}
+           
           </CocktailRate>
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
@@ -47,12 +47,14 @@ return (
            
             setFav(!fav);
             
-            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.name }]);
+            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.title ,favStatus:true}]);
             
 
           }} 
           
-          icon={faHeart} />}
+          icon={faHeart} />
+        
+        }
 
 </>
 
@@ -61,4 +63,4 @@ return (
 
 };
 
-export default DisplayCocktail;
+export default DisplayFavCocktail;
