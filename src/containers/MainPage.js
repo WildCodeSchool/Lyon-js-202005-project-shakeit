@@ -11,29 +11,30 @@ import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
 import LogOut from "./LogOut";
 import Global from "./../components/MainPage/Global";
-import CocktailLogo from "./Logo"
+import CocktailLogo from "./Logo";
+import MenuBurger from './MenuBurger'
 const MainPage = () => {
   return (
     <>
     <Global /> 
     <div>
       <GridLayout>
-        <Header>
-        
-          <Link to="/main">
+        {/* <Header> */}
+        <MenuBurger/>
+          {/* <Link to="/main">
             <CocktailLogo />
-          </Link>
-          <Title>ShakeIt</Title>
-          <LogOut />
-        </Header>
-        <Search>
+          </Link> */}
+          {/* <Title>Shake It</Title> */}
+          
+          {/* <LogOut /> */}
+        {/* </Header> */}
+        <Search style={{marginTop:"10px"}}>
           <DisplaySearch />
         </Search>
         <Main>
           <DisplayCocktails />
         </Main>
       </GridLayout>
-
       <Footer>
         <Navbar />
       </Footer>

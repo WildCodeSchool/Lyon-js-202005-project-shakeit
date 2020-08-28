@@ -44,7 +44,6 @@ export default function App() {
               listIngredients={listIngredients}
               removeListIngredients={setListIngredients}
             />
-
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
           </AuthentProvider>

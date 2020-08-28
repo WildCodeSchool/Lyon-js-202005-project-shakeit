@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import CocktailRate from "../components/MainPage/CocktailRate";
 import CocktailList from "../components/MainPage/CocktailList";
 import "font-awesome/css/font-awesome.min.css";
@@ -19,20 +18,20 @@ function DisplaySearch() {
   let apiImage = [];
 
   const useStyles = makeStyles((theme) => ({
+    input: {
+      color: "white"
+    },
     inputRoot: {
-      color: "white",
+      color: "black",
       "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "white",
+        borderColor: "#7AD1E0",
       },
       "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "blue",
+        borderColor: "#7AD1E0",
       },
       "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "blue",
-      },
-      "&.MuiFormLabel-root .MuiFormLabel-colorSecondary .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-outlined": {
-        color: "#BEDA04",
-      },
+        borderColor: "#7AD1E0",
+      }
     },
   }));
   const classes = useStyles();
@@ -56,13 +55,13 @@ function DisplaySearch() {
   }, [value]);
 
   return (
+    <>
     <div className="searchBar">
       <Autocomplete
         onChange={(e, newValue) => {
           setValue(newValue.map((i) => i.ingredient));
         }}
         multiple
-        classes={classes}
         options={liste_ingredient}
         getOptionLabel={(option) => option.ingredient}
         style={{ width: 300 }}
@@ -75,6 +74,7 @@ function DisplaySearch() {
           />
         )}
       />
+      </div>
       <div>
         {cocktailName.map((item, i) => (
           <div key={i}>
@@ -93,7 +93,8 @@ function DisplaySearch() {
           </div>
         ))}
       </div>
-    </div>
+    
+    </>
   );
 }
 export default DisplaySearch;

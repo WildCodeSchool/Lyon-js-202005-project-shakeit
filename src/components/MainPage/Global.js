@@ -8,7 +8,7 @@ export const Global = createGlobalStyle`
    
   }
   :root {
-      background-color: #F2F2F9;
+      background-color: black;
       color: #3DE0D7;
     }
 a {
@@ -22,7 +22,7 @@ svg{
   margin-right: 5px;
 }
 label{
-  color: #fff !important;
+  color: #3DE0D7 !important;
 }
 `;
 
