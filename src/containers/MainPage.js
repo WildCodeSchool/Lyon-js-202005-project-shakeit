@@ -1,4 +1,5 @@
-import React from "react";
+import React  from "react";
+import {useHistory} from "react-router-dom"
 import GridLayout from "./../components/MainPage/GridLayout";
 import Footer from "./../components/MainPage/Footer";
 import Main from "./../components/MainPage/Main";
@@ -9,11 +10,13 @@ import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
-import LogOut from "./LogOut";
 import Global from "./../components/MainPage/Global";
 import CocktailLogo from "./Logo"
-import { FavProvider } from "../context/FavContext";
+import LogButton from "../components/LogButton"
+import Filters from "./Filters"
 const MainPage = () => {
+
+  const history=useHistory();
   return (
     <>
     <Global /> 
@@ -26,7 +29,9 @@ const MainPage = () => {
             <CocktailLogo />
           </Link>
           <Title>ShakeIt</Title>
-          <LogOut />
+          <Link to="/filters">
+          <LogButton  width={60} >Filter</LogButton>
+          </Link>
         </Header>
         <Search>
           <DisplaySearch />
