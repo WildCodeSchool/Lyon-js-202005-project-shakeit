@@ -11,6 +11,8 @@ const CocktailList = styled.div`
       display: block;
       margin-left: auto;
       margin-right: auto;
+      border-radius: 30% 15% / 10% 35%;
+      box-shadow: 10px -8px #7ad1e03b;
     }
   }
 `;

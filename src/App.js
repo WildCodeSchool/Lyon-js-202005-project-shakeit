@@ -46,7 +46,6 @@ export default function App() {
               listIngredients={listIngredients}
               setListIngredients={setListIngredients}
             />
-
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
             <Route path="/filters" component={Filters} />

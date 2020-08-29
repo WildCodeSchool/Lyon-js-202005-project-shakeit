@@ -8,11 +8,11 @@ export const Global = createGlobalStyle`
    
   }
   :root {
-      background-color: #2b323c;
-      color: #fff;
+      background-color: black;
+      color: #3DE0D7;
     }
 a {
-    color: #fff;
+    color: #3DE0D7;
 }
 h1 {
     text-align: center;
@@ -22,7 +22,7 @@ svg{
   margin-right: 5px;
 }
 label{
-  color: #fff !important;
+  color: #3DE0D7 !important;
 }
 `;
 
