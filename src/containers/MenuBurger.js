@@ -2,7 +2,7 @@ import React from 'react';
 import * as ReactBootStrap from 'react-bootstrap';
 function MenuBurger(){
     return(
-    <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="info" variant="dark">
+    <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="" style={{backgroundColor:'#3DE0D7'}} variant="dark">
   <ReactBootStrap.Navbar.Brand href="#home" style={{color:'white'}}>Shake it</ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">

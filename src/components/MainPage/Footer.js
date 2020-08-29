@@ -11,6 +11,7 @@ const Footer = styled.footer`
   align-items: center;
   background-color: #FEF3E0;
   height: 60px;
+  border-top: 1px solid #3de0d849;
 `;
 
 export default Footer;

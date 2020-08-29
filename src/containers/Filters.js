@@ -25,9 +25,7 @@ const apiRequestCategories= () => {
     .get("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
     .then ((response) => (response.data))
     .then ( data => setApiCategories(data.drinks) )
-
       }  
-
 
       const apiRequestCocktails= (cat) => {
 
@@ -35,32 +33,16 @@ const apiRequestCategories= () => {
         .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${cat}`)
         .then ((response) => (response.data))
         .then ( data => setApiResults(data.drinks) )
-    
           }  
 
+    const handleChange = (e) => {setOptionChosen(e.target.value);}
 
-
-    const handleChange = (e) => {
-
-setOptionChosen(e.target.value);
-
-
-
-
+    const handleSubmit = (e) => 
+    {
+      e.preventDefault();
+      setApiResults([]);
+      apiRequestCocktails(optionChosen);
     }
-
-
-    
-    const handleSubmit = (e) => {
-
-            e.preventDefault();
-            setApiResults([]);
-        apiRequestCocktails(optionChosen);
-       
-        
-        
-        
-            }
 
 
 
@@ -98,18 +80,20 @@ return(
 
 {apiResults.map ( (cocktail,i ) =>  
 <CocktailList>
-<DisplayCocktail  favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktail.idDrink} img={cocktail.strDrinkThumb} name={cocktail.strDrink}/> 
+<DisplayCocktail
+favCocktails={favCocktails} 
+setFavCocktails={setFavCocktails}
+id={cocktail.idDrink} 
+img={cocktail.strDrinkThumb}
+name={cocktail.strDrink}/> 
 </CocktailList>
- 
 )
 }
 
-
 <Footer>
-        <Navbar />
-      </Footer>
+<Navbar />
+</Footer>
 </>
-
 )
 
 }

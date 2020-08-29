@@ -105,8 +105,13 @@ function DisplaySearch() {
         {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
-              
-            <DisplayCocktail key={item.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktailId[i]} name={cocktailName[i]}  img={cocktailImage[i]}/>          
+            <DisplayCocktail 
+            key={item.id} 
+            favCocktails={favCocktails} 
+            setFavCocktails={setFavCocktails} 
+            id={cocktailId[i]} 
+            name={cocktailName[i]}  
+            img={cocktailImage[i]}/>          
             </CocktailList>
           </div>
         ))}

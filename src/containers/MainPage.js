@@ -12,7 +12,8 @@ import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
 import Global from "./../components/MainPage/Global";
 import CocktailLogo from "./Logo";
-import MenuBurger from './MenuBurger'
+import MenuBurger from './MenuBurger';
+import LogButton from '../components/LogButton';
 const MainPage = () => {
 
   const history=useHistory();
@@ -28,7 +29,13 @@ const MainPage = () => {
             <CocktailLogo />
           </Link> */}
           {/* <Title>Shake It</Title> */}
-          
+
+
+          {/* <Link to ="/filters">
+          <LogButton width={60} >Filtre</LogButton>
+          </Link> */}
+
+
           {/* <LogOut /> */}
         {/* </Header> */}
         <Search style={{marginTop:"10px"}}>

@@ -4,6 +4,7 @@ const CocktailList = styled.div`
   @media (max-width: 768px) {
     grid-area: main;
     width: 100%;
+    text-align:center;
 
     img {
       width: 90%;
