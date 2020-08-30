@@ -5,15 +5,10 @@ import CocktailRate from "./../components/MainPage/CocktailRate";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 
 const DisplayFavCocktail = ({favCocktails,setFavCocktails,...rest}) => {
-
-    
-    const [fav,setFav]= useState(true)
+const [fav,setFav]= useState(true)
 
 return (
-
 <>
-
-
 <Link to={`/recipePage/${rest.name}`}>
       <img src={rest.img} alt="Cocktail Thumb" />
       </Link>
@@ -21,46 +16,30 @@ return (
             {rest.name}
            
           </CocktailRate>
+          {/* <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
+          <FontAwesomeIcon icon="star" /> */}
           {fav? 
-         
           <FontAwesomeIcon  
-          onClick={ () => {
-          
+          style={{color:'red'}}
+          onClick={ () => {        
             setFav(!fav);
             const filteredCocktails= favCocktails.filter ( favcocktail => rest.id !== favcocktail.id)
             setFavCocktails(filteredCocktails);
-            
-
-          }} 
-          
-          
-          icon="heart" /> :
-          
-          <FontAwesomeIcon 
-          
-          onClick={ () => {
-           
-            setFav(!fav);
-            
+          }}     
+          icon="heart" /> :     
+          <FontAwesomeIcon  
+          style={{color:'red'}}     
+          onClick={ () => {    
+            setFav(!fav);          
             setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.title ,favStatus:true}]);
-            
-
-          }} 
-          
+          }}   
           icon={faHeart} />
-        
         }
-
 </>
-
 )
-
-
 };
 
 export default DisplayFavCocktail;

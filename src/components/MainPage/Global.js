@@ -5,10 +5,9 @@ export const Global = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-   
   }
   :root {
-      background-color: white;
+      /* background-color: green; */
       color: #3DE0D7;
     }
 a {

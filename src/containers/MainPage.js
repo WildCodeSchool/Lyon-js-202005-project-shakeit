@@ -20,8 +20,6 @@ const MainPage = () => {
   return (
     <>
     <Global /> 
-    <div>
-   
       <GridLayout>
         {/* <Header> */}
         <MenuBurger/>
@@ -39,7 +37,7 @@ const MainPage = () => {
           {/* <LogOut /> */}
         {/* </Header> */}
         <Search style={{marginTop:"10px"}}>
-          <DisplaySearch />
+          <DisplaySearch/>
         </Search>
         <Main>
           <DisplayCocktails />
@@ -48,8 +46,6 @@ const MainPage = () => {
       <Footer>
         <Navbar />
       </Footer>
-     
-    </div>
     </>
   );
 };

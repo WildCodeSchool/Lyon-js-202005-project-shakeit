@@ -22,13 +22,16 @@ return (
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" /> */}
           {fav? 
-          <FontAwesomeIcon onClick={ () => {         
+          <FontAwesomeIcon 
+          style={{color:'red'}}
+          onClick={ () => {         
             setFav(!fav);
             const filteredCocktails= favCocktails.filter ( favcocktail => rest.id !== favcocktail.id)
             setFavCocktails(filteredCocktails);
           }} 
           icon="heart" /> : 
           <FontAwesomeIcon 
+          style={{color:'red'}}
           onClick={ () => {       
             setFav(!fav);      
             setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.name }]);

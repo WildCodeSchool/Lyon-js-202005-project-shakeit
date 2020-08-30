@@ -2,14 +2,14 @@ import React from 'react';
 import * as ReactBootStrap from 'react-bootstrap';
 function MenuBurger(){
     return(
-    <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="" style={{backgroundColor:'#3DE0D7'}} variant="dark">
-  <ReactBootStrap.Navbar.Brand href="#home" style={{color:'white'}}>Shake it</ReactBootStrap.Navbar.Brand>
+      <div >
+    <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="" style={{backgroundColor:'#F2DAC4'}} variant="light">
+  <ReactBootStrap.Navbar.Brand href="#home" style={{color:'white',fontFamily:'Sacramento', fontSize:'220%', fontWeight:'bold'}}>Shake it</ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">
       <ReactBootStrap.Nav.Link href="#features">Features</ReactBootStrap.Nav.Link>
       <ReactBootStrap.Nav.Link href="#pricing">Pricing</ReactBootStrap.Nav.Link>
-      
       <ReactBootStrap.NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
@@ -26,6 +26,7 @@ function MenuBurger(){
     </ReactBootStrap.Nav>
   </ReactBootStrap.Navbar.Collapse>
 </ReactBootStrap.Navbar>
+</div>
 );
 }
 export default MenuBurger;

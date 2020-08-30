@@ -7,6 +7,8 @@ const CocktailRate = styled.p`
     margin-top:5px;
     margin-bottom:35px;
     margin-left: 5%;
+    /* font-weight:bold; */
+    color:#F05322;
 `
 
 export default  CocktailRate;

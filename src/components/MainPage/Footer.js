@@ -9,9 +9,9 @@ const Footer = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #FEF3E0;
+  background-color: whitesmoke;
   height: 60px;
-  border-top: 1px solid #3de0d849;
+  /* border: 1px solid #F05322; */
 `;
 
 export default Footer;

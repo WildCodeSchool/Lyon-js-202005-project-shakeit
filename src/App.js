@@ -10,7 +10,8 @@ import { FavProvider } from "./context/FavContext";
 import PrivateRoute from "./containers/PrivateRoute";
 import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import Filters from "./containers/Filters"
+import Filters from "./containers/Filters";
+import './App.css'
 import {
   faHeart,
   faStar,

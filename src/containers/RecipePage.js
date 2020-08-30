@@ -68,13 +68,11 @@ function RecipePage({ addIngredient, ...props }) {
           <CocktailLogo />
         </Link>
         <Title>ShakeIt</Title>
-        
       </Header>
-      <CocktailName>{dataRecipe.strDrink}</CocktailName>
+      <CocktailName style={{color:'#3DE0D7'}}>{dataRecipe.strDrink}</CocktailName>
       <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-      <CocktailInstructions>{dataRecipe.strInstructions}</CocktailInstructions>
+      <CocktailInstructions style={{color:'#3DE0D7'}}>{dataRecipe.strInstructions}</CocktailInstructions>
       <ul>{listOfIngredients}</ul>
-
       <Footer>
         <Navbar />
       </Footer>

@@ -10,14 +10,9 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import liste_ingredient from "./liste_ingredient.js";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
-
 import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import DisplayCocktail from "./DisplayCocktail"
-
-
-
-
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
@@ -35,20 +30,20 @@ function DisplaySearch() {
 
   const useStyles = makeStyles((theme) => ({
     input: {
-      color: "white"
+      color: "#D96F32"
     },
-    inputRoot: {
-      color: "black",
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#7AD1E0",
-      },
-      "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#7AD1E0",
-      },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "#7AD1E0",
-      }
-    },
+    // inputRoot: {
+    //   color: "green",
+    //   "& .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   },
+    //   "&:hover .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   },
+    //   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   }
+    // },
   }));
   const classes = useStyles();
 
@@ -57,45 +52,39 @@ function DisplaySearch() {
     setCocktailName(value);
     value.map((i) =>
       axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`)
-        
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`) 
         .then((response) => response.data)
-        .then((data) => {
-          
+        .then((data) => {    
           const tabData=Object.values(data)
-          setApiResponse(tabData[0]);
-          
-          
-         
+          setApiResponse(tabData[0]);      
           apiCocktailId = apiCocktailId.concat(data["drinks"].map((i) => i.idDrink));
           apiName = apiName.concat(data["drinks"].map((i) => i.strDrink));
-          apiImage = apiImage.concat(
-            data["drinks"].map((i) => i.strDrinkThumb)
-          );
+          apiImage = apiImage.concat(data["drinks"].map((i) => i.strDrinkThumb));
           setCocktailName(apiName);
           setCocktailImage(apiImage);
           setCocktailId(apiCocktailId);
         })
     );
-
-  }, [value]);
+}, [value]);
 
   return (
     <>
-    <div className="searchBar">
+    <div className="searchBar" >
       <Autocomplete
+        // freeSolo
         onChange={(e, newValue) => {
           setValue(newValue.map((i) => i.ingredient));
         }}
         multiple
+        classes={classes}
         options={liste_ingredient}
         getOptionLabel={(option) => option.ingredient}
-        style={{ width: 300 }}
+        style={{ width: 300}}
         renderInput={(params) => (
           <TextField
             {...params}
-            variant="outlined"
-            label="Ingredient"
+            variant="standard"
+            // label="Ingredient"
             placeholder="What's inside your fridge?"
           />
         )}

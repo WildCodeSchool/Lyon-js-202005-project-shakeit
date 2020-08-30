@@ -11,7 +11,7 @@ const Ingredients = ({ item, addIngredient }) => {
           src={`https://www.thecocktaildb.com/images/ingredients/${item.name}-Small.png`}
           alt={item.name}
         />
-        <span>
+        <span style={{color:'#3DE0D7'}}>
           {item.measure ? `${item.measure} of` : null} {item.name}
         </span>
       </CocktailIngredient>
