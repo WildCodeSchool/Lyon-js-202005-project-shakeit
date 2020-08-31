@@ -11,16 +11,10 @@ import CocktailLogo from "./Logo";
 import Title from "./../components/MainPage/Title";
 
 const PopularCocktails = () => {
-
-
-    // States
     const [apiRequest,setApiRequest] = useState([]);
-    // List of popular cocktails
     const [famousCocktails,setFamousCocktails] = useState(["Margarita","Mojito","Rum Punch","Long Island ", "Daiquiri","Manhattan","Moscow Mule","Pina","sex on the beach","blue lagoon","cosmopolitan","Caipirinha","spritz","tequila sunrise"])
     const [favCocktails, setFavCocktails] = useContext(FavContext);
 
-
-    // API Request
     const apiRequestCategories = (cocktailName) => {
         axios
           .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`)
@@ -30,16 +24,11 @@ const PopularCocktails = () => {
       };
 
       useEffect(() => {
-         
-
         famousCocktails.map( (cocktail) => apiRequestCategories(cocktail) )
         ;
       }, []);
-    
-
 
     return(
-
         <>
         <div>
         <Header>
@@ -51,7 +40,6 @@ const PopularCocktails = () => {
       </div>
     <h2>Welcome Popular cocktails </h2>
     <h3>{famousCocktails.length} cocktails</h3>
-    
     {apiRequest.map((cocktail, i) => (
         <CocktailList>
           <DisplayCocktail
@@ -67,7 +55,6 @@ const PopularCocktails = () => {
         <Navbar />
       </Footer>
       </>
-
     )
 }
 

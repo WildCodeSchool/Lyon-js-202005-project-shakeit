@@ -7,7 +7,6 @@ const CocktailRate = styled.p`
     margin-top:5px;
     margin-bottom:15px;
     margin-left: 5%;
-    /* font-weight:bold; */
     color:#00b9cd;
 `;
 

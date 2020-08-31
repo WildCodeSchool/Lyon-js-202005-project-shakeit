@@ -4,10 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
-
-const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {
-    
-const [fav,setFav]= useState(false)
+const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {   
+const [fav,setFav]= useState(false);
 
 return (
 <>
@@ -17,22 +15,15 @@ return (
       <CocktailRate>
             {rest.name}
       </CocktailRate>
-          {/* <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" /> */}
           {fav? (
           <FontAwesomeIcon 
           style={{color:'red'}}
           onClick={ () => {         
-
             setFav(!fav);
             const filteredCocktails = favCocktails.filter(
               (favcocktail) => rest.id !== favcocktail.id
             );
             setFavCocktails(filteredCocktails);
-
           }}
           icon="heart"
         />
@@ -40,7 +31,6 @@ return (
         <FontAwesomeIcon
           onClick={() => {
             setFav(!fav);
-
             setFavCocktails([
               ...favCocktails,
               { id: rest.id, img: rest.img, title: rest.name },

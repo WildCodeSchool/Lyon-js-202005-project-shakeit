@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
-
 const DisplayFavCocktail = ({favCocktails,setFavCocktails,...rest}) => {
 const [fav,setFav]= useState(true)
 
@@ -14,13 +13,7 @@ return (
       </Link>
       <CocktailRate>
             {rest.name}
-           
           </CocktailRate>
-          {/* <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" /> */}
           {fav? 
           <FontAwesomeIcon  
           style={{color:'red'}}

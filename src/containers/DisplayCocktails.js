@@ -5,7 +5,6 @@ import {FavContext} from "../context/FavContext";
 import "font-awesome/css/font-awesome.min.css";
 
 const DisplayCocktails = () => {
-  // Hooks déclaration
   const [favCocktails,setFavCocktails]= useContext(FavContext)
 
   return (

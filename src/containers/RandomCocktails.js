@@ -26,19 +26,12 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
 
   return (
     <CocktailList>
-   
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-
         </Link>
           <CocktailRate>
             {dataRecipe.strDrink}
           </CocktailRate>
-          {/* <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" /> */}
           {fav? 
           <FontAwesomeIcon 
           style={{color:'red'}}
@@ -46,9 +39,7 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
             setFav(!fav);
             const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== dataRecipe.idDrink)
             setFavCocktails(filteredCocktails);
-          }} 
-          
-          
+          }}
           icon="heart" />:
           <FontAwesomeIcon 
           style={{color:'red'}}
@@ -56,7 +47,6 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
             setFav(!fav);         
             setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink ,favStatus:true }]);
           }} 
-          
           icon={faHeart} />} 
     </CocktailList>
   );

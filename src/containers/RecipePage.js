@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import CocktailLogo from "./Logo";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import Header from "./../components/MainPage/Header";
 import Footer from "./../components/MainPage/Footer";
 import Ingredients from "./Ingredients";
 import CocktailImg from "./../components/RecipePage/CocktailImg";
 import CocktailName from "./../components/RecipePage/CocktailName";
 import CocktailInstructions from "./../components/RecipePage/CocktailInstructions";
 import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
-import Title from "./../components/MainPage/Title";
 import Subtitle from "./../components/MainPage/Subtitle";
 import uuid from "react-uuid";
 import MenuBurger from './MenuBurger';
@@ -63,12 +60,6 @@ function RecipePage({ addIngredient, ...props }) {
 
   return (
     <RecipePageStyle>
-      {/* <Header>
-        <Link to="/main">
-          <CocktailLogo />
-        </Link>
-        <Title>ShakeIt</Title>
-      </Header> */}
       <MenuBurger />
       <CocktailName style={{color:'rgba(0, 185, 205,1)'}}>{dataRecipe.strDrink}</CocktailName>
       <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
