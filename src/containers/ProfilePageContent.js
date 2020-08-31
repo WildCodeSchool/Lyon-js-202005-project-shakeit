@@ -22,13 +22,13 @@ function ProfilePageContent() {
 
       <Link to="/favoritepage">
         <div className="profilepage-arrow">
-          <FontAwesomeIcon icon="heart" size="1x" color="#009ce7" />
+          <FontAwesomeIcon icon="heart" size="1x" color="#00B9CD" />
           <h2>My Favorite Cocktails</h2>
         </div>
       </Link>
       <Link to="/shoppinglistpage">
         <div className="profilepage-arrow">
-          <FontAwesomeIcon icon="list" size="1x" color="#009ce7" />
+          <FontAwesomeIcon icon="list" size="1x" color="#00B9CD" />
           <h2>My Shopping List</h2>
         </div>
       </Link>

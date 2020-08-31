@@ -14,9 +14,9 @@ const ProfilePageCss = styled.div`
 
   button {
     border-radius: 5px;
-    background-color: #009ce7;
+    background-color: #00b9cd;
     color: whitesmoke;
-    border: 1px solid #009ce7;
+    border: 1px solid #00b9cd;
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
@@ -24,7 +24,7 @@ const ProfilePageCss = styled.div`
   }
   h2 {
     margin-left: 50px;
-    color: #009ce7;
+    color: #00b9cd;
     text-decoration: none;
     font-size: 1.2em;
   }
