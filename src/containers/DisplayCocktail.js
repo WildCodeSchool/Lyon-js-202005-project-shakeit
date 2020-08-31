@@ -22,7 +22,7 @@ return (
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" /> */}
-          {fav? 
+          {fav? (
           <FontAwesomeIcon 
           style={{color:'red'}}
           onClick={ () => {         

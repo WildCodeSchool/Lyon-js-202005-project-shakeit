@@ -29,7 +29,7 @@ const Search = styled.div`
     align-items: center;
     margin-bottom: 15px;
     color:black;
-    background-color:grey;
+    /* background-color:grey; */
   }
 
   .searchTags {
