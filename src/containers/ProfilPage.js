@@ -7,6 +7,8 @@ import LogOut from "./LogOut";
 import MenuBurger from './MenuBurger';
 import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
+import ProfilePageContent from "./ProfilePageContent";
+import ProfilePageCss from "../components/ProfilPage/ProfilePageCss";
 
 const ProfilPage = () => {
   return (
@@ -17,10 +19,17 @@ const ProfilPage = () => {
         </Link>
         <Title>ShakeIt</Title>
         <LogOut />
+
       </Header> */}
       
-      <MenuBurger />
+    {/* <MenuBurger />
       <h1 style={{color:'rgba(0, 185, 205,1)'}}>Your Profile</h1>
+
+      </Header> */}
+      <ProfilePageCss>
+        <ProfilePageContent />
+      </ProfilePageCss>
+
 
       <Footer>
         <Navbar />

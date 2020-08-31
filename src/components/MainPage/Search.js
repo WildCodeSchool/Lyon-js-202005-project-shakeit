@@ -28,6 +28,8 @@ const Search = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    color:black;
+    background-color:grey;
   }
 
   .searchTags {
@@ -56,13 +58,13 @@ const Search = styled.div`
       background-size: 18px 18px;
       background-position: 95% center;
       border-radius: 50px;
-      border: 1px solid #575756;
+      border: 1px solid black;
       transition: all 250ms ease-in-out;
       backface-visibility: hidden;
       transform-style: preserve-3d;
 
       &::placeholder {
-        color: color(#575756 a(0.8));
+        color: color(black a(0.8));
         text-transform: uppercase;
         letter-spacing: 1.5px;
       }
@@ -72,7 +74,7 @@ const Search = styled.div`
         padding: 12px 0;
         outline: 0;
         border: 1px solid transparent;
-        border-bottom: 1px solid #575756;
+        border-bottom: 1px solid black;
         border-radius: 0;
         background-position: 100% center;
       }

@@ -5,10 +5,11 @@ const CocktailRate = styled.p`
     display:inline-block;
     width: 50%;
     margin-top:5px;
-    margin-bottom:35px;
+    margin-bottom:15px;
     margin-left: 5%;
     /* font-weight:bold; */
     color:#00b9cd;
-`
+`;
+
 
 export default  CocktailRate;
