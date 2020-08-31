@@ -19,6 +19,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Switch, Route } from "react-router-dom";
+import PopularCocktails from "./containers/PopularCocktails";
 
 library.add(faStar, faHeart, faCocktail, faList, faUser);
 
@@ -49,7 +50,8 @@ export default function App() {
 
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
-            <Route path="/filters" component={Filters} />
+            <PrivateRoute path="/filters" component={Filters} />
+            <PrivateRoute path="/popularcocktails" component={PopularCocktails} />
             
             </FavProvider>
           </AuthentProvider>

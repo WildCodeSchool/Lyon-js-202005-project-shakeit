@@ -53,50 +53,5 @@ const FavoritePage = () => {
 export default FavoritePage;
 
 
-{/* <CocktailList>
-      
-      <Link to={`/recipePage/${favCocktails.id}`}>
-        <img src={favCocktails.img} alt="Cocktail Thumb" />
-        </Link>
-          <CocktailRate>
-            {dataRecipe.strDrink}
-          </CocktailRate>
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          {fav? 
-          <FontAwesomeIcon  
-          // onClick={ () => {
-          
-          //   setFav(!fav);
-          //   const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== dataRecipe.idDrink)
-          //   setFavCocktails(filteredCocktails);
-            
 
-          // }} 
-          
-          
-          icon="heart" />:
-          <FontAwesomeIcon 
-          
-          // onClick={ () => {
-           
-          //   setFav(!fav);
-            
-          //   setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink }]);
-            
-
-          // }} 
-          
-          icon={faHeart} />}
-          
-         
-
-
-
-        
-      
-    </CocktailList> */}
 
