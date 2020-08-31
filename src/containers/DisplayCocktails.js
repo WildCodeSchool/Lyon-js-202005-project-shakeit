@@ -10,7 +10,7 @@ const DisplayCocktails = () => {
 
   return (
     <>
-      <h2 style={{fontSize:'120%', color:'#F05322',marginBottom:'20px'}}>Some cocktails ( just for you )</h2>
+      <h2 style={{fontSize:'120%', color:'#00b9cd',marginBottom:'20px'}}>Some cocktails ( just for you )</h2>
       <RandomCocktails favCocktails={favCocktails} setFavCocktails={setFavCocktails} />
       <RandomCocktails favCocktails={favCocktails}  setFavCocktails={setFavCocktails}  />
       <RandomCocktails favCocktails={favCocktails} setFavCocktails={setFavCocktails} />

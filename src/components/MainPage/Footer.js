@@ -9,7 +9,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: white;
   height: 60px;
   /* border: 1px solid #F05322; */
 `;

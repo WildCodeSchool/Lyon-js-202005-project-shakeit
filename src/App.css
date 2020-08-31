@@ -1,5 +1,5 @@
 *{
-  background-color: #F2DAC4; 
+  background-color: white; 
 } 
 
 
@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  /* background-color: #DBE0E9; */
+  /* background-color: #00b9cd; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

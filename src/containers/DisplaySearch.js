@@ -30,7 +30,7 @@ function DisplaySearch() {
 
   const useStyles = makeStyles((theme) => ({
     input: {
-      color: "#D96F32"
+      color: "black "
     },
     // inputRoot: {
     //   color: "green",
