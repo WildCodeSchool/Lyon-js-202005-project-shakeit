@@ -25,7 +25,6 @@ function MenuBurger(){
         <ReactBootStrap.NavDropdown.Item href="#action/3.3">Beer</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Item href="#action/3.3">Soft Drink / Soda</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Divider />
-        <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
       </ReactBootStrap.NavDropdown>
     </ReactBootStrap.Nav>
   </ReactBootStrap.Navbar.Collapse>
