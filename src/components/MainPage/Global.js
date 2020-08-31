@@ -7,7 +7,6 @@ export const Global = createGlobalStyle`
     padding: 0;
   }
   :root {
-      /* background-color: green; */
       color: #3DE0D7;
     }
 a {

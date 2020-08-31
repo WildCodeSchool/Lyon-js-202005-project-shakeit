@@ -55,9 +55,7 @@ const Filters = () => {
           <Title>ShakeIt</Title>
         </Header>
       </div>
-
       <h2>Categories List</h2>
-      
       <form onSubmit={handleSubmit}>
         <select value={optionChosen} onChange={handleChange}>
           {apiCategories.map((category, i) => (
@@ -69,7 +67,6 @@ const Filters = () => {
         <button>Go !</button>
       </form>
       <p> {apiResults.length} results</p>
-
       {apiResults.map((cocktail, i) => (
         <CocktailList>
           <DisplayCocktail
@@ -85,7 +82,6 @@ const Filters = () => {
 <Link to="/popularcocktails">
       <PopularCocktails />
       </Link>
-
       <Footer>
         <Navbar />
       </Footer>

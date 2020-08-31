@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +11,7 @@ import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
-import DisplayCocktail from "./DisplayCocktail"
+import DisplayCocktail from "./DisplayCocktail";
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
@@ -23,30 +22,9 @@ function DisplaySearch() {
   let apiName = [];
   let apiImage = [];
   let apiCocktailId = [];
-
-    // Hooks déclaration
-    const [favCocktails,setFavCocktails]= useContext(FavContext)
-    
-
-  const useStyles = makeStyles((theme) => ({
-    input: {
-      color: "black "
-    },
-    // inputRoot: {
-    //   color: "green",
-    //   "& .MuiOutlinedInput-notchedOutline": {
-    //     borderColor: "#D96F32",
-    //   },
-    //   "&:hover .MuiOutlinedInput-notchedOutline": {
-    //     borderColor: "#D96F32",
-    //   },
-    //   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    //     borderColor: "#D96F32",
-    //   }
-    // },
-  }));
+  const [favCocktails,setFavCocktails]= useContext(FavContext);
+  const useStyles = makeStyles((theme) => ({input: {color: "black "}}));
   const classes = useStyles();
-
 
   useEffect(() => {
     setCocktailName(value);
@@ -71,7 +49,6 @@ function DisplaySearch() {
     <>
     <div className="searchBar" >
       <Autocomplete
-        // freeSolo
         onChange={(e, newValue) => {
           setValue(newValue.map((i) => i.ingredient));
         }}
@@ -84,7 +61,6 @@ function DisplaySearch() {
           <TextField
             {...params}
             variant="standard"
-            // label="Ingredient"
             placeholder="What's inside your fridge?"
           />
         )}
@@ -105,9 +81,7 @@ function DisplaySearch() {
           </div>
         ))}
       </div>
-
       </>
-    
   );
 }
 export default DisplaySearch;

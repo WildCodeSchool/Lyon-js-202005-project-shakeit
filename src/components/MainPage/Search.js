@@ -29,7 +29,6 @@ const Search = styled.div`
     align-items: center;
     margin-bottom: 15px;
     color:black;
-    /* background-color:grey; */
   }
 
   .searchTags {
@@ -48,7 +47,6 @@ const Search = styled.div`
     &__input {
       padding: 12px 24px;
       margin-right: 15px;
-      /* background-color: transparent; */
       transition: transform 250ms ease-in-out;
       font-size: 14px;
       line-height: 18px;
