@@ -7,6 +7,8 @@ import LogOut from "./LogOut";
 
 import Navbar from "./Navbar";
 import Title from "./../components/MainPage/Title";
+import ProfilePageContent from "./ProfilePageContent";
+import ProfilePageCss from "../components/ProfilPage/ProfilePageCss";
 
 const ProfilPage = () => {
   return (
@@ -18,9 +20,9 @@ const ProfilPage = () => {
         <Title>ShakeIt</Title>
         <LogOut />
       </Header>
-      
-
-      <h1>Your Profile</h1>
+      <ProfilePageCss>
+        <ProfilePageContent />
+      </ProfilePageCss>
 
       <Footer>
         <Navbar />
