@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import uuid from "react-uuid";
+
+import Ingredients from "./Ingredients";
+import MenuBurger from "./MenuBurger";
 import Navbar from "./Navbar";
 import Footer from "./../components/MainPage/Footer";
-import Ingredients from "./Ingredients";
 import CocktailImg from "./../components/RecipePage/CocktailImg";
 import CocktailName from "./../components/RecipePage/CocktailName";
 import CocktailInstructions from "./../components/RecipePage/CocktailInstructions";
 import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 import Subtitle from "./../components/MainPage/Subtitle";
-import uuid from "react-uuid";
-import MenuBurger from './MenuBurger';
+
 function RecipePage({ addIngredient, ...props }) {
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,10 @@ function RecipePage({ addIngredient, ...props }) {
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
     for (let i = 1; i < 16; i++) {
-      if (dataRecipe["strIngredient" + i] != null) {
+      if (
+        dataRecipe["strIngredient" + i] !== null &&
+        dataRecipe["strIngredient" + i] !== ""
+      ) {
         ingredients.push({
           name: dataRecipe["strIngredient" + i],
           measure: dataRecipe["strMeasure" + i],
@@ -61,10 +65,10 @@ function RecipePage({ addIngredient, ...props }) {
   return (
     <RecipePageStyle>
       <MenuBurger />
-      <CocktailName style={{color:'rgba(0, 185, 205,1)'}}>{dataRecipe.strDrink}</CocktailName>
+      <CocktailName>{dataRecipe.strDrink}</CocktailName>
       <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-      <CocktailInstructions style={{color:'rgba(0, 185, 205,1)'}}>{dataRecipe.strInstructions}</CocktailInstructions>
-      <ul>{listOfIngredients}</ul>
+      <CocktailInstructions>{dataRecipe.strInstructions}</CocktailInstructions>
+      <ul style={{ padding: "0" }}>{listOfIngredients}</ul>
       <Footer>
         <Navbar />
       </Footer>

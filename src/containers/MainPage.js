@@ -1,27 +1,22 @@
-import React  from "react";
-import {useHistory} from "react-router-dom"
+import React from "react";
 import GridLayout from "./../components/MainPage/GridLayout";
 import Footer from "./../components/MainPage/Footer";
 import Main from "./../components/MainPage/Main";
 import Search from "./../components/MainPage/Search";
-import Title from "./../components/MainPage/Title";
 import DisplayCocktails from "./DisplayCocktails";
 import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
-import {Link} from "react-router-dom";
 import Global from "./../components/MainPage/Global";
-import MenuBurger from './MenuBurger';
-import LogButton from '../components/LogButton';
-const MainPage = () => {
+import MenuBurger from "./MenuBurger";
 
-  const history=useHistory();
+const MainPage = () => {
   return (
     <>
-    <Global /> 
+      <Global />
       <GridLayout>
-        <MenuBurger/>
-        <Search style={{marginTop:"10px"}}>
-          <DisplaySearch/>
+        <MenuBurger />
+        <Search style={{ marginTop: "10px" }}>
+          <DisplaySearch />
         </Search>
         <Main>
           <DisplayCocktails />

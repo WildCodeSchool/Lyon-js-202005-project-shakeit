@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-const IngredientBtn = styled.button`
-  align-self: center;
+const ButtonStyle = styled.button`
   border-radius: 5px;
   background-color: #00b9cd;
   color: whitesmoke;
@@ -9,7 +8,7 @@ const IngredientBtn = styled.button`
   font-weight: bold;
   padding: 5px;
   font-size: 14px;
-  margin-right: 15px;
+  margin-left: 80px;
 `;
 
-export default IngredientBtn;
+export default ButtonStyle;

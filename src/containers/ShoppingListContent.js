@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import EmptierButton from "../components/ShoppingList/EmptierButton";
+import React, { useState } from "react";
+import ButtonStyle from "../components/ShoppingList/ButtonStyle";
 import ShoppingListIngredient from "./ShoppingListIngredient";
 import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
@@ -42,17 +42,17 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
 
   return (
     <div>
-      <Title style={{color:'rgba(0, 185, 205, 1)'}}>Your Shopping list</Title>
+      <Title style={{ color: "rgba(0, 185, 205, 1)" }}>Shopping list</Title>
       <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
       <div>
-        <EmptierButton
+        <ButtonStyle
           onClick={() => {
             setListIngredients([]);
           }}
         >
-          Reset
-        </EmptierButton>
-        <button onClick={() => sortIngredients()}>Sort Ingredients</button>
+          Clear All
+        </ButtonStyle>
+        <ButtonStyle onClick={() => sortIngredients()}>Sort A-Z</ButtonStyle>
       </div>
     </div>
   );
