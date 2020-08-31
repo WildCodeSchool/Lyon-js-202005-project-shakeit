@@ -19,7 +19,6 @@ function ProfilePageContent() {
         </div>
       </div>
       <hr />
-
       <Link to="/favoritepage">
         <div className="profilepage-arrow">
           <FontAwesomeIcon icon="heart" size="1x" color="#00B9CD" />
