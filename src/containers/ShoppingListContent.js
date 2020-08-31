@@ -42,7 +42,7 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
 
   return (
     <div>
-      <Title>Your Shopping list</Title>
+      <Title style={{color:'rgba(0, 185, 205, 1)'}}>Your Shopping list</Title>
       <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
       <div>
         <EmptierButton

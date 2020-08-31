@@ -15,7 +15,7 @@ const Form = (props) => {
 
             
             <label>Mdp : </label>
-            <input onChange={props.mdpHandleChange} /><br></br>
+            <input type='password' onChange={props.mdpHandleChange} /><br></br>
             <LogButton type="submit" marginleft={150} width={100} >Sign Up</LogButton>
             
            

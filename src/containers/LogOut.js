@@ -22,9 +22,7 @@ const disconnect = () => {
 
   return (   
 
-      <LogButton  onClick={disconnect} width={60}>Logout</LogButton>  
-    
-     
+      <LogButton  onClick={disconnect} width={60}>Logout</LogButton>    
     
   );
 };

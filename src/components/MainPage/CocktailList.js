@@ -4,9 +4,9 @@ const CocktailList = styled.div`
   @media (max-width: 768px) {
     grid-area: main;
     width: 100%;
+    text-align:center;
     background-color:grey;
     border-radius:5px;
-    
 
     img {
       width: 90%;
@@ -14,6 +14,8 @@ const CocktailList = styled.div`
       display: block;
       margin-left: auto;
       margin-right: auto;
+      border-radius: 30% 15% / 10% 35%;
+      box-shadow: 10px -8px rgba(0, 185, 205, 0.49);
     }
   }
 `;

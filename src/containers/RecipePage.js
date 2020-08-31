@@ -13,7 +13,7 @@ import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 import Title from "./../components/MainPage/Title";
 import Subtitle from "./../components/MainPage/Subtitle";
 import uuid from "react-uuid";
-
+import MenuBurger from './MenuBurger';
 function RecipePage({ addIngredient, ...props }) {
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,18 +63,17 @@ function RecipePage({ addIngredient, ...props }) {
 
   return (
     <RecipePageStyle>
-      <Header>
+      {/* <Header>
         <Link to="/main">
           <CocktailLogo />
         </Link>
         <Title>ShakeIt</Title>
-        
-      </Header>
-      <CocktailName>{dataRecipe.strDrink}</CocktailName>
+      </Header> */}
+      <MenuBurger />
+      <CocktailName style={{color:'rgba(0, 185, 205,1)'}}>{dataRecipe.strDrink}</CocktailName>
       <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-      <CocktailInstructions>{dataRecipe.strInstructions}</CocktailInstructions>
+      <CocktailInstructions style={{color:'rgba(0, 185, 205,1)'}}>{dataRecipe.strInstructions}</CocktailInstructions>
       <ul>{listOfIngredients}</ul>
-
       <Footer>
         <Navbar />
       </Footer>

@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+
 const CocktailRate = styled.p`
-  display: inline-block;
-  
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-left: 5%;
+    display:inline-block;
+    width: 50%;
+    margin-top:5px;
+    margin-bottom:15px;
+    margin-left: 5%;
+    /* font-weight:bold; */
+    color:#00b9cd;
 `;
 
-export default CocktailRate;
+
+export default  CocktailRate;

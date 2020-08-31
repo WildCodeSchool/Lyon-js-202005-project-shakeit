@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import CocktailRate from "../components/MainPage/CocktailRate";
 import CocktailList from "../components/MainPage/CocktailList";
 import "font-awesome/css/font-awesome.min.css";
@@ -11,14 +10,9 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import liste_ingredient from "./liste_ingredient.js";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
-
 import {FavContext} from "../context/FavContext";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import DisplayCocktail from "./DisplayCocktail"
-
-
-
-
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
@@ -35,23 +29,21 @@ function DisplaySearch() {
     
 
   const useStyles = makeStyles((theme) => ({
-    inputRoot: {
-      color: "white",
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "white",
-      },
-      "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "blue",
-      },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "blue",
-      },
-      "&.MuiFormLabel-root .MuiFormLabel-colorSecondary .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-outlined": {
-
-        color: "#BEDA04",
-
-      },
+    input: {
+      color: "black "
     },
+    // inputRoot: {
+    //   color: "green",
+    //   "& .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   },
+    //   "&:hover .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   },
+    //   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    //     borderColor: "#D96F32",
+    //   }
+    // },
   }));
   const classes = useStyles();
 
@@ -60,33 +52,26 @@ function DisplaySearch() {
     setCocktailName(value);
     value.map((i) =>
       axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`)
-        
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${i}`) 
         .then((response) => response.data)
-        .then((data) => {
-          
+        .then((data) => {    
           const tabData=Object.values(data)
-          setApiResponse(tabData[0]);
-          
-          
-         
+          setApiResponse(tabData[0]);      
           apiCocktailId = apiCocktailId.concat(data["drinks"].map((i) => i.idDrink));
           apiName = apiName.concat(data["drinks"].map((i) => i.strDrink));
-          apiImage = apiImage.concat(
-            data["drinks"].map((i) => i.strDrinkThumb)
-          );
+          apiImage = apiImage.concat(data["drinks"].map((i) => i.strDrinkThumb));
           setCocktailName(apiName);
           setCocktailImage(apiImage);
           setCocktailId(apiCocktailId);
         })
     );
-
-  }, [value]);
+}, [value]);
 
   return (
     <>
-    <div className="searchBar">
+    <div className="searchBar" >
       <Autocomplete
+        // freeSolo
         onChange={(e, newValue) => {
           setValue(newValue.map((i) => i.ingredient));
         }}
@@ -94,12 +79,12 @@ function DisplaySearch() {
         classes={classes}
         options={liste_ingredient}
         getOptionLabel={(option) => option.ingredient}
-        style={{ width: 300 }}
+        style={{ width: 300}}
         renderInput={(params) => (
           <TextField
             {...params}
-            variant="outlined"
-            label="Ingredient"
+            variant="standard"
+            // label="Ingredient"
             placeholder="What's inside your fridge?"
           />
         )}
@@ -109,8 +94,13 @@ function DisplaySearch() {
         {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
-              
-            <DisplayCocktail key={item.id} favCocktails={favCocktails} setFavCocktails={setFavCocktails} id={cocktailId[i]} name={cocktailName[i]}  img={cocktailImage[i]}/>          
+            <DisplayCocktail 
+            key={item.id} 
+            favCocktails={favCocktails} 
+            setFavCocktails={setFavCocktails} 
+            id={cocktailId[i]} 
+            name={cocktailName[i]}  
+            img={cocktailImage[i]}/>          
             </CocktailList>
           </div>
         ))}

@@ -10,7 +10,8 @@ import { FavProvider } from "./context/FavContext";
 import PrivateRoute from "./containers/PrivateRoute";
 import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import Filters from "./containers/Filters"
+import Filters from "./containers/Filters";
+import './App.css'
 import {
   faHeart,
   faStar,
@@ -47,7 +48,6 @@ export default function App() {
               listIngredients={listIngredients}
               setListIngredients={setListIngredients}
             />
-
             <PrivateRoute path="/profilpage" component={ProfilPage} />
             <PrivateRoute path="/favoritepage" component={FavoritePage} />
             <PrivateRoute path="/filters" component={Filters} />

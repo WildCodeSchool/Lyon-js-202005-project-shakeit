@@ -8,7 +8,7 @@ const Header = styled.header`
   width: 90%;
   margin-left: 5%;
   margin-bottom: 10px;
-  border-bottom: 2px solid #009ce7;
+  border-bottom: 2px solid #7AD1E0;
   
     img{
       position: relative;

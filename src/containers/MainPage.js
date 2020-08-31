@@ -11,44 +11,41 @@ import DisplaySearch from "./DisplaySearch";
 import Navbar from "./Navbar";
 import {Link} from "react-router-dom";
 import Global from "./../components/MainPage/Global";
-import CocktailLogo from "./Logo"
-import LogButton from "../components/LogButton"
-import Filters from "./Filters"
+import CocktailLogo from "./Logo";
+import MenuBurger from './MenuBurger';
+import LogButton from '../components/LogButton';
 const MainPage = () => {
 
   const history=useHistory();
   return (
     <>
     <Global /> 
-    <div>
-   
       <GridLayout>
-        <Header>
-        
-          <Link to="/main">
+        {/* <Header> */}
+        <MenuBurger/>
+          {/* <Link to="/main">
             <CocktailLogo />
-          </Link>
-          <Title>ShakeIt</Title>
-          <Link to="/filters">
-          <LogButton  width={60} >Filter</LogButton>
-          </Link>
-        </Header>
-        <Search>
-          <DisplaySearch />
+          </Link> */}
+          {/* <Title>Shake It</Title> */}
+
+
+          {/* <Link to ="/filters">
+          <LogButton width={60} >Filtre</LogButton>
+          </Link> */}
+
+
+          {/* <LogOut /> */}
+        {/* </Header> */}
+        <Search style={{marginTop:"10px"}}>
+          <DisplaySearch/>
         </Search>
         <Main>
-        
-
-        
           <DisplayCocktails />
         </Main>
       </GridLayout>
-
       <Footer>
         <Navbar />
       </Footer>
-     
-    </div>
     </>
   );
 };

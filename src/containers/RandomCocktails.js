@@ -9,9 +9,7 @@ import CocktailRate from "./../components/MainPage/CocktailRate";
 
 function RandomCocktail({favCocktails, setFavCocktails}) {
   const [dataRecipe, setDataRecipe] = useState({});
-  const [fav,setFav]= useState(false)
-  
- 
+  const [fav,setFav]= useState(false);
 
   const getRandomCocktail = () => {
     axios
@@ -26,10 +24,6 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
     getRandomCocktail();
   }, []);
 
-
-  
-
-
   return (
     <CocktailList>
    
@@ -40,44 +34,30 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
           <CocktailRate>
             {dataRecipe.strDrink}
           </CocktailRate>
+          {/* <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
           <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
-          <FontAwesomeIcon icon="star" />
+          <FontAwesomeIcon icon="star" /> */}
           {fav? 
-          <FontAwesomeIcon  
-          onClick={ () => {
-          
+          <FontAwesomeIcon 
+          style={{color:'red'}}
+          onClick={ () => { 
             setFav(!fav);
             const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== dataRecipe.idDrink)
             setFavCocktails(filteredCocktails);
-            
-
           }} 
           
           
           icon="heart" />:
           <FontAwesomeIcon 
-          
-          onClick={ () => {
-           
-            setFav(!fav);
-            
+          style={{color:'red'}}
+          onClick={ () => {   
+            setFav(!fav);         
             setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink ,favStatus:true }]);
-            
-
           }} 
           
-          icon={faHeart} />}
-          
-         
-
-
-
-        
-      
-
+          icon={faHeart} />} 
     </CocktailList>
   );
 }
