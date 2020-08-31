@@ -6,8 +6,10 @@ const ProfilePageCss = styled.div`
   }
   .profilpage-box {
     display: flex;
+    justify-content: space-around;
     margin-left: 10px;
     font-size: 0.7em;
+    margin-bottom: 40px;
   }
 
   button {
@@ -19,6 +21,21 @@ const ProfilePageCss = styled.div`
     padding: 5px;
     font-size: 14px;
     margin-left: 80px;
+  }
+  h2 {
+    margin-left: 50px;
+    color: #009ce7;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .profilepage-arrow {
+    display: flex;
+    margin-left: 30px;
   }
 `;
 
