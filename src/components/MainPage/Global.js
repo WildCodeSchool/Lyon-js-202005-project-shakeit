@@ -5,14 +5,13 @@ export const Global = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-   
   }
   :root {
-      background-color: #2b323c;
-      color: #fff;
+      /* background-color: green; */
+      color: #3DE0D7;
     }
 a {
-    color: #fff;
+    color: #3DE0D7;
 }
 h1 {
     text-align: center;
@@ -22,7 +21,7 @@ svg{
   margin-right: 5px;
 }
 label{
-  color: #fff !important;
+  color: #3DE0D7 !important;
 }
 `;
 

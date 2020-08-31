@@ -11,14 +11,9 @@ height:812px;
 color:white;
 
 input,button {
-
     border-radius:7px;
-    margin-top:50px;
-    
-    
+    margin-top:50px;    
 }
-
-
 
 input,label,input {
     margin-left:35px;
