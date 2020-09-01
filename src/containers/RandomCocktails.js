@@ -24,6 +24,8 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
     getRandomCocktail();
   }, []);
 
+  
+
   return (
     <CocktailList>
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
@@ -35,6 +37,7 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
           style={{ color: "red" }}
           onClick={() => {
             setFav(!fav);
+
             const filteredCocktails = favCocktails.filter(
               (cocktail) => cocktail.id !== dataRecipe.idDrink
             );
@@ -60,6 +63,7 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
           icon={faHeart}
         />
       )}
+
     </CocktailList>
   );
 }

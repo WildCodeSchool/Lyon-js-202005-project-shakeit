@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import FavoritePage from "./containers/FavoritePage";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
@@ -11,6 +11,7 @@ import PrivateRoute from "./containers/PrivateRoute";
 import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Filters from "./containers/Filters";
+
 import './App.css'
 import {
   faHeart,
@@ -26,6 +27,11 @@ library.add(faStar, faHeart, faCocktail, faList, faUser);
 
 export default function App() {
   const [listIngredients, setListIngredients] = useState([]);
+  
+
+
+
+ 
 
   return (
     <>

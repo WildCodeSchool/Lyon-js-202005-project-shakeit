@@ -10,8 +10,14 @@ const FavoritePage = () => {
   const [favCocktails, setFavCocktails] = useContext(FavContext);
   const [fav, setFav] = useState(true);
 
+   
+  
+ 
+  
+
   return (
     <div>
+
       <div>
         <MenuBurger />
         <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Favorites</h1>
@@ -28,6 +34,7 @@ const FavoritePage = () => {
           ))}
         </CocktailList>
       </div>
+
       <Footer>
         <Navbar />
       </Footer>

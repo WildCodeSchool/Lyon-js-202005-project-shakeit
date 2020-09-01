@@ -33,6 +33,10 @@ const DisplayCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
               ...favCocktails,
               { id: rest.id, img: rest.img, title: rest.name },
             ]);
+            // localStorage.setItem("myfav",JSON.stringify({ id: rest.id, img: rest.img, title: rest.name }))
+            // const result=JSON.parse(localStorage.getItem("myfav"));
+            // console.log("Resultat MyFav")
+            // console.log(result)
           }}
           icon={faHeart}
         />
