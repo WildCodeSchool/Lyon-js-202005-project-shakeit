@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
-const DisplayCocktail = ({favCocktails,setFavCocktails,...rest}) => {   
-const [fav,setFav]= useState(false);
+const DisplayCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
+  const [fav, setFav] = useState(false);
 
-return (
-<>
-<Link to={`/recipePage/${rest.name}`}>
-      <img src={rest.img} alt="Cocktail Thumb" />
+  return (
+    <>
+      <Link to={`/recipePage/${rest.name}`}>
+        <img src={rest.img} alt="Cocktail Thumb" />
       </Link>
-      <CocktailRate>
-            {rest.name}
-      </CocktailRate>
-          {fav? (
-          <FontAwesomeIcon 
-          style={{color:'red'}}
-          onClick={ () => {         
+      <CocktailRate>{rest.name}</CocktailRate>
+      {fav ? (
+        <FontAwesomeIcon
+          style={{ color: "red" }}
+          onClick={() => {
             setFav(!fav);
             const filteredCocktails = favCocktails.filter(
               (favcocktail) => rest.id !== favcocktail.id
@@ -41,7 +39,6 @@ return (
       )}
     </>
   );
-
 };
 
 export default DisplayCocktail;

@@ -28,7 +28,7 @@ const Search = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    color:black;
+    color: black;
   }
 
   .searchTags {

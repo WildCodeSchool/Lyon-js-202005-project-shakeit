@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function ProfilePageContent() {
   return (
     <div>
-      <h1>My Info</h1>
       <div className="profilpage-box">
         <div>
           <h3>LastName : Stark</h3>

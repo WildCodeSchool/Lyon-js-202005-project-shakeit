@@ -3,13 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import {faHeart} from "@fortawesome/free-regular-svg-icons"
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import CocktailList from "./../components/MainPage/CocktailList";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 
-function RandomCocktail({favCocktails, setFavCocktails}) {
+function RandomCocktail({ favCocktails, setFavCocktails }) {
   const [dataRecipe, setDataRecipe] = useState({});
-  const [fav,setFav]= useState(false);
+  const [fav, setFav] = useState(false);
 
   const getRandomCocktail = () => {
     axios
@@ -28,26 +28,38 @@ function RandomCocktail({favCocktails, setFavCocktails}) {
     <CocktailList>
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
         <img src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-        </Link>
-          <CocktailRate>
-            {dataRecipe.strDrink}
-          </CocktailRate>
-          {fav? 
-          <FontAwesomeIcon 
-          style={{color:'red'}}
-          onClick={ () => { 
+      </Link>
+      <CocktailRate>{dataRecipe.strDrink}</CocktailRate>
+      {fav ? (
+        <FontAwesomeIcon
+          style={{ color: "red" }}
+          onClick={() => {
             setFav(!fav);
-            const filteredCocktails= favCocktails.filter ( cocktail => cocktail.id !== dataRecipe.idDrink)
+            const filteredCocktails = favCocktails.filter(
+              (cocktail) => cocktail.id !== dataRecipe.idDrink
+            );
             setFavCocktails(filteredCocktails);
           }}
-          icon="heart" />:
-          <FontAwesomeIcon 
-          style={{color:'red'}}
-          onClick={ () => {   
-            setFav(!fav);         
-            setFavCocktails( [...favCocktails,{id :dataRecipe.idDrink, img : dataRecipe.strDrinkThumb , title:dataRecipe.strDrink ,favStatus:true }]);
-          }} 
-          icon={faHeart} />} 
+          icon="heart"
+        />
+      ) : (
+        <FontAwesomeIcon
+          style={{ color: "red" }}
+          onClick={() => {
+            setFav(!fav);
+            setFavCocktails([
+              ...favCocktails,
+              {
+                id: dataRecipe.idDrink,
+                img: dataRecipe.strDrinkThumb,
+                title: dataRecipe.strDrink,
+                favStatus: true,
+              },
+            ]);
+          }}
+          icon={faHeart}
+        />
+      )}
     </CocktailList>
   );
 }
