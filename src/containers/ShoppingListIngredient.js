@@ -1,5 +1,5 @@
 import React from "react";
-import IngredientBtn from "./../components/RecipePage/IngredientBtn";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
   const styledDiv = {
@@ -17,7 +17,18 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
   return (
     <div style={styledDiv}>
       <div style={styledIngName}>{ingredient}</div>
-      <IngredientBtn onClick={() => removeIng(ingredientId)}>X</IngredientBtn>
+
+      <FontAwesomeIcon
+        icon="minus"
+        style={{
+          backgroundColor: "rgba(256,256,256,0)",
+          width: "18px",
+          height: "auto",
+          marginRight: "15px",
+        }}
+        color="#00b9cd"
+        onClick={() => removeIng(ingredientId)}
+      />
     </div>
   );
 };

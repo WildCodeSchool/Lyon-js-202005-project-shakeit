@@ -1,7 +1,7 @@
 import React from "react";
 import CocktailIngredient from "./../components/RecipePage/CocktailIngredient";
-import IngredientBtn from "./../components/RecipePage/IngredientBtn";
 import ListIngredient from "./../components/RecipePage/ListIngredient";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Ingredients = ({ item, addIngredient }) => {
   return (
@@ -15,13 +15,20 @@ const Ingredients = ({ item, addIngredient }) => {
           {item.measure ? `${item.measure}` : null} {item.name}
         </span>
       </CocktailIngredient>
-      <IngredientBtn
+
+      <FontAwesomeIcon
+        icon="cart-plus"
+        style={{
+          backgroundColor: "rgba(256,256,256,0)",
+          width: "32px",
+          height: "auto",
+          marginRight: "15px",
+        }}
+        color="#00b9cd"
         onClick={() => {
           addIngredient(item);
         }}
-      >
-        Add
-      </IngredientBtn>
+      />
     </ListIngredient>
   );
 };
