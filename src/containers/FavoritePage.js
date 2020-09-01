@@ -12,6 +12,13 @@ const FavoritePage = () => {
   const [favCocktails,setFavCocktails]= useContext(FavContext);
   const [fav,setFav]= useState(true);
 
+ 
+
+  
+  
+ 
+  
+
   return (
     <div>
       <MenuBurger/>
@@ -25,6 +32,9 @@ const FavoritePage = () => {
         name={cocktail.title} 
         id={cocktail.id} 
         img={cocktail.img}/> ))}
+
+
+
       </CocktailList>
       <Footer>
         <Navbar />
