@@ -12,6 +12,7 @@ const Footer = styled.footer`
   background-color: white;
   height: 60px;
   border-top: solid 1px lightgrey;
+  box-shadow: 0em 0 2em grey;
 `;
 
 export default Footer;
