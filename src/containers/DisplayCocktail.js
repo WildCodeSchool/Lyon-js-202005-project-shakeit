@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
@@ -6,8 +6,6 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const DisplayCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
   const [fav, setFav] = useState(false);
-
-
 
   return (
     <>

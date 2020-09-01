@@ -1,38 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
-import {faHeart} from "@fortawesome/free-regular-svg-icons"
-const DisplayFavCocktail = ({favCocktails,setFavCocktails,...rest}) => {
-const [fav,setFav]= useState(true)
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+const DisplayFavCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
+  const [fav, setFav] = useState(true);
 
-return (
-<>
-<Link to={`/recipePage/${rest.name}`}>
-      <img src={rest.img} alt="Cocktail Thumb" />
+  return (
+    <>
+      <Link to={`/recipePage/${rest.name}`}>
+        <img src={rest.img} alt="Cocktail Thumb" />
       </Link>
-      <CocktailRate>
-            {rest.name}
-          </CocktailRate>
-          {fav? 
-          <FontAwesomeIcon  
-          style={{color:'red'}}
-          onClick={ () => {        
+      <CocktailRate>{rest.name}</CocktailRate>
+      {fav ? (
+        <FontAwesomeIcon
+          style={{ color: "red" }}
+          onClick={() => {
             setFav(!fav);
-            const filteredCocktails= favCocktails.filter ( favcocktail => rest.id !== favcocktail.id)
+            const filteredCocktails = favCocktails.filter(
+              (favcocktail) => rest.id !== favcocktail.id
+            );
             setFavCocktails(filteredCocktails);
-          }}     
-          icon="heart" /> :     
-          <FontAwesomeIcon  
-          style={{color:'red'}}     
-          onClick={ () => {    
-            setFav(!fav);          
-            setFavCocktails( [...favCocktails,{id :rest.id, img : rest.img , title:rest.title ,favStatus:true}]);
-          }}   
-          icon={faHeart} />
-        }
-</>
-)
+          }}
+          icon="heart"
+        />
+      ) : (
+        <FontAwesomeIcon
+          style={{ color: "red" }}
+          onClick={() => {
+            setFav(!fav);
+            setFavCocktails([
+              ...favCocktails,
+              {
+                id: rest.id,
+                img: rest.img,
+                title: rest.title,
+                favStatus: true,
+              },
+            ]);
+          }}
+          icon={faHeart}
+        />
+      )}
+    </>
+  );
 };
 
 export default DisplayFavCocktail;
