@@ -25,6 +25,7 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
           width: "18px",
           height: "auto",
           marginRight: "15px",
+          cursor: "pointer",
         }}
         color="#00b9cd"
         onClick={() => removeIng(ingredientId)}
