@@ -16,11 +16,11 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
     setListIngredients(newListIngredients);
   };
 
-  const sortIngredients = () => {
+  const sortIngredients = (num1, num2) => {
     let listIngrSorted = list.sort(function (a, b) {
       let textA = a.name.toUpperCase();
       let textB = b.name.toUpperCase();
-      return textA < textB ? -1 : textA > textB ? 1 : 0;
+      return textA < textB ? num1 : textA > textB ? num2 : 0;
     });
     setListIngredients(listIngrSorted);
     setDisplaySortedIngr((prevState) => !prevState);
@@ -52,7 +52,15 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
         >
           Clear All
         </ButtonStyle>
-        <ButtonStyle onClick={() => sortIngredients()}>Sort A-Z</ButtonStyle>
+        <ButtonStyle
+          onClick={
+            displaySortedIngr
+              ? () => sortIngredients(1, -1)
+              : () => sortIngredients(-1, 1)
+          }
+        >
+          {displaySortedIngr ? "Sort Z - A" : "Sort A - Z"}
+        </ButtonStyle>
       </div>
     </div>
   );
