@@ -2,12 +2,7 @@ import styled from "styled-components";
 import img from "../img/accueil.jpg";
 
 const LogPage = styled.div`
-  background-image: url(${img});
-  background-size: cover;
-  background-position: top;
-  width: 375px;
-  height: 812px;
-  color: white;
+  color: black;
 
   input,
   button {

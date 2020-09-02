@@ -15,6 +15,9 @@ const GridLayout = styled.div`
       "search"
       "main";
   }
+  @media (min-width: 769px) {
+    margin-left: 60px;
+  }
 `;
 
 export default GridLayout;

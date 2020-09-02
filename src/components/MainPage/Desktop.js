@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Desktop = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     grid-area: main;
-    width: 95%;
     text-align: center;
+    width: 100%;
 
     img {
       width: 250px;
