@@ -18,10 +18,10 @@ const Navbar = () => {
       </Link>
       <Link to="/shoppinglistpage">
         <FontAwesomeIcon
-          icon="list"
+          icon="shopping-cart" //list
           style={{
             backgroundColor: "rgba(256,256,256,0)",
-            width: "24px",
+            width: "30px",
             height: "auto",
           }}
           color="#00b9cd"

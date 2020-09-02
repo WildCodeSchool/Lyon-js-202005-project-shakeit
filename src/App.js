@@ -12,26 +12,35 @@ import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Filters from "./containers/Filters";
 
-import './App.css'
+import { SnackbarProvider } from "notistack";
+
+import "./App.css";
 import {
   faHeart,
   faStar,
   faCocktail,
   faList,
   faUser,
+  faCartPlus,
+  faShoppingCart,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { Switch, Route } from "react-router-dom";
 import PopularCocktails from "./containers/PopularCocktails";
 
-library.add(faStar, faHeart, faCocktail, faList, faUser);
+library.add(
+  faStar,
+  faHeart,
+  faCocktail,
+  faList,
+  faUser,
+  faCartPlus,
+  faShoppingCart,
+  faMinus
+);
 
 export default function App() {
   const [listIngredients, setListIngredients] = useState([]);
-  
-
-
-
- 
 
   return (
     <>
@@ -39,26 +48,39 @@ export default function App() {
         <LoginDatabaseProvider>
           <AuthentProvider>
             <FavProvider>
-            <Route exact path="/" component={LoginPage} />
-            <PrivateRoute path="/main" component={MainPage} />
-            <PrivateRoute
-              path="/recipepage/:cocktailName"
-              component={RecipePage}
-              addIngredient={(ingredient) => {
-                setListIngredients([ingredient, ...listIngredients]);
-              }}
-            />
-            <PrivateRoute
-              path="/shoppinglistpage"
-              component={ShoppingListPage}
-              listIngredients={listIngredients}
-              setListIngredients={setListIngredients}
-            />
-            <PrivateRoute path="/profilpage" component={ProfilPage} />
-            <PrivateRoute path="/favoritepage" component={FavoritePage} />
-            <PrivateRoute path="/filters" component={Filters} />
-            <PrivateRoute path="/popularcocktails" component={PopularCocktails} />
-            
+              <Route exact path="/" component={LoginPage} />
+              <PrivateRoute path="/main" component={MainPage} />
+
+              <SnackbarProvider
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+                maxSnack={3}
+                autoHideDuration={2000}
+              >
+                <PrivateRoute
+                  path="/recipepage/:cocktailName"
+                  component={RecipePage}
+                  addIngredient={(ingredient) => {
+                    setListIngredients([ingredient, ...listIngredients]);
+                  }}
+                />
+                <PrivateRoute
+                  path="/shoppinglistpage"
+                  component={ShoppingListPage}
+                  listIngredients={listIngredients}
+                  setListIngredients={setListIngredients}
+                />
+              </SnackbarProvider>
+
+              <PrivateRoute path="/profilpage" component={ProfilPage} />
+              <PrivateRoute path="/favoritepage" component={FavoritePage} />
+              <PrivateRoute path="/filters" component={Filters} />
+              <PrivateRoute
+                path="/popularcocktails"
+                component={PopularCocktails}
+              />
             </FavProvider>
           </AuthentProvider>
         </LoginDatabaseProvider>
