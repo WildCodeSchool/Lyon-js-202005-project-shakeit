@@ -8,7 +8,6 @@ const Ingredients = ({ item, addIngredient }) => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleClickVariant = (variant) => {
-    console.log("hereee");
     // variant could be success, error, warning, info, or default
     enqueueSnackbar(`${item.name} added to the shopping list!`, {
       variant,
@@ -19,10 +18,11 @@ const Ingredients = ({ item, addIngredient }) => {
     <ListIngredient>
       <CocktailIngredient>
         <img
+          height="70px"
           src={`https://www.thecocktaildb.com/images/ingredients/${item.name}-Small.png`}
           alt={item.name}
         />
-        <span style={{ color: "#3DE0D7", paddingLeft: "15px" }}>
+        <span style={{ color: "black", paddingLeft: "15px" }}>
           {item.measure ? `${item.measure}` : null} {item.name}
         </span>
       </CocktailIngredient>

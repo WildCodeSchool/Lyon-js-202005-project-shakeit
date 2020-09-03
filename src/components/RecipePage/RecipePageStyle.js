@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const RecipePage = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: center;

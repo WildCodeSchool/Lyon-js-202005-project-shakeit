@@ -21,7 +21,7 @@ import {
   faUser,
   faCartPlus,
   faShoppingCart,
-  faMinus,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { Switch, Route } from "react-router-dom";
 import PopularCocktails from "./containers/PopularCocktails";
@@ -45,7 +45,7 @@ library.add(
   faUser,
   faCartPlus,
   faShoppingCart,
-  faMinus
+  faTimes
 );
 
 export default function App() {

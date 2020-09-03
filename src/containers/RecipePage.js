@@ -71,7 +71,7 @@ function RecipePage({ addIngredient, ...props }) {
         <CocktailInstructions>
           {dataRecipe.strInstructions}
         </CocktailInstructions>
-        <ul style={{ padding: "0" }}>{listOfIngredients}</ul>
+        <ul style={{ padding: "0", marginBottom: "0" }}>{listOfIngredients}</ul>
       </RecipePageStyle>
       <Footer>
         <Navbar />
