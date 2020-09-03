@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ButtonStyle from "../components/ShoppingList/ButtonStyle";
 import ShoppingListIngredient from "./ShoppingListIngredient";
-import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
 import Title from "./../components/MainPage/Title";
 
 const ShoppingListContent = ({ list, setListIngredients }) => {
@@ -40,27 +39,49 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
     });
   }
 
+  let displayButtonsClearSort = (
+    <>
+      <ButtonStyle
+        onClick={() => {
+          setListIngredients([]);
+        }}
+      >
+        Clear All
+      </ButtonStyle>
+      <ButtonStyle
+        onClick={
+          displaySortedIngr
+            ? () => sortIngredients(1, -1)
+            : () => sortIngredients(-1, 1)
+        }
+      >
+        {displaySortedIngr ? "Sort Z - A" : "Sort A - Z"}
+      </ButtonStyle>
+    </>
+  );
+
+  let emptyList = (
+    <>
+      <p
+        style={{
+          fontStyle: "italic",
+          color: "lightgrey",
+          padding: "20px 0 0 20px",
+        }}
+      >
+        Your shopping list is empty...
+      </p>
+    </>
+  );
+
   return (
     <div>
       <Title style={{ color: "rgba(0, 185, 205, 1)" }}>Shopping list</Title>
-      <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
-      <div>
-        <ButtonStyle
-          onClick={() => {
-            setListIngredients([]);
-          }}
-        >
-          Clear All
-        </ButtonStyle>
-        <ButtonStyle
-          onClick={
-            displaySortedIngr
-              ? () => sortIngredients(1, -1)
-              : () => sortIngredients(-1, 1)
-          }
-        >
-          {displaySortedIngr ? "Sort Z - A" : "Sort A - Z"}
-        </ButtonStyle>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        {list.length === 0 ? emptyList : displayButtonsClearSort}
+      </div>
+      <div className={list.length === 0 ? "" : "paperStack"}>
+        {listIngredients}
       </div>
     </div>
   );

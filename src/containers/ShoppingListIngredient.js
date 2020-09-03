@@ -9,7 +9,7 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
   };
 
   const styledIngName = {
-    color: "rgb(61, 224, 215)",
+    color: "black",
     alignSelf: "center",
     marginLeft: "15px",
   };
@@ -19,7 +19,7 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
       <div style={styledIngName}>{ingredient}</div>
 
       <FontAwesomeIcon
-        icon="minus"
+        icon="times"
         style={{
           backgroundColor: "rgba(256,256,256,0)",
           width: "18px",
