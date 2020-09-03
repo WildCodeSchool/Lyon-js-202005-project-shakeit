@@ -20,6 +20,7 @@ const ProfilePageCss = styled.div`
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
+    margin-left: 10%;
   }
   h2 {
     margin-left: 50px;
@@ -38,7 +39,7 @@ const ProfilePageCss = styled.div`
   }
   label {
     color: black;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-top: 10px;
   }
 
