@@ -79,8 +79,8 @@ const Filters = () => {
         </CocktailList>
       ))}
 
-<Link to="/popularcocktails">
-      <PopularCocktails />
+      <Link to="/popularcocktails">
+        <PopularCocktails />
       </Link>
       <Footer>
         <Navbar />
