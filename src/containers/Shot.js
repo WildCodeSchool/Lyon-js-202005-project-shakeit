@@ -6,6 +6,7 @@ import DisplayCocktail from "./DisplayCocktail";
 import Footer from "../components/MainPage/Footer";
 import Navbar from "./Navbar";
 import MenuBurger from "./MenuBurger";
+import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
 
 function Shot() {
   const [result, setResult] = useState([]);
@@ -18,23 +19,26 @@ function Shot() {
   }, []);
   console.log(result);
   return (
-    <>
+    <div>
       <MenuBurger />
-      {result.map((cocktail, i) => (
-        <CocktailList>
-          <DisplayCocktail
-            favCocktails={favCocktails}
-            setFavCocktails={setFavCocktails}
-            id={cocktail.idDrink}
-            img={cocktail.strDrinkThumb}
-            name={cocktail.strDrink}
-          />
-        </CocktailList>
-      ))}
+      <FavoriteDisplay>
+        {result.map((cocktail, i) => (
+          <CocktailList>
+            <DisplayCocktail
+              favCocktails={favCocktails}
+              setFavCocktails={setFavCocktails}
+              id={cocktail.idDrink}
+              img={cocktail.strDrinkThumb}
+              name={cocktail.strDrink}
+            />
+          </CocktailList>
+        ))}
+      </FavoriteDisplay>
+
       <Footer>
         <Navbar />
       </Footer>
-    </>
+    </div>
   );
 }
 

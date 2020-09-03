@@ -11,7 +11,7 @@ import MenuBurger from "./MenuBurger";
 
 const MainPage = () => {
   return (
-    <>
+    <div>
       <Global />
       <GridLayout>
         <MenuBurger />
@@ -25,7 +25,7 @@ const MainPage = () => {
       <Footer>
         <Navbar />
       </Footer>
-    </>
+    </div>
   );
 };
 
