@@ -37,6 +37,9 @@ const ProfilePageCss = styled.div`
     display: flex;
     margin-left: 30px;
   }
+  @media (min-width: 769px) {
+    margin-left: 60px;
+  }
 `;
 
 export default ProfilePageCss;

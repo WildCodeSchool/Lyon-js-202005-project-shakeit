@@ -63,16 +63,20 @@ function RecipePage({ addIngredient, ...props }) {
   }
 
   return (
-    <RecipePageStyle>
-      <MenuBurger />
-      <CocktailName>{dataRecipe.strDrink}</CocktailName>
-      <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
-      <CocktailInstructions>{dataRecipe.strInstructions}</CocktailInstructions>
-      <ul style={{ padding: "0" }}>{listOfIngredients}</ul>
+    <div>
+      <RecipePageStyle>
+        <MenuBurger />
+        <CocktailName>{dataRecipe.strDrink}</CocktailName>
+        <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+        <CocktailInstructions>
+          {dataRecipe.strInstructions}
+        </CocktailInstructions>
+        <ul style={{ padding: "0" }}>{listOfIngredients}</ul>
+      </RecipePageStyle>
       <Footer>
         <Navbar />
       </Footer>
-    </RecipePageStyle>
+    </div>
   );
 }
 

@@ -13,10 +13,12 @@ function ProfilePageContent() {
           <h3>Email: iron@man.com</h3>
           <button>Update my profile</button>
         </div>
+
         <div>
           <img src={tonyAvatar} alt="Avatar" width="170" />
         </div>
       </div>
+
       <hr />
       <Link to="/favoritepage">
         <div className="profilepage-arrow">

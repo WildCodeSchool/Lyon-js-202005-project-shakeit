@@ -8,7 +8,7 @@ import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import { FavContext } from "../context/FavContext";
 import DisplayCocktail from "./DisplayCocktail";
-import Desktop from "../components/MainPage/Desktop";
+import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
@@ -68,24 +68,22 @@ function DisplaySearch() {
         />
       </div>
 
-      <div>
+      <FavoriteDisplay>
         {cocktailName.map((item, i) => (
-          <Desktop>
-            <div key={i}>
-              <CocktailList>
-                <DisplayCocktail
-                  key={item.id}
-                  favCocktails={favCocktails}
-                  setFavCocktails={setFavCocktails}
-                  id={cocktailId[i]}
-                  name={cocktailName[i]}
-                  img={cocktailImage[i]}
-                />
-              </CocktailList>
-            </div>
-          </Desktop>
+          <div key={i}>
+            <CocktailList>
+              <DisplayCocktail
+                key={item.id}
+                favCocktails={favCocktails}
+                setFavCocktails={setFavCocktails}
+                id={cocktailId[i]}
+                name={cocktailName[i]}
+                img={cocktailImage[i]}
+              />
+            </CocktailList>
+          </div>
         ))}
-      </div>
+      </FavoriteDisplay>
     </>
   );
 }

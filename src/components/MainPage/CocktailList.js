@@ -17,6 +17,22 @@ const CocktailList = styled.div`
       box-shadow: 10px -8px rgba(0, 185, 205, 0.49);
     }
   }
+
+  @media (min-width: 769px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 250px;
+    text-align: center;
+    margin-left: 60px;
+
+    img {
+      width: 250px;
+      border-radius: 30% 15% / 10% 35%;
+      box-shadow: 10px -8px rgba(0, 185, 205, 0.49);
+    }
+  }
 `;
 
 export default CocktailList;
