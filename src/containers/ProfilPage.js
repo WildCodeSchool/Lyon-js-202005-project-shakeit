@@ -11,8 +11,9 @@ const ProfilPage = () => {
     <div>
       <MenuBurger />
       <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
-      <LogOut />
+
       <ProfilePageCss>
+        <LogOut />
         <ProfilePageContent />
       </ProfilePageCss>
 
