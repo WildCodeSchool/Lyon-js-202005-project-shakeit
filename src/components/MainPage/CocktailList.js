@@ -25,7 +25,7 @@ const CocktailList = styled.div`
     flex-wrap: wrap;
     width: 250px;
     text-align: center;
-    margin-left: 60px;
+    margin-left: 80px;
 
     img {
       width: 250px;
