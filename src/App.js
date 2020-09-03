@@ -11,9 +11,7 @@ import PrivateRoute from "./containers/PrivateRoute";
 import ProfilPage from "./containers/ProfilPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Filters from "./containers/Filters";
-
 import { SnackbarProvider } from "notistack";
-
 import "./App.css";
 import {
   faHeart,
@@ -27,6 +25,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Switch, Route } from "react-router-dom";
 import PopularCocktails from "./containers/PopularCocktails";
+import Beer from "./containers/Beer";
+import Shot from "./containers/Shot";
+import Soft from "./containers/Soft";
+import Punch from "./containers/Punch";
+import Other from "./containers/Other";
+import Ordinary from "./containers/Ordinary";
+import Milk from "./containers/Milk";
+import Homemade from "./containers/Homemade";
+import Coffee from "./containers/Coffee";
+import Cocoa from "./containers/Cocoa";
+import Cocktail from "./containers/Cocktail";
 
 library.add(
   faStar,
@@ -50,7 +59,6 @@ export default function App() {
             <FavProvider>
               <Route exact path="/" component={LoginPage} />
               <PrivateRoute path="/main" component={MainPage} />
-
               <SnackbarProvider
                 anchorOrigin={{
                   vertical: "bottom",
@@ -81,6 +89,17 @@ export default function App() {
                 path="/popularcocktails"
                 component={PopularCocktails}
               />
+              <PrivateRoute path="/beer" component={Beer} />
+              <PrivateRoute path="/soft" component={Soft} />
+              <PrivateRoute path="/shot" component={Shot} />
+              <PrivateRoute path="/punch" component={Punch} />
+              <PrivateRoute path="/ordinary" component={Ordinary} />
+              <PrivateRoute path="/other" component={Other} />
+              <PrivateRoute path="/milk" component={Milk} />
+              <PrivateRoute path="/homemade" component={Homemade} />
+              <PrivateRoute path="/coffee" component={Coffee} />
+              <PrivateRoute path="/cocoa" component={Cocoa} />
+              <PrivateRoute path="/cocktail" component={Cocktail} />
             </FavProvider>
           </AuthentProvider>
         </LoginDatabaseProvider>
