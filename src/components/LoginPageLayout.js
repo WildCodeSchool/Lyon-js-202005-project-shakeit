@@ -2,12 +2,15 @@ import styled from "styled-components";
 import img from "../img/accueil.jpg";
 
 const LogPage = styled.div`
-  background-image: url(${img});
-  background-size: cover;
-  background-position: top;
-  width: 375px;
-  height: 812px;
-  color: white;
+  color: black;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
   input,
   button {
@@ -15,18 +18,13 @@ const LogPage = styled.div`
     margin-top: 50px;
   }
 
-  input,
-  label,
+  label {
+    margin-right: 10px;
+  }
+
   input {
-    margin-left: 35px;
-  }
-
-  .labelForm {
-    margin-top: 350px;
-  }
-
-  .inputForm {
-    margin-top: 350px;
+    width: 200px;
+    box-shadow: 0em 0 1em grey;
   }
 `;
 

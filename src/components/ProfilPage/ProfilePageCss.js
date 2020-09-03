@@ -38,21 +38,9 @@ const ProfilePageCss = styled.div`
     margin-left: 30px;
   }
 
-  form {
-    margin-top: 20px;
-  }
+  @media (min-width: 769px) {
+    margin-left: 60px;
 
-  label {
-    width: 100px;
-    font-size: 1.5em;
-  }
-
-  input {
-    width: 180px;
-  }
-
-  .profil-box-bottom {
-    margin-bottom: 100px;
   }
 `;
 

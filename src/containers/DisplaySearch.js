@@ -8,6 +8,7 @@ import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import { FavContext } from "../context/FavContext";
 import DisplayCocktail from "./DisplayCocktail";
+import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
 
 function DisplaySearch() {
   const [value, setValue] = useState([]);
@@ -66,7 +67,8 @@ function DisplaySearch() {
           )}
         />
       </div>
-      <div>
+
+      <FavoriteDisplay>
         {cocktailName.map((item, i) => (
           <div key={i}>
             <CocktailList>
@@ -81,7 +83,7 @@ function DisplaySearch() {
             </CocktailList>
           </div>
         ))}
-      </div>
+      </FavoriteDisplay>
     </>
   );
 }

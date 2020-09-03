@@ -29,6 +29,7 @@ function ProfilePageContent() {
         <div>
           <img src={tonyAvatar} alt="Avatar" width="170" />
         </div>
+
         <div>
           <form>
             <p>
@@ -65,6 +66,7 @@ function ProfilePageContent() {
           </form>
         </div>
       </div>
+
       <hr />
       <div className="profil-box-bottom">
         <Link to="/favoritepage">

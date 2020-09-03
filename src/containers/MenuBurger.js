@@ -1,12 +1,13 @@
-import React from 'react';
-import * as ReactBootStrap from 'react-bootstrap';
+import React from "react";
+import * as ReactBootStrap from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 function MenuBurger(){
     return(
       <div >
     <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="" style={{backgroundColor:'white'}} variant="light">
       <Link to='/main'>
-  <ReactBootStrap.Navbar.Brand style={{color:'black',fontFamily:'Sacramento', fontSize:'220%', fontWeight:'bold'}}>Shake it</ReactBootStrap.Navbar.Brand>
+  <ReactBootStrap.Navbar.Brand style={{color:'black',fontFamily:'Sacramento', fontSize:'220%', fontWeight:'bold', marginLeft: "110px"}}>Shake it</ReactBootStrap.Navbar.Brand>
   </Link>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -55,5 +56,6 @@ function MenuBurger(){
 </ReactBootStrap.Navbar>
 </div>
 );
+
 }
 export default MenuBurger;
