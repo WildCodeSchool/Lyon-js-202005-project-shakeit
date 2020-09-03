@@ -4,24 +4,27 @@ import img from "../img/accueil.jpg";
 const LogPage = styled.div`
   color: black;
 
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
   input,
   button {
     border-radius: 7px;
     margin-top: 50px;
   }
 
-  input,
-  label,
+  label {
+    margin-right: 10px;
+  }
+
   input {
-    margin-left: 35px;
-  }
-
-  .labelForm {
-    margin-top: 350px;
-  }
-
-  .inputForm {
-    margin-top: 350px;
+    width: 200px;
+    box-shadow: 0em 0 1em grey;
   }
 `;
 
