@@ -6,13 +6,16 @@ import DisplayCocktail from "./DisplayCocktail";
 import Footer from "../components/MainPage/Footer";
 import Navbar from "./Navbar";
 import MenuBurger from "./MenuBurger";
+import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
 
 function Other() {
   const [result, setResult] = useState([]);
   const [favCocktails, setFavCocktails] = useContext(FavContext);
   useEffect(() => {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Other/Unknown")
+      .get(
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Other/Unknown"
+      )
       .then((response) => response.data)
       .then((data) => setResult(data.drinks));
   }, []);
@@ -20,17 +23,20 @@ function Other() {
   return (
     <>
       <MenuBurger />
-      {result.map((cocktail, i) => (
-        <CocktailList>
-          <DisplayCocktail
-            favCocktails={favCocktails}
-            setFavCocktails={setFavCocktails}
-            id={cocktail.idDrink}
-            img={cocktail.strDrinkThumb}
-            name={cocktail.strDrink}
-          />
-        </CocktailList>
-      ))}
+      <FavoriteDisplay>
+        {result.map((cocktail, i) => (
+          <CocktailList>
+            <DisplayCocktail
+              favCocktails={favCocktails}
+              setFavCocktails={setFavCocktails}
+              id={cocktail.idDrink}
+              img={cocktail.strDrinkThumb}
+              name={cocktail.strDrink}
+            />
+          </CocktailList>
+        ))}
+      </FavoriteDisplay>
+
       <Footer>
         <Navbar />
       </Footer>

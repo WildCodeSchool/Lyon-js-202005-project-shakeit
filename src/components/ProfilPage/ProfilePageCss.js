@@ -9,6 +9,7 @@ const ProfilePageCss = styled.div`
     margin-left: 10px;
     font-size: 0.7em;
     margin-bottom: 40px;
+    margin-top: 20px;
   }
 
   .button-submit {
@@ -19,8 +20,7 @@ const ProfilePageCss = styled.div`
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
-    margin-left: 80px;
-    width: 140px;
+    margin-left: 10%;
   }
   h2 {
     margin-left: 50px;
@@ -37,10 +37,14 @@ const ProfilePageCss = styled.div`
     display: flex;
     margin-left: 30px;
   }
+  label {
+    color: black;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
 
   @media (min-width: 769px) {
     margin-left: 60px;
-
   }
 `;
 

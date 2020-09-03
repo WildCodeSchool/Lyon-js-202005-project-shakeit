@@ -5,6 +5,7 @@ const CocktailImg = styled.img`
   max-width: 350px;
   margin: auto;
   display: flex;
+
   border-radius: 30% 15% / 10% 35%;
   box-shadow: 10px -8px rgba(0, 185, 205, 0.49);
 

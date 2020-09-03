@@ -83,6 +83,7 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
       <div className={list.length === 0 ? "" : "paperStack"}>
         {listIngredients}
       </div>
+
     </div>
   );
 };
