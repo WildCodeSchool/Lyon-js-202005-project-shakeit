@@ -6,6 +6,7 @@ import { AuthentContext } from "../../context/AuthentContext";
 import { LoginDatabaseContext } from "../../context/LoginDatabaseContext";
 import md5 from "md5-hash";
 import * as ReactBootStrap from "react-bootstrap";
+import logoAccueil from "../../img/logoAccueil.png";
 
 const LoginPage = (props) => {
   // USE CONTEXT
@@ -51,6 +52,9 @@ const LoginPage = (props) => {
         >
           Shake it
         </ReactBootStrap.Navbar.Brand>
+        <div className="img-container-log">
+          <img src={logoAccueil} alt="cocktail Logo" width="200px" />
+        </div>
 
         <Form
           loginForm={loginForm}

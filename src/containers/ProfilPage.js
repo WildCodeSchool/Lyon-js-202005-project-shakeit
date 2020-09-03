@@ -11,7 +11,10 @@ const ProfilPage = () => {
     <div>
       <MenuBurger />
       <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
-      <LogOut />
+      <div style={{ witdh: "100%", display: "flex", justifyContent: "center" }}>
+        <LogOut />
+      </div>
+
       <ProfilePageCss>
         <ProfilePageContent />
       </ProfilePageCss>

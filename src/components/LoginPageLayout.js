@@ -4,12 +4,20 @@ import img from "../img/accueil.jpg";
 const LogPage = styled.div`
   color: black;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   form {
     display: flex;
     flex-direction: column;
-    height: 70vh;
     align-items: center;
     justify-content: flex-end;
+  }
+  .img-container-log {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   input,

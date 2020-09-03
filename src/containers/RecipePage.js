@@ -64,8 +64,8 @@ function RecipePage({ addIngredient, ...props }) {
 
   return (
     <div>
+      <MenuBurger />
       <RecipePageStyle>
-        <MenuBurger />
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <CocktailInstructions>

@@ -7,6 +7,8 @@ import DisplayCocktail from "./DisplayCocktail";
 import Footer from "../components/MainPage/Footer";
 import Navbar from "./Navbar";
 import MenuBurger from "./MenuBurger";
+import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
+
 const PopularCocktails = () => {
   const [apiRequest, setApiRequest] = useState([]);
   const [famousCocktails, setFamousCocktails] = useState([
@@ -42,25 +44,28 @@ const PopularCocktails = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div>
         <MenuBurger />
       </div>
-      {apiRequest.map((cocktail, i) => (
-        <CocktailList>
-          <DisplayCocktail
-            favCocktails={favCocktails}
-            setFavCocktails={setFavCocktails}
-            id={cocktail.idDrink}
-            img={cocktail.strDrinkThumb}
-            name={cocktail.strDrink}
-          />
-        </CocktailList>
-      ))}
+      <FavoriteDisplay>
+        {apiRequest.map((cocktail, i) => (
+          <CocktailList>
+            <DisplayCocktail
+              favCocktails={favCocktails}
+              setFavCocktails={setFavCocktails}
+              id={cocktail.idDrink}
+              img={cocktail.strDrinkThumb}
+              name={cocktail.strDrink}
+            />
+          </CocktailList>
+        ))}
+      </FavoriteDisplay>
+
       <Footer>
         <Navbar />
       </Footer>
-    </>
+    </div>
   );
 };
 
