@@ -43,25 +43,27 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
   return (
     <div>
       <Title style={{ color: "rgba(0, 185, 205, 1)" }}>Shopping list</Title>
-      <ShoppingListContainer>{listIngredients}</ShoppingListContainer>
-      <div>
-        <ButtonStyle
-          onClick={() => {
-            setListIngredients([]);
-          }}
-        >
-          Clear All
-        </ButtonStyle>
-        <ButtonStyle
-          onClick={
-            displaySortedIngr
-              ? () => sortIngredients(1, -1)
-              : () => sortIngredients(-1, 1)
-          }
-        >
-          {displaySortedIngr ? "Sort Z - A" : "Sort A - Z"}
-        </ButtonStyle>
-      </div>
+      <ShoppingListContainer>
+        {listIngredients}
+        <div>
+          <ButtonStyle
+            onClick={() => {
+              setListIngredients([]);
+            }}
+          >
+            Clear All
+          </ButtonStyle>
+          <ButtonStyle
+            onClick={
+              displaySortedIngr
+                ? () => sortIngredients(1, -1)
+                : () => sortIngredients(-1, 1)
+            }
+          >
+            {displaySortedIngr ? "Sort Z - A" : "Sort A - Z"}
+          </ButtonStyle>
+        </div>
+      </ShoppingListContainer>
     </div>
   );
 };
