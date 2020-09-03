@@ -46,8 +46,6 @@ const PopularCocktails = () => {
       <div>
         <MenuBurger />
       </div>
-      <h2>Welcome Popular cocktails </h2>
-      <h3>{famousCocktails.length} cocktails</h3>
       {apiRequest.map((cocktail, i) => (
         <CocktailList>
           <DisplayCocktail
