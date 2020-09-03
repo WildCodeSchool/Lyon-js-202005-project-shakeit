@@ -50,7 +50,6 @@ export default function App() {
             <FavProvider>
               <Route exact path="/" component={LoginPage} />
               <PrivateRoute path="/main" component={MainPage} />
-
               <SnackbarProvider
                 anchorOrigin={{
                   vertical: "bottom",
@@ -77,10 +76,7 @@ export default function App() {
               <PrivateRoute path="/profilpage" component={ProfilPage} />
               <PrivateRoute path="/favoritepage" component={FavoritePage} />
               <PrivateRoute path="/filters" component={Filters} />
-              <PrivateRoute
-                path="/popularcocktails"
-                component={PopularCocktails}
-              />
+              <PrivateRoute path="/popularcocktails" component={PopularCocktails} />
             </FavProvider>
           </AuthentProvider>
         </LoginDatabaseProvider>

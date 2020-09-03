@@ -11,7 +11,9 @@ function MenuBurger(){
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">
+      <Link to='/popularcocktails'>
       <ReactBootStrap.Nav.Link href="#features">Most popular cocktails</ReactBootStrap.Nav.Link>
+      </Link>
       <ReactBootStrap.NavDropdown title="Sorted by categories" id="collasible-nav-dropdown">
         <ReactBootStrap.NavDropdown.Item href="#action/3.1">Ordinary Drink</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Item href="#action/3.2">Cocktail</ReactBootStrap.NavDropdown.Item>

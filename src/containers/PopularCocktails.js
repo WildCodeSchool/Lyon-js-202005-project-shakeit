@@ -9,7 +9,7 @@ import Header from "../components/MainPage/Header.js";
 import Navbar from "./Navbar";
 import CocktailLogo from "./Logo";
 import Title from "./../components/MainPage/Title";
-
+import MenuBurger from './MenuBurger';
 const PopularCocktails = () => {
     const [apiRequest,setApiRequest] = useState([]);
     const [famousCocktails,setFamousCocktails] = useState(["Margarita","Mojito","Rum Punch","Long Island ", "Daiquiri","Manhattan","Moscow Mule","Pina","sex on the beach","blue lagoon","cosmopolitan","Caipirinha","spritz","tequila sunrise"])
@@ -31,12 +31,7 @@ const PopularCocktails = () => {
     return(
         <>
         <div>
-        <Header>
-          <Link to="/main">
-            <CocktailLogo />
-          </Link>
-          <Title>ShakeIt</Title>
-        </Header>
+        <MenuBurger />
       </div>
     <h2>Welcome Popular cocktails </h2>
     <h3>{famousCocktails.length} cocktails</h3>
