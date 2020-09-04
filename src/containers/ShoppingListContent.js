@@ -76,14 +76,13 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
 
   return (
     <div>
-      <Title style={{ color: "rgba(0, 185, 205, 1)" }}>Shopping list</Title>
+      <Title>Shopping list</Title>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         {list.length === 0 ? emptyList : displayButtonsClearSort}
       </div>
       <div className={list.length === 0 ? "" : "paperStack"}>
         {listIngredients}
       </div>
-
     </div>
   );
 };

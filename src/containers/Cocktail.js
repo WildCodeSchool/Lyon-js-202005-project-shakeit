@@ -7,6 +7,7 @@ import Footer from "../components/MainPage/Footer";
 import Navbar from "./Navbar";
 import MenuBurger from "./MenuBurger";
 import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
+import Title from "./../components/MainPage/Title";
 
 function Cocktail() {
   const [result, setResult] = useState([]);
@@ -21,6 +22,7 @@ function Cocktail() {
   return (
     <>
       <MenuBurger />
+      <Title>Cocktails</Title>
       <FavoriteDisplay>
         {result.map((cocktail, i) => (
           <CocktailList>

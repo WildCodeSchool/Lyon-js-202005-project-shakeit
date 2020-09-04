@@ -5,13 +5,22 @@ import MenuBurger from "./MenuBurger";
 import Navbar from "./Navbar";
 import ProfilePageContent from "./ProfilePageContent";
 import ProfilePageCss from "../components/ProfilPage/ProfilePageCss";
+import Title from "./../components/MainPage/Title";
 
 const ProfilPage = () => {
   return (
     <div>
       <MenuBurger />
-      <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
-      <div style={{ witdh: "100%", display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          witdh: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Title>My Infos</Title>
+
         <LogOut />
       </div>
 
