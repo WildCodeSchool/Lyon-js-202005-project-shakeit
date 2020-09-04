@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import { FavContext } from "../context/FavContext";
 import CocktailList from "./../components/MainPage/CocktailList";
 import DisplayFavCocktail from "./DisplayFavCocktail";
+import Title from "./../components/MainPage/Title";
 
 const FavoritePage = () => {
   const [favCocktails, setFavCocktails] = useContext(FavContext);
@@ -15,9 +16,7 @@ const FavoritePage = () => {
     <div>
       <div>
         <MenuBurger />
-        <h1 style={{ color: "rgba(0, 185, 205,1)", textAlign: "center" }}>
-          My Favorites
-        </h1>
+        <Title>My Favorites</Title>
         <FavoriteDisplay>
           {favCocktails.map((cocktail) => (
             <CocktailList>

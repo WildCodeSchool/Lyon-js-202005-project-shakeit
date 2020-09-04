@@ -5,6 +5,7 @@ import MenuBurger from "./MenuBurger";
 import Navbar from "./Navbar";
 import ProfilePageContent from "./ProfilePageContent";
 import ProfilePageCss from "../components/ProfilPage/ProfilePageCss";
+import Title from "./../components/MainPage/Title";
 
 const ProfilPage = () => {
   return (
@@ -18,7 +19,7 @@ const ProfilPage = () => {
           alignItems: "center",
         }}
       >
-        <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
+        <Title>My Infos</Title>
 
         <LogOut />
       </div>
