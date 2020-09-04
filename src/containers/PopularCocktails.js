@@ -8,6 +8,7 @@ import Footer from "../components/MainPage/Footer";
 import Navbar from "./Navbar";
 import MenuBurger from "./MenuBurger";
 import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
+import Title from "./../components/MainPage/Title";
 
 const PopularCocktails = () => {
   const [apiRequest, setApiRequest] = useState([]);
@@ -48,6 +49,7 @@ const PopularCocktails = () => {
       <div>
         <MenuBurger />
       </div>
+      <Title>Popular Cocktails</Title>
       <FavoriteDisplay>
         {apiRequest.map((cocktail, i) => (
           <CocktailList>
