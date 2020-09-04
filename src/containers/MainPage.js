@@ -13,8 +13,9 @@ const MainPage = () => {
   return (
     <div>
       <Global />
-      <GridLayout>
         <MenuBurger />
+        <GridLayout>
+        
         <Search style={{ marginTop: "10px" }}>
           <DisplaySearch />
         </Search>
