@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ButtonStyle from "../components/ShoppingList/ButtonStyle";
 import ShoppingListIngredient from "./ShoppingListIngredient";
+import ShoppingListContainer from "./../components/ShoppingList/ShoppingListContainer";
+import ShoppingListContainerButtons from "./../components/ShoppingList/ShoppingListContainerButtons";
 import Title from "./../components/MainPage/Title";
 
 const ShoppingListContent = ({ list, setListIngredients }) => {
@@ -77,11 +79,15 @@ const ShoppingListContent = ({ list, setListIngredients }) => {
   return (
     <div>
       <Title>Shopping list</Title>
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <ShoppingListContainerButtons>
         {list.length === 0 ? emptyList : displayButtonsClearSort}
-      </div>
-      <div className={list.length === 0 ? "" : "paperStack"}>
-        {listIngredients}
+      </ShoppingListContainerButtons>
+      <div style={{ display: "flex" }}>
+        <ShoppingListContainer
+          className={list.length === 0 ? "" : "paperStack"}
+        >
+          {listIngredients}
+        </ShoppingListContainer>
       </div>
     </div>
   );
