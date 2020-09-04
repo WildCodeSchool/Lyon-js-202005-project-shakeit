@@ -10,8 +10,16 @@ const ProfilPage = () => {
   return (
     <div>
       <MenuBurger />
-      <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
-      <div style={{ witdh: "100%", display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          witdh: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Infos</h1>
+
         <LogOut />
       </div>
 

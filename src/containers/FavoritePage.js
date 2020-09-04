@@ -15,7 +15,9 @@ const FavoritePage = () => {
     <div>
       <div>
         <MenuBurger />
-        <h1 style={{ color: "rgba(0, 185, 205,1)" }}>My Favorites</h1>
+        <h1 style={{ color: "rgba(0, 185, 205,1)", textAlign: "center" }}>
+          My Favorites
+        </h1>
         <FavoriteDisplay>
           {favCocktails.map((cocktail) => (
             <CocktailList>
