@@ -11,10 +11,34 @@ import CocktailName from "./../components/RecipePage/CocktailName";
 import CocktailInstructions from "./../components/RecipePage/CocktailInstructions";
 import RecipePageStyle from "../components/RecipePage/RecipePageStyle";
 import Subtitle from "./../components/MainPage/Subtitle";
+import Rating from "@material-ui/lab/Rating";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 function RecipePage({ addIngredient, ...props }) {
   const [dataRecipe, setDataRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [rate, setRate] = useState(1);
+  const [avg, setAvg] = useState(0);
+
+  const avgGet = (dataId) => {
+    fetch("http://localhost:9000/rates", { method: "GET" })
+      .then((response) => 
+        
+        response.json())
+      .then((json) => {
+        if (dataId !== null) {
+          const avgFilters = json.filter(
+            (cocktail) => cocktail["_id"] === dataId
+          );
+          avgFilters.length
+            ? setAvg(Math.round(avgFilters[0].average * 10) / 10)
+            : setAvg(null);
+        } else {
+          console.log("dataId :", dataId);
+        }
+      });
+  };
 
   const getDetailedRecipe = () => {
     axios
@@ -25,12 +49,30 @@ function RecipePage({ addIngredient, ...props }) {
       .then((data) => {
         setDataRecipe(data.drinks[0]);
         setLoading(false);
+        avgGet(data.drinks[0].idDrink);
       });
   };
 
   useEffect(() => {
     getDetailedRecipe();
-  }, []);
+  }, [rate]);
+
+  const handleClick = (newValue) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
+    };
+
+    fetch("http://localhost:9000/rates", requestOptions).then(
+      (response) => {
+        
+        setTimeout(() => {
+          setRate(0);
+        }, 1000);
+      }
+    );
+  };
 
   const getIngredients = (dataRecipe) => {
     let ingredients = [];
@@ -68,10 +110,42 @@ function RecipePage({ addIngredient, ...props }) {
       <RecipePageStyle>
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
+        <Box component="fieldset" mb={3} borderColor="transparent">
+            
+            <Rating
+              name="rating"
+              value={avg}
+              precision={0.1}
+              onChange={(event, newValue) => {
+                handleClick(newValue);
+                setRate(newValue);
+              }}
+            />
+            {avg === null ?
+              `0 / 5` : `${avg} / 5` }
+             {console.log(avg)}
+          </Box>
+          
+        
         <CocktailInstructions>
           {dataRecipe.strInstructions}
         </CocktailInstructions>
         <ul style={{ padding: "0", marginBottom: "0" }}>{listOfIngredients}</ul>
+        <div>
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Typography component="legend">Rate this cocktail!</Typography>
+            <Rating
+              name="rating"
+              value={rate}
+              precision={0.5}
+              onChange={(event, newValue) => {
+                handleClick(newValue);
+                setRate(newValue);
+              }}
+            />
+          </Box>
+        </div>
+        
       </RecipePageStyle>
       <Footer>
         <Navbar />
