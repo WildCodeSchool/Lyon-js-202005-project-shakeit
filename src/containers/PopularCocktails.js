@@ -52,7 +52,7 @@ const PopularCocktails = () => {
       <Title>Popular Cocktails</Title>
       <FavoriteDisplay>
         {apiRequest.map((cocktail, i) => (
-          <CocktailList>
+          <CocktailList key={cocktail.strDrink}>
             <DisplayCocktail
               favCocktails={favCocktails}
               setFavCocktails={setFavCocktails}
