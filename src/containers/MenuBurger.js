@@ -28,70 +28,46 @@ function MenuBurger() {
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
-            <Link to="/popularcocktails">
-              <ReactBootStrap.Nav.Link href="#features">
-                Most popular cocktails
-              </ReactBootStrap.Nav.Link>
-            </Link>
+            <ReactBootStrap.Nav.Link href="/popularcocktails">
+              Most popular cocktails
+            </ReactBootStrap.Nav.Link>
             <ReactBootStrap.NavDropdown
               title="Sorted by categories"
               id="collasible-nav-dropdown"
             >
-              <Link to="/ordinary">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.1">
-                  Ordinary Drink
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/cocktail">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.2">
-                  Cocktail
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/milk">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Milk / Float / Shake
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/other">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Other / Unknown
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/cocoa">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Cocoa
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/shot">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Shot
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/coffee">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Coffee / Tea
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/homemade">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Homemade Liqueur
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/punch">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Punch / Party Drink
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/beer">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Beer
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
-              <Link to="/soft">
-                <ReactBootStrap.NavDropdown.Item href="#action/3.3">
-                  Soft Drink / Soda
-                </ReactBootStrap.NavDropdown.Item>
-              </Link>
+              <ReactBootStrap.NavDropdown.Item href="/ordinary">
+                Ordinary Drink
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/cocktail">
+                Cocktail
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/milk">
+                Milk / Float / Shake
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/other">
+                Other / Unknown
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/cocoa">
+                Cocoa
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/shot">
+                Shot
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="coffee">
+                Coffee / Tea
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/homemade">
+                Homemade Liqueur
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/punch">
+                Punch / Party Drink
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/beer">
+                Beer
+              </ReactBootStrap.NavDropdown.Item>
+              <ReactBootStrap.NavDropdown.Item href="/soft">
+                Soft Drink / Soda
+              </ReactBootStrap.NavDropdown.Item>
               <ReactBootStrap.NavDropdown.Divider />
             </ReactBootStrap.NavDropdown>
           </ReactBootStrap.Nav>
