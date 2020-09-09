@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import FavoritePage from "./containers/FavoritePage";
 import MainPage from "./containers/MainPage.js";
 import RecipePage from "./containers/RecipePage.js";
