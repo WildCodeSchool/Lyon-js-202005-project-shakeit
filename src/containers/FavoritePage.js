@@ -18,9 +18,8 @@ const FavoritePage = () => {
         <Title>My Favorites</Title>
         <FavoriteDisplay>
           {favCocktails.map((cocktail) => (
-            <CocktailList>
+            <CocktailList key={cocktail.id}>
               <DisplayFavCocktail
-                key={cocktail.id}
                 favCocktails={favCocktails}
                 setFavCocktails={setFavCocktails}
                 name={cocktail.title}
