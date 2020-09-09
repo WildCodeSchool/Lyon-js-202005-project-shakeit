@@ -23,9 +23,7 @@ function RecipePage({ addIngredient, ...props }) {
 
   const avgGet = (dataId) => {
     fetch("http://localhost:9000/rates", { method: "GET" })
-      .then((response) => 
-        
-        response.json())
+      .then((response) => response.json())
       .then((json) => {
         if (dataId !== null) {
           const avgFilters = json.filter(
@@ -40,7 +38,7 @@ function RecipePage({ addIngredient, ...props }) {
       });
   };
 
-  const getDetailedRecipe = () => {
+  useEffect(() => {
     axios
       .get(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${props.match.params.cocktailName}`
@@ -51,10 +49,6 @@ function RecipePage({ addIngredient, ...props }) {
         setLoading(false);
         avgGet(data.drinks[0].idDrink);
       });
-  };
-
-  useEffect(() => {
-    getDetailedRecipe();
   }, [rate]);
 
   const handleClick = (newValue) => {
@@ -64,14 +58,11 @@ function RecipePage({ addIngredient, ...props }) {
       body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
     };
 
-    fetch("http://localhost:9000/rates", requestOptions).then(
-      (response) => {
-        
-        setTimeout(() => {
-          setRate(0);
-        }, 1000);
-      }
-    );
+    fetch("http://localhost:9000/rates", requestOptions).then((response) => {
+      setTimeout(() => {
+        setRate(0);
+      }, 1000);
+    });
   };
 
   const getIngredients = (dataRecipe) => {
@@ -111,23 +102,22 @@ function RecipePage({ addIngredient, ...props }) {
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <Box component="fieldset" mb={3} borderColor="transparent">
-            
-            <Rating
-              name="rating"
-              value={avg}
-              precision={0.1}
-              onChange={(event, newValue) => {
-                handleClick(newValue);
-                setRate(newValue);
-              }}
-            />
-            {avg === null ?
-              `(0 / 5)` : `(${avg} / 5)npm start
-              ` }
-             {console.log(avg)}
-          </Box>
-          
-        
+          <Rating
+            name="rating"
+            value={avg}
+            precision={0.1}
+            onChange={(event, newValue) => {
+              handleClick(newValue);
+              setRate(newValue);
+            }}
+          />
+          {avg === null
+            ? `(0 / 5)`
+            : `(${avg} / 5)npm start
+              `}
+          {console.log(avg)}
+        </Box>
+
         <CocktailInstructions>
           {dataRecipe.strInstructions}
         </CocktailInstructions>
@@ -146,7 +136,6 @@ function RecipePage({ addIngredient, ...props }) {
             />
           </Box>
         </div>
-        
       </RecipePageStyle>
       <Footer>
         <Navbar />

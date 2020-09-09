@@ -7,9 +7,27 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import CocktailList from "./../components/MainPage/CocktailList";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 
+import { useSnackbar } from "notistack";
+
 function RandomCocktail({ favCocktails, setFavCocktails }) {
   const [dataRecipe, setDataRecipe] = useState({});
   const [fav, setFav] = useState(false);
+
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleClickSuccess = (variant) => {
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar(`${dataRecipe.strDrink} added to your favorites!`, {
+      variant,
+    });
+  };
+
+  const handleClickError = (variant) => {
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar(`${dataRecipe.strDrink} removed from your favorites!`, {
+      variant,
+    });
+  };
 
   const getRandomCocktail = () => {
     axios
@@ -24,8 +42,6 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
     getRandomCocktail();
   }, []);
 
-  
-
   return (
     <CocktailList>
       <Link to={`/recipePage/${dataRecipe.strDrink}`}>
@@ -36,8 +52,8 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
         <FontAwesomeIcon
           style={{ color: "red" }}
           onClick={() => {
+            handleClickError("error");
             setFav(!fav);
-
             const filteredCocktails = favCocktails.filter(
               (cocktail) => cocktail.id !== dataRecipe.idDrink
             );
@@ -49,6 +65,7 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
         <FontAwesomeIcon
           style={{ color: "red" }}
           onClick={() => {
+            handleClickSuccess("success");
             setFav(!fav);
             setFavCocktails([
               ...favCocktails,
@@ -63,7 +80,6 @@ function RandomCocktail({ favCocktails, setFavCocktails }) {
           icon={faHeart}
         />
       )}
-
     </CocktailList>
   );
 }

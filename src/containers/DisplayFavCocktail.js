@@ -3,8 +3,19 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CocktailRate from "./../components/MainPage/CocktailRate";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { useSnackbar } from "notistack";
+
 const DisplayFavCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
   const [fav, setFav] = useState(true);
+
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleClickError = (variant) => {
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar(`${rest.name} removed from your favorites!`, {
+      variant,
+    });
+  };
 
   return (
     <>
@@ -16,6 +27,7 @@ const DisplayFavCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
         <FontAwesomeIcon
           style={{ color: "red" }}
           onClick={() => {
+            handleClickError("error");
             setFav(!fav);
             const filteredCocktails = favCocktails.filter(
               (favcocktail) => rest.id !== favcocktail.id
@@ -28,6 +40,7 @@ const DisplayFavCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
         <FontAwesomeIcon
           style={{ color: "red" }}
           onClick={() => {
+            console.log("ho-displayFav"); // Utile??
             setFav(!fav);
             setFavCocktails([
               ...favCocktails,
