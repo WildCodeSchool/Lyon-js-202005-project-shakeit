@@ -20,23 +20,42 @@ function RecipePage({ addIngredient, ...props }) {
   const [loading, setLoading] = useState(true);
   const [rate, setRate] = useState(1);
   const [avg, setAvg] = useState(0);
+  const [nbRates,setNbRates] = useState(0)
 
-  const avgGet = (dataId) => {
+ 
+
+  const avgGet= (dataId) => {
+
     fetch("http://localhost:9000/rates", { method: "GET" })
-      .then((response) => response.json())
-      .then((json) => {
-        if (dataId !== null) {
-          const avgFilters = json.filter(
-            (cocktail) => cocktail["_id"] === dataId
-          );
-          avgFilters.length
-            ? setAvg(Math.round(avgFilters[0].average * 10) / 10)
-            : setAvg(null);
-        } else {
-          console.log("dataId :", dataId);
-        }
-      });
-  };
+
+    .then((response) =>  response.json())
+    .then (json => {
+
+console.log(json['avg'])
+      if (dataId !== null) {
+
+        // Get Nb Rates
+      const FilteredRates = json['nbRates'].filter (  rate => rate._id === dataId)
+
+      FilteredRates.length ? 
+      setNbRates(FilteredRates[0]['NbRates']) :
+      setNbRates(0)
+
+      // Get Avg Rate
+
+      const avgFilters = json['avg'].filter(
+                  (cocktail) => cocktail["_id"] === dataId
+                );
+                avgFilters.length
+                  ? setAvg(Math.round(avgFilters[0].average * 10) / 10)
+                  : setAvg(null);
+    }
+
+    })
+
+
+  }
+
 
   const getDetailedRecipe = () => {
     axios
@@ -106,21 +125,24 @@ function RecipePage({ addIngredient, ...props }) {
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <Box component="fieldset" mb={3} borderColor="transparent">
-          <Rating
-            name="rating"
-            value={avg}
-            precision={0.1}
-            onChange={(event, newValue) => {
-              handleClick(newValue);
-              setRate(newValue);
-            }}
-          />
-          {avg === null
-            ? `(0 / 5)`
-            : `(${avg} / 5)
-              `}
-          {console.log(avg)}
-        </Box>
+
+            
+            <Rating
+              name="rating"
+              value={avg}
+              precision={0.1}
+              onChange={(event, newValue) => {
+                handleClick(newValue);
+                setRate(newValue);
+              }}
+            />
+            {avg === null ?
+              `( 0 / 5 - 0 Votes )` : ` (${avg} / 5 - ${nbRates} Votes )
+              ` }
+             {console.log(avg)}
+          </Box>
+          
+        
 
         <CocktailInstructions>
           {dataRecipe.strInstructions}
