@@ -27,6 +27,7 @@ function RecipePage({ addIngredient, ...props }) {
   const avgGet= (dataId) => {
 
     fetch("http://localhost:9000/rates", { method: "GET" })
+
     .then((response) =>  response.json())
     .then (json => {
 
@@ -55,6 +56,7 @@ console.log(json['avg'])
 
   }
 
+
   const getDetailedRecipe = () => {
     axios
       .get(
@@ -79,14 +81,11 @@ console.log(json['avg'])
       body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
     };
 
-    fetch("http://localhost:9000/rates", requestOptions).then(
-      (response) => {
-        
-        setTimeout(() => {
-          setRate(0);
-        }, 1000);
-      }
-    );
+    fetch("http://localhost:9000/rates", requestOptions).then((response) => {
+      setTimeout(() => {
+        setRate(0);
+      }, 1000);
+    });
   };
 
   const getIngredients = (dataRecipe) => {
@@ -126,6 +125,7 @@ console.log(json['avg'])
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <Box component="fieldset" mb={3} borderColor="transparent">
+
             
             <Rating
               name="rating"
@@ -143,6 +143,7 @@ console.log(json['avg'])
           </Box>
           
         
+
         <CocktailInstructions>
           {dataRecipe.strInstructions}
         </CocktailInstructions>
@@ -161,7 +162,6 @@ console.log(json['avg'])
             />
           </Box>
         </div>
-        
       </RecipePageStyle>
       <Footer>
         <Navbar />

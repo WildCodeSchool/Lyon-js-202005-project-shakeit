@@ -19,7 +19,6 @@ function MenuBurger() {
               fontFamily: "Sacramento",
               fontSize: "220%",
               fontWeight: "bold",
-              marginLeft: "110px",
             }}
           >
             Shake it
