@@ -20,14 +20,13 @@ function Coffee() {
       .then((response) => response.data)
       .then((data) => setResult(data.drinks));
   }, []);
-  console.log(result);
   return (
     <>
       <MenuBurger />
       <Title>Cocktails with Coffee</Title>
       <FavoriteDisplay>
         {result.map((cocktail, i) => (
-          <CocktailList>
+          <CocktailList key={cocktail.strDrink}>
             <DisplayCocktail
               favCocktails={favCocktails}
               setFavCocktails={setFavCocktails}

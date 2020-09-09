@@ -27,7 +27,7 @@ function Other() {
       <Title>Other</Title>
       <FavoriteDisplay>
         {result.map((cocktail, i) => (
-          <CocktailList>
+          <CocktailList key={cocktail.strDrink}>
             <DisplayCocktail
               favCocktails={favCocktails}
               setFavCocktails={setFavCocktails}
