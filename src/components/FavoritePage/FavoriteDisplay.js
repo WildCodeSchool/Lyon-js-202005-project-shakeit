@@ -8,6 +8,7 @@ const FavoriteDisplay = styled.div`
     justify-content: space-around;
     align-items: center;
   }
+  margin-bottom: 80px;
 `;
 
 export default FavoriteDisplay;

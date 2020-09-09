@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import FavoriteDisplay from "../components/FavoritePage/FavoriteDisplay";
 import Footer from "../components/MainPage/Footer";
 import MenuBurger from "./MenuBurger";
@@ -10,7 +10,6 @@ import Title from "./../components/MainPage/Title";
 
 const FavoritePage = () => {
   const [favCocktails, setFavCocktails] = useContext(FavContext);
-  const [fav, setFav] = useState(true);
 
   return (
     <div>
