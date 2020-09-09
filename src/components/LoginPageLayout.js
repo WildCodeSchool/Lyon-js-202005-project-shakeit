@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import img from "../img/accueil.jpg";
 
 const LogPage = styled.div`
   color: black;
