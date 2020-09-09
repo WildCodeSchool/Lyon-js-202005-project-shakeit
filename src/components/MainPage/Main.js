@@ -6,7 +6,7 @@ const Main = styled.div`
   flex-direction: column;
   overflow-y: scroll;
   margin: auto;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   align-items: center;
   width: 90%;
 `;
