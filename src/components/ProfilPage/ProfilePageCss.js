@@ -6,10 +6,15 @@ const ProfilePageCss = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    margin-left: 10px;
     font-size: 0.7em;
     margin-bottom: 40px;
     margin-top: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .button-submit {
@@ -20,7 +25,7 @@ const ProfilePageCss = styled.div`
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
-    margin-left: 10%;
+    width: 150px;
   }
   h2 {
     margin-left: 50px;
@@ -35,16 +40,13 @@ const ProfilePageCss = styled.div`
 
   .profilepage-arrow {
     display: flex;
-    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
   }
   label {
     color: black;
     margin-right: 20px;
     margin-top: 10px;
-  }
-
-  @media (min-width: 769px) {
-    margin-left: 60px;
   }
 `;
 
