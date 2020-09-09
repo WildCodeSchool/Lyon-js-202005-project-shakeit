@@ -1,13 +1,8 @@
 import React from "react";
+import ShoppListIngrContainer from "./../components/ShoppingList/ShoppListIngrContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
-  const styledDiv = {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "10px 0",
-  };
-
   const styledIngName = {
     color: "black",
     alignSelf: "center",
@@ -15,7 +10,7 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
   };
 
   return (
-    <div style={styledDiv}>
+    <ShoppListIngrContainer>
       <div style={styledIngName}>{ingredient}</div>
 
       <FontAwesomeIcon
@@ -30,7 +25,7 @@ const ShoppingListIngredient = ({ ingredient, ingredientId, removeIng }) => {
         color="#00b9cd"
         onClick={() => removeIng(ingredientId)}
       />
-    </div>
+    </ShoppListIngrContainer>
   );
 };
 
