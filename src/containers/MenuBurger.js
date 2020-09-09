@@ -53,7 +53,7 @@ function MenuBurger() {
               <ReactBootStrap.NavDropdown.Item href="/shot">
                 Shot
               </ReactBootStrap.NavDropdown.Item>
-              <ReactBootStrap.NavDropdown.Item href="coffee">
+              <ReactBootStrap.NavDropdown.Item href="/coffee">
                 Coffee / Tea
               </ReactBootStrap.NavDropdown.Item>
               <ReactBootStrap.NavDropdown.Item href="/homemade">
