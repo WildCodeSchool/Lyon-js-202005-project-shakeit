@@ -117,7 +117,7 @@ function RecipePage({ addIngredient, ...props }) {
           />
           {avg === null
             ? `(0 / 5)`
-            : `(${avg} / 5)npm start
+            : `(${avg} / 5)
               `}
           {console.log(avg)}
         </Box>
