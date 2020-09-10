@@ -40,7 +40,6 @@ const DisplayFavCocktail = ({ favCocktails, setFavCocktails, ...rest }) => {
         <FontAwesomeIcon
           style={{ color: "red" }}
           onClick={() => {
-            console.log("ho-displayFav"); // Utile??
             setFav(!fav);
             setFavCocktails([
               ...favCocktails,
