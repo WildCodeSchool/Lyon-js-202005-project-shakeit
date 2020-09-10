@@ -26,7 +26,7 @@ function RecipePage({ addIngredient, ...props }) {
 
   const avgGet= (dataId) => {
 
-    fetch("http://localhost:9000/rates", { method: "GET" })
+    fetch("http://51.210.47.134:9000/rates", { method: "GET" })
 
     .then((response) =>  response.json())
     .then (json => {
@@ -81,7 +81,7 @@ console.log(json['avg'])
       body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
     };
 
-    fetch("http://localhost:9000/rates", requestOptions).then((response) => {
+    fetch("http://51.210.47.134:9000/rates", requestOptions).then((response) => {
       setTimeout(() => {
         setRate(0);
       }, 1000);
