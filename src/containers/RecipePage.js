@@ -26,7 +26,7 @@ function RecipePage({ addIngredient, ...props }) {
 
   const avgGet= (dataId) => {
 
-    fetch("http://51.210.47.134:9000/rates", { method: "GET" })
+    fetch("https://shakeit.social-car.fr/rates", { method: "GET" })
 
     .then((response) =>  response.json())
     .then (json => {
@@ -77,7 +77,7 @@ function RecipePage({ addIngredient, ...props }) {
       body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
     };
 
-    fetch("http://51.210.47.134:9000/rates", requestOptions).then((response) => {
+    fetch("https://shakeit.social-car.fr/rates", requestOptions).then((response) => {
       setTimeout(() => {
         setRate(0);
       }, 1000);
