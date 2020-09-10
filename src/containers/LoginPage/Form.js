@@ -17,7 +17,7 @@ const Form = (props) => {
         </div>
         <br></br>
         <LogButton type="submit" marginleft={150} width={100}>
-          Sign Up
+          Sign In
         </LogButton>
       </form>
     </>
