@@ -1,4 +1,5 @@
 import React, {createContext} from 'react';
+import { useEffect } from 'react';
 
 
 export const LoginDatabaseContext= createContext();
@@ -6,10 +7,22 @@ export const LoginDatabaseContext= createContext();
 
 export const LoginDatabaseProvider = (props) => {
 
-    const identifiants = {
-        login: "1d665b9b1467944c128a5575119d1cfd", //f
-        mdp: "5cef00a3b11989380be79e59b26f8f19"  //
-      };
+
+useEffect(() => {
+
+    fetch("https://shakeit.social-car.fr/users/login")
+    .then ( response => response.json())
+    .then ( json =>{
+    
+    identifiants.login = json[0]['login']
+    identifiants.mdp= json[0]['mdp']
+
+
+},[])
+
+})
+
+const identifiants = {};
 
      
      
