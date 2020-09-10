@@ -13,8 +13,8 @@ const LoginPage = (props) => {
   const identifiants = useContext(LoginDatabaseContext);
   const [auth, setAuth] = useContext(AuthentContext);
 
-  const [Login, setLogin] = useState("p2");
-  const [Mdp, setMdp] = useState("p2mdp");
+  const [Login, setLogin] = useState(identifiants.login);
+  const [Mdp, setMdp] = useState(identifiants.mdp);
 
   const loginHandleChange = (e) => {
     setLogin(e.target.value);
