@@ -31,7 +31,7 @@ function RecipePage({ addIngredient, ...props }) {
     .then((response) =>  response.json())
     .then (json => {
 
-console.log(json['avg'])
+
       if (dataId !== null) {
 
         // Get Nb Rates
@@ -133,13 +133,13 @@ console.log(json['avg'])
               precision={0.1}
               onChange={(event, newValue) => {
                 handleClick(newValue);
-                setRate(newValue);
+                // setRate(newValue);
               }}
             />
             {avg === null ?
               `( 0 / 5 - 0 Votes )` : ` (${avg} / 5 - ${nbRates} Votes )
               ` }
-             {console.log(avg)}
+            
           </Box>
           
         
