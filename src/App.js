@@ -58,7 +58,6 @@ export default function App() {
           <AuthentProvider>
             <FavProvider>
               <Route exact path="/" component={LoginPage} />
-              <PrivateRoute path="/main" component={MainPage} />
               <SnackbarProvider
                 anchorOrigin={{
                   vertical: "bottom",
@@ -67,6 +66,7 @@ export default function App() {
                 maxSnack={3}
                 autoHideDuration={2000}
               >
+                <PrivateRoute path="/main" component={MainPage} />
                 <PrivateRoute
                   path="/recipepage/:cocktailName"
                   component={RecipePage}
@@ -80,26 +80,26 @@ export default function App() {
                   listIngredients={listIngredients}
                   setListIngredients={setListIngredients}
                 />
-              </SnackbarProvider>
 
-              <PrivateRoute path="/profilpage" component={ProfilPage} />
-              <PrivateRoute path="/favoritepage" component={FavoritePage} />
-              <PrivateRoute path="/filters" component={Filters} />
-              <PrivateRoute
-                path="/popularcocktails"
-                component={PopularCocktails}
-              />
-              <PrivateRoute path="/beer" component={Beer} />
-              <PrivateRoute path="/soft" component={Soft} />
-              <PrivateRoute path="/shot" component={Shot} />
-              <PrivateRoute path="/punch" component={Punch} />
-              <PrivateRoute path="/ordinary" component={Ordinary} />
-              <PrivateRoute path="/other" component={Other} />
-              <PrivateRoute path="/milk" component={Milk} />
-              <PrivateRoute path="/homemade" component={Homemade} />
-              <PrivateRoute path="/coffee" component={Coffee} />
-              <PrivateRoute path="/cocoa" component={Cocoa} />
-              <PrivateRoute path="/cocktail" component={Cocktail} />
+                <PrivateRoute path="/profilpage" component={ProfilPage} />
+                <PrivateRoute path="/favoritepage" component={FavoritePage} />
+                <PrivateRoute path="/filters" component={Filters} />
+                <PrivateRoute
+                  path="/popularcocktails"
+                  component={PopularCocktails}
+                />
+                <PrivateRoute path="/beer" component={Beer} />
+                <PrivateRoute path="/soft" component={Soft} />
+                <PrivateRoute path="/shot" component={Shot} />
+                <PrivateRoute path="/punch" component={Punch} />
+                <PrivateRoute path="/ordinary" component={Ordinary} />
+                <PrivateRoute path="/other" component={Other} />
+                <PrivateRoute path="/milk" component={Milk} />
+                <PrivateRoute path="/homemade" component={Homemade} />
+                <PrivateRoute path="/coffee" component={Coffee} />
+                <PrivateRoute path="/cocoa" component={Cocoa} />
+                <PrivateRoute path="/cocktail" component={Cocktail} />
+              </SnackbarProvider>
             </FavProvider>
           </AuthentProvider>
         </LoginDatabaseProvider>

@@ -57,7 +57,7 @@ function RecipePage({ addIngredient, ...props }) {
   }
 
 
-  const getDetailedRecipe = () => {
+  useEffect(() => {
     axios
       .get(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${props.match.params.cocktailName}`
@@ -68,10 +68,6 @@ function RecipePage({ addIngredient, ...props }) {
         setLoading(false);
         avgGet(data.drinks[0].idDrink);
       });
-  };
-
-  useEffect(() => {
-    getDetailedRecipe();
   }, [rate]);
 
   const handleClick = (newValue) => {
@@ -125,8 +121,7 @@ function RecipePage({ addIngredient, ...props }) {
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <Box component="fieldset" mb={3} borderColor="transparent">
-
-            
+   
             <Rating
               name="rating"
               value={avg}
@@ -141,8 +136,6 @@ function RecipePage({ addIngredient, ...props }) {
               ` }
             
           </Box>
-          
-        
 
         <CocktailInstructions>
           {dataRecipe.strInstructions}
