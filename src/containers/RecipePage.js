@@ -128,7 +128,7 @@ function RecipePage({ addIngredient, ...props }) {
               precision={0.1}
               onChange={(event, newValue) => {
                 handleClick(newValue);
-                // setRate(newValue);
+                 setRate(newValue);
               }}
             />
             {avg === null ?
@@ -149,7 +149,7 @@ function RecipePage({ addIngredient, ...props }) {
               value={rate}
               precision={0.5}
               onChange={(event, newValue) => {
-                handleClick(newValue);
+              
                 setRate(newValue);
               }}
             />
