@@ -77,7 +77,7 @@ function ProfilePageContent() {
         </Link>
         <Link to="/shoppinglistpage">
           <div className="profilepage-arrow">
-            <FontAwesomeIcon icon="list" size="1x" color="#00B9CD" />
+            <FontAwesomeIcon icon="shopping-cart" size="1x" color="#00B9CD" />
             <h2>My Shopping List</h2>
           </div>
         </Link>
