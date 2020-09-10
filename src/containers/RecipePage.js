@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import uuid from "react-uuid";
-
 import Ingredients from "./Ingredients";
 import MenuBurger from "./MenuBurger";
 import Navbar from "./Navbar";
@@ -20,42 +19,33 @@ function RecipePage({ addIngredient, ...props }) {
   const [loading, setLoading] = useState(true);
   const [rate, setRate] = useState(1);
   const [avg, setAvg] = useState(0);
-  const [nbRates,setNbRates] = useState(0)
+  const [nbRates, setNbRates] = useState(0);
 
- 
-
-  const avgGet= (dataId) => {
-
+  const avgGet = (dataId) => {
     fetch("https://shakeit.social-car.fr/rates", { method: "GET" })
+      .then((response) => response.json())
+      .then((json) => {
+        if (dataId !== null) {
+          // Get Nb Rates
+          const FilteredRates = json["nbRates"].filter(
+            (rate) => rate._id === dataId
+          );
 
-    .then((response) =>  response.json())
-    .then (json => {
+          FilteredRates.length
+            ? setNbRates(FilteredRates[0]["NbRates"])
+            : setNbRates(0);
 
+          // Get Avg Rate
 
-      if (dataId !== null) {
-
-        // Get Nb Rates
-      const FilteredRates = json['nbRates'].filter (  rate => rate._id === dataId)
-
-      FilteredRates.length ? 
-      setNbRates(FilteredRates[0]['NbRates']) :
-      setNbRates(0)
-
-      // Get Avg Rate
-
-      const avgFilters = json['avg'].filter(
-                  (cocktail) => cocktail["_id"] === dataId
-                );
-                avgFilters.length
-                  ? setAvg(Math.round(avgFilters[0].average * 10) / 10)
-                  : setAvg(null);
-    }
-
-    })
-
-
-  }
-
+          const avgFilters = json["avg"].filter(
+            (cocktail) => cocktail["_id"] === dataId
+          );
+          avgFilters.length
+            ? setAvg(Math.round(avgFilters[0].average * 10) / 10)
+            : setAvg(null);
+        }
+      });
+  };
 
   useEffect(() => {
     axios
@@ -77,11 +67,13 @@ function RecipePage({ addIngredient, ...props }) {
       body: JSON.stringify({ idCocktail: dataRecipe.idDrink, rate: newValue }),
     };
 
-    fetch("https://shakeit.social-car.fr/rates", requestOptions).then((response) => {
-      setTimeout(() => {
-        setRate(0);
-      }, 1000);
-    });
+    fetch("https://shakeit.social-car.fr/rates", requestOptions).then(
+      (response) => {
+        setTimeout(() => {
+          setRate(0);
+        }, 1000);
+      }
+    );
   };
 
   const getIngredients = (dataRecipe) => {
@@ -121,21 +113,20 @@ function RecipePage({ addIngredient, ...props }) {
         <CocktailName>{dataRecipe.strDrink}</CocktailName>
         <CocktailImg src={dataRecipe.strDrinkThumb} alt="Cocktail Thumb" />
         <Box component="fieldset" mb={3} borderColor="transparent">
-   
-            <Rating
-              name="rating"
-              value={avg}
-              precision={0.1}
-              onChange={(event, newValue) => {
-                handleClick(newValue);
-                 setRate(newValue);
-              }}
-            />
-            {avg === null ?
-              `( 0 / 5 - 0 Votes )` : ` (${avg} / 5 - ${nbRates} Votes )
-              ` }
-            
-          </Box>
+          <Rating
+            name="rating"
+            value={avg}
+            precision={0.1}
+            onChange={(event, newValue) => {
+              // handleClick(newValue);
+              setRate(newValue);
+            }}
+          />
+          {avg === null
+            ? `( 0 / 5 - 0 Votes )`
+            : ` (${avg} / 5 - ${nbRates} Votes )
+              `}
+        </Box>
 
         <CocktailInstructions>
           {dataRecipe.strInstructions}
@@ -145,11 +136,11 @@ function RecipePage({ addIngredient, ...props }) {
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Typography component="legend">Rate this cocktail!</Typography>
             <Rating
-              name="rating"
+              name="sables bretons"
               value={rate}
               precision={0.5}
               onChange={(event, newValue) => {
-              
+                handleClick(newValue);
                 setRate(newValue);
               }}
             />
