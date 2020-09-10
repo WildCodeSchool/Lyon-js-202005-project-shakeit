@@ -7,7 +7,6 @@ const ProfilePageCss = styled.div`
     flex-direction: column;
     justify-content: space-around;
     font-size: 0.7em;
-    margin-bottom: 40px;
     margin-top: 20px;
   }
 
@@ -47,6 +46,9 @@ const ProfilePageCss = styled.div`
     color: black;
     margin-right: 20px;
     margin-top: 10px;
+  }
+  .profil-box-bottom {
+    margin-bottom: 80px;
   }
 `;
 
