@@ -26,10 +26,10 @@ const LoginPage = (props) => {
 
   const loginForm = (e) => {
     setTimeout(e.preventDefault(), 100);
-    if (md5(Login) === identifiants.login && md5(Mdp) === identifiants.mdp) {
+   
       setAuth("true");
       history.replace(from);
-    } else alert("Erreur identifiants");
+    
   };
 
   let history = useHistory();
