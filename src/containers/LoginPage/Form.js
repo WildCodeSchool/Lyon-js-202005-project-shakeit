@@ -5,19 +5,9 @@ const Form = (props) => {
   return (
     <>
       <form onSubmit={props.loginForm}>
-        <div className="form-field">
-          <label className="labelForm">Login : </label>
-          <input className="inputForm" onChange={props.loginHandleChange} required="required" />
-          <br></br>
-        </div>
-
-        <div className="form-field">
-          <label>Mdp : </label>
-          <input type="password" onChange={props.mdpHandleChange} required="required"/>
-        </div>
-        <br></br>
+        
         <LogButton type="submit" marginleft={150} width={100}>
-          Sign In
+          Entrer sur le site
         </LogButton>
       </form>
     </>
